@@ -1311,6 +1311,9 @@
   flex-wrap: nowrap;
 }
 .flex-box.center {
+  justify-content: center;
+}
+.flex-box.va-center {
   align-items: center;
 }
 .flex-box.self-center {

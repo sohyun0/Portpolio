@@ -168,6 +168,9 @@
     flex-wrap: nowrap;
   }
   &.center {
+    justify-content: center;
+  }
+  &.va-center {
     align-items: center;
   }
   &.self-center {

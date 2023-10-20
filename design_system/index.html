@@ -4,7 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>type A</title>
+    <title>Design System - Foundations</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/component.css" />
+    <link rel="stylesheet" href="css/design-system.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="cover">
+      <div class="center-content">
+        <div class="title" data-title="Design System">Design System</div>
+        <div class="flex-box center gopage-wrapper">
+          <button class="btn primary-bd start-btn">Start Exploring <span class="ic ic-md like-full bg-primary-500"></span></button>
+          <div class="flex-box link-group">
+            <a href="/design_system/components/foundations/foundations.html" class="btn primary-text fc-primary-75">Foundations</a>
+            <a href="/design_system/components/ui/components.html" class="btn primary-text fc-primary-75">Components</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/design-system.js"></script>
+  <script>
+    let startBtn = document.querySelector(".start-btn");
+    startBtn.onclick = function (e) {
+      if (!this.classList.contains("active")) {
+        this.classList.add("active");
+        document.querySelector(".gopage-wrapper").classList.add("active");
+      }
+    };
+  </script>
 </html>

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 .container {
   max-width: 1600px;
   min-width: 1440px;
@@ -17,20 +18,19 @@
   top: 0;
   transform: translate(-50%, 0);
   width: 100%;
-  background-color: rgb(44, 43, 46);
+  background-color: #0f0b24;
   border-bottom: 1px solid #7357ff;
   z-index: 100;
 }
 
 h1 {
-  color: rgb(255, 255, 255);
+  color: #e2dcff;
   font-weight: 700;
   font-size: 1.75rem;
   line-height: 1.4285714286;
   max-width: 1600px;
   padding: 32px 20px;
   margin: 0 auto;
-  color: #f1eeff;
 }
 
 h2 {
@@ -336,4 +336,161 @@ h2 + h3 {
 #ToolTip h4 ~ table .tool-tip {
   position: absolute;
   display: block;
+}
+
+/***** Cover *****/
+@keyframes titleMotionBefore {
+  0% {
+    left: -70px;
+    top: 70px;
+  }
+  99% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleMotionAfter {
+  0% {
+    left: 70px;
+    top: -70px;
+  }
+  99% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleMotion {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  0% {
+    transform: scale(1);
+  }
+}
+@keyframes btnShow {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes linkShow {
+  100% {
+    right: 0%;
+  }
+}
+.cover {
+  background-color: #0f0b24;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.cover * {
+  font-family: "Kaushan Script", "Pretendard", "Noto Sans KR" !important;
+}
+.cover .center-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cover .title {
+  color: #e2dcff;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1.4545454545;
+  font-size: 8.8541666667vw;
+  animation: titleMotion 1.4s cubic-bezier(0, 0.45, 0.32, 0.97) 1.4s;
+  white-space: nowrap;
+}
+.cover .title::before, .cover .title::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  content: attr(data-title);
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  white-space: nowrap;
+}
+.cover .title::before {
+  animation: titleMotionBefore 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.cover .title::after {
+  animation: titleMotionAfter 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.cover .gopage-wrapper {
+  align-items: center;
+  margin-top: 3.3333333333vw;
+}
+.cover .gopage-wrapper.active {
+  justify-content: space-evenly;
+}
+.cover .start-btn {
+  opacity: 0;
+  animation: btnShow 1s ease-in 2.4s forwards;
+  padding: 1.0416666667vw 1.25vw;
+  font-size: 1.6666666667vw;
+  font-weight: 300;
+}
+.cover .start-btn .ic-md {
+  width: 1.6666666667vw;
+  height: 1.6666666667vw;
+}
+.cover .start-btn.active + .link-group {
+  display: block;
+}
+.cover .start-btn.active + .link-group a {
+  animation: linkShow 0.7s cubic-bezier(0.18, 0.89, 0.53, 1.05) 0s forwards;
+}
+.cover .link-group {
+  display: none;
+  overflow: hidden;
+}
+.cover .link-group a {
+  display: block;
+  position: relative;
+  top: 0;
+  right: -100%;
+  padding: 1.0416666667vw 1.25vw;
+  font-size: 2.2916666667vw;
+  font-weight: 300;
+}
+.cover .link-group a:first-of-type {
+  border-bottom: 5px dotted rgba(226, 220, 255, 0.2);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cover .link-group a:hover {
+  border-radius: 6px;
+}
+
+@media all and (max-width: 768px) {
+  .cover .title {
+    font-size: 12.5vw;
+  }
+  .cover .gopage-wrapper {
+    margin-top: 5.8823529412vw;
+  }
+  .cover .start-btn {
+    opacity: 0;
+    font-size: 2.9411764706vw;
+    padding: 1.7647058824vw 2.3529411765vw;
+  }
+  .cover .start-btn .ic-md {
+    width: 2.9411764706vw;
+    height: 2.9411764706vw;
+  }
+  .cover .link-group a {
+    padding: 1.7647058824vw 2.3529411765vw;
+    font-size: 4.7058823529vw;
+    font-weight: 300;
+  }
 }

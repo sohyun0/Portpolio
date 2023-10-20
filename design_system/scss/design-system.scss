@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 @import "_variables", "_mixins";
 // body {
 //   background-color: $base-background-color;
@@ -17,11 +18,10 @@
   z-index: 100;
 }
 h1 {
-  @include setFontStyle(map-get($font, xl4-40), map-get($neutral_white, 100), 700);
+  @include setFontStyle(map-get($font, xl4-40), map-get($primary, 75), 700);
   max-width: 1600px;
   padding: 32px 20px;
   margin: 0 auto;
-  color: map-get($primary, 50);
 }
 h2 {
   @include setFontStyle(map-get($font, xl6-64), map-get($gray, 800));
@@ -337,11 +337,170 @@ h2 + h3 {
 
 /***** components *****/
 #ToolTip {
-
   h4 ~ table {
     .tool-tip {
       position: absolute;
       display: block;
+    }
+  }
+}
+
+/***** Cover *****/
+$bezier: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+$delay: (
+  1: 1.4s,
+  2: 2.4s,
+);
+@keyframes titleMotionBefore {
+  0% {
+    left: -70px;
+    top: 70px;
+  }
+  99% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleMotionAfter {
+  0% {
+    left: 70px;
+    top: -70px;
+  }
+  99% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleMotion {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  0% {
+    transform: scale(1);
+  }
+}
+@keyframes btnShow {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes linkShow {
+  100% {
+    right: 0%;
+  }
+}
+.cover {
+  background-color: $base-background-color;
+  min-width: 100vw;
+  min-height: 100vh;
+  & * {
+    font-family: "Kaushan Script", $base-font-family !important;
+  }
+  & .center-content {
+    @include setPositionCenter(fixed);
+  }
+  & .title {
+    @include setFontStyle(map-get($font, xl6-64), $primary75, 700);
+    font-size: convertPxToVw(170, 1920);
+    animation: titleMotion 1.4s cubic-bezier(0, 0.45, 0.32, 0.97) map-get($delay, 1);
+    white-space: nowrap;
+    &::before,
+    &::after {
+      @include setPosition;
+      content: attr(data-title);
+      font-size: inherit;
+      font-weight: inherit;
+      letter-spacing: inherit;
+      white-space: nowrap;
+    }
+    &::before {
+      animation: titleMotionBefore 2s $bezier;
+    }
+    &::after {
+      animation: titleMotionAfter 2s $bezier;
+    }
+  }
+  & .gopage-wrapper {
+    align-items: center;
+    margin-top: convertPxToVw(64, 1920);
+    &.active {
+      justify-content: space-evenly;
+    }
+  }
+  & .start-btn {
+    opacity: 0;
+    animation: btnShow 1s ease-in map-get($delay, 2) forwards;
+    padding: convertPxToVw(20, 1920) convertPxToVw(24, 1920);
+    font-size: convertPxToVw(32, 1920);
+    font-weight: 300;
+    & .ic-md {
+      width: convertPxToVw(32, 1920);
+      height: convertPxToVw(32, 1920);
+    }
+    &.active {
+      & + .link-group {
+        display: block;
+        & a {
+          animation: linkShow 0.7s cubic-bezier(0.18, 0.89, 0.53, 1.05) 0s forwards;
+        }
+      }
+    }
+  }
+  & .link-group {
+    display: none;
+    overflow: hidden;
+    & a {
+      display: block;
+      position: relative;
+      top: 0;
+      right: -100%;
+      padding: convertPxToVw(20, 1920) convertPxToVw(24, 1920);
+      font-size: convertPxToVw(44, 1920);
+      font-weight: 300;
+      &:first-of-type {
+        border-bottom:5px dotted rgb(226, 220, 255, 0.2);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &:hover {
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+@include respond(768) {
+  .cover {
+    & .title {
+      font-size: convertPxToVw(85, 680);
+    }
+    & .gopage-wrapper {
+      margin-top: convertPxToVw(40, 680);
+    }
+    & .start-btn {
+      opacity: 0;
+      font-size: convertPxToVw(20, 680);
+      padding: convertPxToVw(12, 680) convertPxToVw(16, 680);
+      & .ic-md {
+        width: convertPxToVw(20, 680);
+        height: convertPxToVw(20, 680);
+      }
+    }
+    & .link-group {
+      & a {
+        padding: convertPxToVw(12, 680) convertPxToVw(16, 680);
+        font-size: convertPxToVw(32, 680);
+        font-weight: 300;
+      }
     }
   }
 }
