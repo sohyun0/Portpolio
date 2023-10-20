@@ -1,0 +1,65 @@
+@charset "utf-8";
+@import "../molecules/molecules";
+// /***** modal ******/
+.dimmed {
+  @include dimmed(rgba(64, 64, 64, 0.7));
+  &.opacity {
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 12;
+  }
+}
+.pop {
+  &-wrapper {
+    @include setPositionCenter;
+    position: fixed;
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0px 6px 7px -8px rgba(0, 0, 0, 0.03), 0px 15px 26px 0px rgba(0, 0, 0, 0.1);
+    z-index: 11;
+    &.active {
+      display: block;
+    }
+  }
+  &-calendar {
+    z-index: 13;
+    max-width: 320px;
+  }
+  &-header {
+    @include setFlexLayout(flex, nowrap, space-between);
+    padding: 20px;
+    border-bottom: 1px solid $gray50;
+    align-items: center;
+    & .title {
+      @include setFontStyle(map-get($font, md-24));
+      width: calc(100% - 30px);
+    }
+    & .close-btn {
+      margin-left: 10px;
+      padding: 4px;
+      border: 1px solid $gray100;
+      border-radius: 4px;
+    }
+  }
+  &-body {
+    padding: 20px;
+    min-height: 200px;
+    max-height: 600px;
+  }
+  &-footer {
+    padding: 20px;
+    border-top: 1px solid $gray50;
+    text-align: right;
+    & .btn-group {
+      & button {
+        margin-right: 6px;
+        &:last-of-type,
+        &:only-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

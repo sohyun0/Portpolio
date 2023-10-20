@@ -1,0 +1,642 @@
+@charset "utf-8";
+@import "../../../scss/mixins";
+// /***** button ******/
+.btn {
+  display: inline-block;
+  border-radius: 6px;
+  @each $sizeName, $detailSize in $buttonSize {
+    &-#{$sizeName} {
+      padding: #{nth($detailSize, 1)} #{nth($detailSize, 2)};
+      font-size: #{convertPxToRem(nth($detailSize, 3))};
+    }
+  }
+  &.full {
+    width: 100%;
+  }
+  $color_num: (500, 600, 700, 800, 900);
+  @for $i from 1 through length($color_num) {
+    &[class*="bg-"][class*="#{nth($color_num, $i)}"] {
+      color: white;
+    }
+  }
+  &:disabled,
+  &.disabled {
+    background-color: $base-disabled-bg;
+    color: $base-disabled;
+    & [class*="ic"] {
+      background-color: $base-disabled;
+    }
+    & > *:not([class*="ic"]) {
+      color: $base-disabled;
+    }
+  }
+  &[class*="bd-"] {
+    &:disabled,
+    &.disable {
+      border: 0;
+    }
+  }
+  &.text {
+    &:disabled,
+    &.disabled {
+      background: none !important;
+    }
+  }
+  & > *:not([class*="ic"]) {
+    color: inherit;
+    vertical-align: middle;
+  }
+  &.primary {
+    &-bg {
+      @include setButtonStyle(bg, $primary500, $white100);
+    }
+    &-bd {
+      @include setButtonStyle(bd, $primary500, $primary500);
+    }
+    &-text {
+      @include setButtonStyle(text, "", $primary500);
+    }
+    &-mix {
+      @include setButtonStyle(mix, $primary25, $primary500, $primary500);
+    }
+  }
+  &.secondary {
+    &-bg {
+      @include setButtonStyle(bg, $secondary500, $white100);
+    }
+    &-bd {
+      @include setButtonStyle(bd, $secondary500, $secondary500);
+    }
+    &-text {
+      @include setButtonStyle(text, "", $secondary500);
+    }
+    &-mix {
+      @include setButtonStyle(mix, $secondary25, $secondary500, $secondary500);
+    }
+  }
+  &.gray {
+    &-bg {
+      @include setButtonStyle(bg, $gray500, $white100);
+    }
+    &-bd {
+      @include setButtonStyle(bd, $gray500, $gray500);
+    }
+    &-text {
+      @include setButtonStyle(text, "", $gray500);
+    }
+    &-mix {
+      @include setButtonStyle(mix, $gray25, $gray500, $gray500);
+    }
+  }
+  //   &.black {
+  //     &-bg {
+  //       @include setButtonStyle(bg, $black100, $white100);
+  //     }
+  //     &-bd {
+  //       @include setButtonStyle(bd, $black100, $black100);
+  //     }
+  //     &-text {
+  //       @include setButtonStyle(text, "", $black100);
+  //     }
+  //     &-mix {
+  //       @include setButtonStyle(mix, $black4, $black100, $black100);
+  //     }
+  //   }
+  &.info {
+    &-bg {
+      @include setButtonStyle(bg, $info500, $white100);
+    }
+    &-bd {
+      @include setButtonStyle(bd, $info500, $info500);
+    }
+    &-text {
+      @include setButtonStyle(text, "", $info500);
+    }
+    &-mix {
+      @include setButtonStyle(mix, $info25, $info500, $info500);
+    }
+  }
+  &.success {
+    &-bg {
+      @include setButtonStyle(bg, $success500, $white100);
+    }
+    &-bd {
+      @include setButtonStyle(bd, $success500, $success500);
+    }
+    &-text {
+      @include setButtonStyle(text, "", $success500);
+    }
+    &-mix {
+      @include setButtonStyle(mix, $success25, $success500, $success500);
+    }
+  }
+  &.warning {
+    &-bg {
+      @include setButtonStyle(bg, $warning500, $white100);
+    }
+    &-bd {
+      @include setButtonStyle(bd, $warning500, $warning500);
+    }
+    &-text {
+      @include setButtonStyle(text, "", $warning500);
+    }
+    &-mix {
+      @include setButtonStyle(mix, $warning25, $warning500, $warning500);
+    }
+  }
+  &.danger {
+    &-bg {
+      @include setButtonStyle(bg, $danger500, $white100);
+    }
+    &-bd {
+      @include setButtonStyle(bd, $danger500, $danger500);
+    }
+    &-text {
+      @include setButtonStyle(text, "", $danger500);
+    }
+    &-mix {
+      @include setButtonStyle(mix, $danger25, $danger500, $danger500);
+    }
+  }
+}
+@include respond(500, min) {
+  .btn {
+    &.state {
+      &:hover {
+        filter: opacity(0.7);
+      }
+      &:active {
+        box-shadow: 0px 0px 0px 4px $gray75;
+      }
+    }
+    &.primary {
+      &-bg {
+        @include setButtonStateStyle(bg, $primary300, $primary75);
+      }
+      &-bd {
+        @include setButtonStateStyle(bd, $primary300, $primary75, $white100);
+      }
+      &-text {
+        @include setButtonStateStyle(text, $primary300, $primary75, $white100);
+      }
+      &-mix {
+        @include setButtonStateStyle(mix, $primary300, $primary75, $white100);
+      }
+    }
+    &.secondary {
+      &-bg {
+        @include setButtonStateStyle(bg, $secondary300, $secondary75);
+      }
+      &-bd {
+        @include setButtonStateStyle(bd, $secondary300, $secondary75, $white100);
+      }
+      &-text {
+        @include setButtonStateStyle(text, $secondary300, $secondary75, $white100);
+      }
+      &-mix {
+        @include setButtonStateStyle(mix, $secondary300, $secondary75, $white100);
+      }
+    }
+    &.gray {
+      &-bg {
+        @include setButtonStateStyle(bg, $gray300, $gray75);
+      }
+      &-bd {
+        @include setButtonStateStyle(bd, $gray300, $gray75, $white100);
+      }
+      &-text {
+        @include setButtonStateStyle(text, $gray300, $gray75, $white100);
+      }
+      &-mix {
+        @include setButtonStateStyle(mix, $gray300, $gray75, $white100);
+      }
+    }
+    // &.black {
+    //   &-bg {
+    //     @include setButtonStateStyle(bg, $black48, $black12);
+    //   }
+    //   &-bd {
+    //     @include setButtonStateStyle(bd, $black48, $black12, $white100);
+    //   }
+    //   &-text {
+    //     @include setButtonStateStyle(text, $black48, $black12, $white100);
+    //   }
+    //   &-mix {
+    //     @include setButtonStateStyle(mix, $black48, $black12, $white100);
+    //   }
+    // }
+    &.info {
+      &-bg {
+        @include setButtonStateStyle(bg, $info300, $info75);
+      }
+      &-bd {
+        @include setButtonStateStyle(bd, $info300, $info75, $white100);
+      }
+      &-text {
+        @include setButtonStateStyle(text, $info300, $info75, $white100);
+      }
+      &-mix {
+        @include setButtonStateStyle(mix, $info300, $info75, $white100);
+      }
+    }
+    &.success {
+      &-bg {
+        @include setButtonStateStyle(bg, $success300, $success75);
+      }
+      &-bd {
+        @include setButtonStateStyle(bd, $success300, $success75, $white100);
+      }
+      &-text {
+        @include setButtonStateStyle(text, $success300, $success75, $white100);
+      }
+      &-mix {
+        @include setButtonStateStyle(mix, $success300, $success75, $white100);
+      }
+    }
+    &.warning {
+      &-bg {
+        @include setButtonStateStyle(bg, $warning300, $warning75);
+      }
+      &-bd {
+        @include setButtonStateStyle(bd, $warning300, $warning75, $white100);
+      }
+      &-text {
+        @include setButtonStateStyle(text, $warning300, $warning75, $white100);
+      }
+      &-mix {
+        @include setButtonStateStyle(mix, $warning300, $warning75, $white100);
+      }
+    }
+    &.danger {
+      &-bg {
+        @include setButtonStateStyle(bg, $danger300, $danger75);
+      }
+      &-bd {
+        @include setButtonStateStyle(bd, $danger300, $danger75, $white100);
+      }
+      &-text {
+        @include setButtonStateStyle(text, $danger300, $danger75, $white100);
+      }
+      &-mix {
+        @include setButtonStateStyle(mix, $danger300, $danger75, $white100);
+      }
+    }
+  }
+}
+
+// /***** chips & tags ******/
+
+.chip {
+  @include setFontStyle(map-get($font, sm-24), $gray700, 600);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-right: 4px;
+  @mixin chip($bg, $bd) {
+    background-color: $bg;
+    border: 1px solid $bd;
+  }
+  &[data-chip-color="gray"] {
+    @include chip($white100, $gray75);
+  }
+  &[data-chip-color="primary"] {
+    @include chip($primary75, $primary100);
+  }
+  &[data-chip-color="secondary"] {
+    @include chip($secondary75, $secondary100);
+  }
+  &[data-chip-color="info"] {
+    @include chip($info75, $info100);
+  }
+  &[data-chip-color="success"] {
+    @include chip($success75, $success100);
+  }
+  &[data-chip-color="warning"] {
+    @include chip($warning75, $warning100);
+  }
+  &[data-chip-color="danger"] {
+    @include chip($danger75, $danger100);
+  }
+  &[class*="gray"],
+  &[data-chip-color="gray"] {
+    @include setButtonStateStyle(mix, $gray25, $gray75);
+  }
+  &[class*="primary"],
+  &[data-chip-color="primary"] {
+    @include setButtonStateStyle(mix, $primary25, $primary75);
+  }
+  &[class*="secondary"],
+  &[data-chip-color="secondary"] {
+    @include setButtonStateStyle(mix, $secondary25, $secondary75);
+  }
+  &[class*="info"],
+  &[data-chip-color="info"] {
+    @include setButtonStateStyle(mix, $info25, $info75);
+  }
+  &[class*="success"],
+  &[data-chip-color="success"] {
+    @include setButtonStateStyle(mix, $success25, $success75);
+  }
+  &[class*="warning"],
+  &[data-chip-color="warning"] {
+    @include setButtonStateStyle(mix, $warning25, $warning75);
+  }
+  &[class*="danger"],
+  &[data-chip-color="danger"] {
+    @include setButtonStateStyle(mix, $danger25, $danger75);
+  }
+  &.disabled {
+    background-color: $base-disabled-bg;
+    color: $base-disabled;
+    &:hover {
+      background: none;
+    }
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+.tag {
+  @include setFontStyle(map-get($font, xs2-16), inherit 600);
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 4px;
+  &[data-tag-color="gray"] {
+    color: $gray700;
+    background-color: $white100;
+  }
+  &[data-tag-color="primary"] {
+    color: $primary600;
+    background-color: $primary50;
+  }
+  &[data-tag-color="secondary"] {
+    color: $secondary600;
+    background-color: $secondary50;
+  }
+  &[data-tag-color="info"] {
+    color: $info600;
+    background-color: $info50;
+  }
+  &[data-tag-color="success"] {
+    color: $success600;
+    background-color: $success50;
+  }
+  &[data-tag-color="warning"] {
+    color: $warning600;
+    background-color: $warning50;
+  }
+  &[data-tag-color="danger"] {
+    color: $danger600;
+    background-color: $danger50;
+  }
+  &[data-tag-color="gray"],
+  &[class*="gray"] {
+    @include setButtonStateStyle(bg, $gray75, none);
+  }
+  &[data-tag-color="primary"],
+  &[class*="primary"] {
+    @include setButtonStateStyle(bg, $primary75, none);
+  }
+  &[data-tag-color="secondary"],
+  &[class*="secondary"] {
+    @include setButtonStateStyle(bg, $secondary75, none);
+  }
+  &[data-tag-color="info"],
+  &[class*="info"] {
+    @include setButtonStateStyle(bg, $info75, none);
+  }
+  &[data-tag-color="success"],
+  &[class*="success"] {
+    @include setButtonStateStyle(bg, $success75, none);
+  }
+  &[data-tag-color="warning"],
+  &[class*="warning"] {
+    @include setButtonStateStyle(bg, $warning75, none);
+  }
+  &[data-tag-color="danger"],
+  &[class*="danger"] {
+    @include setButtonStateStyle(bg, $danger75, none);
+  }
+  &.disabled {
+    background-color: $base-disabled-bg;
+    color: $base-disabled;
+    &:hover {
+      background: none;
+    }
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+[data-chip-color="disabled"],
+[data-tag-color="disabled"] {
+  background-color: $base-disabled-bg;
+  color: $base-disabled;
+  &:hover {
+    background: none;
+  }
+  &:active {
+    box-shadow: none;
+  }
+}
+
+// /***** Input & Textarea ******/
+.input,
+.textarea {
+  @include setInputStyle;
+}
+.input {
+  @each $sizeName, $detailSize in $inputnSize {
+    &.inp-#{$sizeName} {
+      padding: #{nth($detailSize, 1)} #{nth($detailSize, 2)};
+      font-size: #{convertPxToRem(nth($detailSize, 3))};
+    }
+  }
+  &.success {
+    border-color: $success500;
+    &:focus {
+      border-color: $success500;
+      box-shadow: 0px 0px 0px 4px $success75;
+    }
+  }
+  &.danger {
+    border-color: $danger500;
+    &:focus {
+      border-color: $danger500;
+      box-shadow: 0px 0px 0px 4px $danger75;
+    }
+  }
+}
+.textarea {
+  @each $sizeName, $detailSize in $inputnSize {
+    &.area-#{$sizeName} {
+      padding: #{nth($detailSize, 1)} #{nth($detailSize, 2)};
+      font-size: #{convertPxToRem(nth($detailSize, 3))};
+    }
+  }
+  @each $sizeName, $detailSize in $textareaHeight {
+    &.area-#{$sizeName} {
+      height: $detailSize;
+    }
+  }
+}
+input {
+  & + label {
+    vertical-align: middle;
+    line-height: 1;
+  }
+  &.text {
+    &:checked + label {
+      color: $primary500;
+      font-weight: 600;
+    }
+  }
+  &.toggle {
+    & + label {
+      position: relative;
+      &::before,
+      &::after {
+        @include createPseudoElement;
+      }
+      &.text {
+        color: $base-disabled;
+      }
+    }
+    &:checked + .text {
+      color: $gray900;
+    }
+    &.left {
+      @include createToggleWrapper(left);
+      @include createToggleCircle(left);
+    }
+    &.right {
+      @include createToggleWrapper(right);
+      @include createToggleCircle(right);
+    }
+  }
+  &.icon {
+    @include createLabelPseudoElement;
+    @include createLabelSize;
+  }
+  &.circle {
+    & + label {
+      @include drawingCircle(mix, $gray500, 2px, $white100);
+      position: relative;
+    }
+    &:checked + label {
+      @include drawingCircle(mix, $primary500, 2px, $primary500);
+      & .circle {
+        @include drawingCircle(fill, $white100);
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        z-index: 1;
+      }
+    }
+  }
+  &.circle-check {
+    & + label {
+      @include drawingCircle(mix, $gray500, 2px, $white100);
+      position: relative;
+    }
+    &:checked + label {
+      @include drawingCircle(mix, $primary500, 2px, $primary500);
+      & .check {
+        position: absolute;
+        transform: translate(-50%, -50%) rotate(45deg) !important;
+      }
+    }
+    &.inp-ic {
+      &-sm {
+        &:checked + label .check {
+          @include drawingCheck(8px, 2px, $white100, 2px);
+          top: calc(50% - 10px);
+          left: calc(50% - 1px);
+        }
+      }
+      &-md {
+        &:checked + label .check {
+          @include drawingCheck(10px, 2px, $white100, 2px);
+          top: calc(50% - 9px);
+          left: calc(50% - 1px);
+        }
+      }
+      &-lg {
+        &:checked + label .check {
+          @include drawingCheck(12px, 2px, $white100, 2px);
+          top: calc(50% - 8px);
+          left: calc(50% - 1px);
+        }
+      }
+    }
+  }
+  &.square-check {
+    & + label {
+      @include drawingRectangle(mix, $gray500, 2px, $white100, 6px);
+      position: relative;
+    }
+    &:checked + label {
+      @include drawingRectangle(mix, $primary500, 2px, $primary500, 6px);
+      & .check {
+        position: absolute;
+        transform: translate(-50%, -50%) rotate(45deg) !important;
+      }
+    }
+    &.inp-ic {
+      &-sm {
+        &:checked + label .check {
+          @include drawingCheck(8px, 2px, $white100, 2px);
+          top: calc(50% - 10px);
+          left: calc(50% - 1px);
+        }
+      }
+      &-md {
+        &:checked + label .check {
+          @include drawingCheck(10px, 2px, $white100, 2px);
+          top: calc(50% - 9px);
+          left: calc(50% - 1px);
+        }
+      }
+      &-lg {
+        &:checked + label .check {
+          @include drawingCheck(12px, 2px, $white100, 2px);
+          top: calc(50% - 8px);
+          left: calc(50% - 1px);
+        }
+      }
+    }
+  }
+}
+
+// /***** Label ******/
+.label {
+  &[class*="top"] {
+    margin-bottom: 4px;
+  }
+  &[class*="bottom"] {
+    margin-top: 4px;
+  }
+  &[class*="left"] {
+    text-align: left;
+  }
+  &[class*="right"] {
+    text-align: right;
+  }
+  &.lab {
+    @each $sizeName, $detailSize in $labelSize {
+      &-#{$sizeName} {
+        font-size: #{convertPxToRem(nth($detailSize, 1))};
+        line-height: nth($detailSize, 2);
+      }
+    }
+  }
+}
+
+// /***** scroll ******/
+.scroll {
+  @include setScrollStyle;
+}

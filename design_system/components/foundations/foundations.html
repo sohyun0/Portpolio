@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System - Foundations</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/lib/prism.css" />
+    <link rel="stylesheet" href="../../css/component.css" />
+    <link rel="stylesheet" href="../../css/design-system.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="fix-content">
+        <h1>Design System - Foundations</h1>
+      </div>
+      <div class="design-system-list foundations">
+        <div class="tab-line tab-header">
+          <button type="button" class="active" data-tab-header="0">Color</button>
+          <button type="button" data-tab-header="1">Grid System</button>
+          <button type="button" data-tab-header="2">Icongraphy</button>
+          <button type="button" data-tab-header="3">Spacing</button>
+          <button type="button" data-tab-header="4">Typography</button>
+          <button type="button" data-tab-header="5">Width</button>
+        </div>
+        <div class="tab-line tab-content">
+          <!-- Color [s] -->
+          <section id="Color" class="active" data-tab-content="0">
+            <h2>Color</h2>
+            <div class="round-box">
+              <ul>
+                <li>1번째 팔레트는 Primary 와 Secondary</li>
+                <li>2번째 팔레트는 Grayscale</li>
+                <li>3번째 팔레트는 투명도로 이루어져 있는 Neutral</li>
+                <li>4번째 팔레트는 4가지 타입이 있는 Functional</li>
+                <li>클래스는 <strong>[type]-[color][number]</strong>의 구성으로 되어있습니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w80p">
+              <tr>
+                <th>Attribute</th>
+                <th>Color & Number</th>
+                <th>Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>color</td>
+                <td>
+                  [25 ~ 900] : primary<small class="fc-black-48"> | </small>secondary<small class="fc-black-48"> | </small>gray<small class="fc-black-48"> | </small>info
+                  <small class="fc-black-48"> | </small>success<small class="fc-black-48"> | </small>warning<small class="fc-black-48"> | </small>danger
+                  <br />
+                  <br />
+                  [4 ~ 100] : black<small class="fc-black-48"> | </small>white
+                </td>
+                <td>fc-primary100</td>
+                <td>폰트 색상 설정</td>
+              </tr>
+              <tr>
+                <td>background</td>
+                <td>
+                  [25 ~ 900] : primary<small class="fc-black-48"> | </small>secondary<small class="fc-black-48"> | </small>gray<small class="fc-black-48"> | </small>info
+                  <small class="fc-black-48"> | </small>success<small class="fc-black-48"> | </small>warning<small class="fc-black-48"> | </small>danger
+                  <br />
+                  <br />
+                  [4 ~ 100] : black<small class="fc-black-48"> | </small>white
+                </td>
+                <td>bg-primary100</td>
+                <td>배경 색상 설정</td>
+              </tr>
+              <tr>
+                <td>border</td>
+                <td>
+                  [25 ~ 900] : primary<small class="fc-black-48"> | </small>secondary<small class="fc-black-48"> | </small>gray<small class="fc-black-48"> | </small>info
+                  <small class="fc-black-48"> | </small>success<small class="fc-black-48"> | </small>warning<small class="fc-black-48"> | </small>danger
+                  <br />
+                  <br />
+                  [4 ~ 100] : black<small class="fc-black-48"> | </small>white
+                </td>
+                <td>bd-primary100</td>
+                <td>라인 색상 설정</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- font color --&gt;
+&lt;p class="fc-primary-500"&gt;color&lt;/p&gt;
+
+&lt;!-- background color & icon color --&gt;
+&lt;p class="bg-black-4"&gt;background color & icon color&lt;/p&gt;
+
+&lt;!-- border color & icon color --&gt;
+&lt;p class="bd-white-24"&gt;border color&lt;/p&gt;
+</code></pre>
+            <h2>Palettes</h2>
+            <h3>Primary</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-primary-25"></div>
+                <p class="info-text">primary / 25</p>
+                <p class="info-text">#f9f8ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-50"></div>
+                <p class="info-text">primary / 50</p>
+                <p class="info-text">#f1eeff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-75"></div>
+                <p class="info-text">primary / 75</p>
+                <p class="info-text">#e2dcff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-100"></div>
+                <p class="info-text">primary / 100</p>
+                <p class="info-text">#c6bbff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-200"></div>
+                <p class="info-text">primary / 200</p>
+                <p class="info-text">#bcafff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-300"></div>
+                <p class="info-text">primary / 300</p>
+                <p class="info-text">#a797ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-400"></div>
+                <p class="info-text">primary / 400</p>
+                <p class="info-text">#8b75ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-500"></div>
+                <p class="info-text">primary / 500</p>
+                <p class="info-text">#7357ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-600"></div>
+                <p class="info-text">primary / 600</p>
+                <p class="info-text">#6347f4</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-700"></div>
+                <p class="info-text">primary / 700</p>
+                <p class="info-text">#553ade</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-800"></div>
+                <p class="info-text">primary / 800</p>
+                <p class="info-text">#3c28a4</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-primary-900"></div>
+                <p class="info-text">primary / 900</p>
+                <p class="info-text">#21194d</p>
+              </li>
+            </ul>
+            <h3>Secondary</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-secondary-25"></div>
+                <p class="info-text">secondary / 25</p>
+                <p class="info-text">#f4fff5</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-50"></div>
+                <p class="info-text">secondary / 50</p>
+                <p class="info-text">#e9ffea</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-75"></div>
+                <p class="info-text">secondary / 75</p>
+                <p class="info-text">#cfffd1</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-100"></div>
+                <p class="info-text">secondary / 100</p>
+                <p class="info-text">#adfcb0</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-200"></div>
+                <p class="info-text">secondary / 200</p>
+                <p class="info-text">#98f89c</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-300"></div>
+                <p class="info-text">secondary / 300</p>
+                <p class="info-text">#7ff183</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-400"></div>
+                <p class="info-text">secondary / 400</p>
+                <p class="info-text">#5ce762</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-500"></div>
+                <p class="info-text">secondary / 500</p>
+                <p class="info-text">#48d64e</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-600"></div>
+                <p class="info-text">secondary / 600</p>
+                <p class="info-text">#3bc641</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-700"></div>
+                <p class="info-text">secondary / 700</p>
+                <p class="info-text">#37b13d</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-800"></div>
+                <p class="info-text">secondary / 800</p>
+                <p class="info-text">#2d8331</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-secondary-900"></div>
+                <p class="info-text">secondary / 900</p>
+                <p class="info-text">#143e16</p>
+              </li>
+            </ul>
+            <h3>Gray</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-gray-25"></div>
+                <p class="info-text">gray / 25</p>
+                <p class="info-text">#f8f8f8</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-50"></div>
+                <p class="info-text">gray / 50</p>
+                <p class="info-text">#f3f3f4</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-75"></div>
+                <p class="info-text">gray / 75</p>
+                <p class="info-text">#ececed</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-100"></div>
+                <p class="info-text">gray / 100</p>
+                <p class="info-text">#e2e2e4</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-200"></div>
+                <p class="info-text">gray / 200</p>
+                <p class="info-text">#d9d8dc</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-300"></div>
+                <p class="info-text">gray / 300</p>
+                <p class="info-text">#c6c5ca</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-400"></div>
+                <p class="info-text">gray / 400</p>
+                <p class="info-text">#b3b1b8</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-500"></div>
+                <p class="info-text">gray / 500</p>
+                <p class="info-text">#8d8a95</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-600"></div>
+                <p class="info-text">gray / 600</p>
+                <p class="info-text">#676472</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-700"></div>
+                <p class="info-text">gray / 700</p>
+                <p class="info-text">#4f4b5c</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-800"></div>
+                <p class="info-text">gray / 800</p>
+                <p class="info-text">#2e293d</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-gray-900"></div>
+                <p class="info-text">gray / 900</p>
+                <p class="info-text">#110c22</p>
+              </li>
+            </ul>
+            <h3>Neutrals - Black</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-black-4"></div>
+                <p class="info-text">black / 4</p>
+                <p class="info-text">#000 / 4%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-7"></div>
+                <p class="info-text">black / 7</p>
+                <p class="info-text">#000 / 7%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-12"></div>
+                <p class="info-text">black / 12</p>
+                <p class="info-text">#000 / 12%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-16"></div>
+                <p class="info-text">black / 16</p>
+                <p class="info-text">#000 / 16%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-20"></div>
+                <p class="info-text">black / 20</p>
+                <p class="info-text">#000 / 20%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-24"></div>
+                <p class="info-text">black / 24</p>
+                <p class="info-text">#000 / 24%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-32"></div>
+                <p class="info-text">black / 32</p>
+                <p class="info-text">#000 / 32%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-48"></div>
+                <p class="info-text">black / 48</p>
+                <p class="info-text">#000 / 48%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-64"></div>
+                <p class="info-text">black / 64</p>
+                <p class="info-text">#000 / 64%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-76"></div>
+                <p class="info-text">black / 76</p>
+                <p class="info-text">#000 / 76%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-88"></div>
+                <p class="info-text">black / 88</p>
+                <p class="info-text">#000 / 88%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-black-100"></div>
+                <p class="info-text">black / 100</p>
+                <p class="info-text">#000 / 100%</p>
+              </li>
+            </ul>
+            <h3>Neutrals - White</h3>
+            <ul class="flex-box nowrap col12" style="background: linear-gradient(180deg, rgba(0, 0, 0, 1) 62%, rgba(0, 0, 0, 0) 62%)">
+              <li class="flex-item">
+                <div class="bg-white-4"></div>
+                <p class="info-text">white / 4</p>
+                <p class="info-text">#fff / 4%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-7"></div>
+                <p class="info-text">white / 7</p>
+                <p class="info-text">#fff / 7%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-12"></div>
+                <p class="info-text">white / 12</p>
+                <p class="info-text">#fff / 0.12%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-16"></div>
+                <p class="info-text">white / 16</p>
+                <p class="info-text">#fff / 16%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-20"></div>
+                <p class="info-text">white / 20</p>
+                <p class="info-text">#fff / 20%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-24"></div>
+                <p class="info-text">white / 24</p>
+                <p class="info-text">#fff / 24%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-32"></div>
+                <p class="info-text">white / 32</p>
+                <p class="info-text">#fff / 32%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-48"></div>
+                <p class="info-text">white / 48</p>
+                <p class="info-text">#fff / 48%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-64"></div>
+                <p class="info-text">white / 64</p>
+                <p class="info-text">#fff / 64%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-76"></div>
+                <p class="info-text">white / 76</p>
+                <p class="info-text">#fff / 76%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-88"></div>
+                <p class="info-text">white / 88</p>
+                <p class="info-text">#fff / 88%</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-white-100"></div>
+                <p class="info-text">white / 100</p>
+                <p class="info-text">#fff / 100%</p>
+              </li>
+            </ul>
+            <h3>Functional - Information</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-info-25"></div>
+                <p class="info-text">info / 25</p>
+                <p class="info-text">#f5faff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-50"></div>
+                <p class="info-text">info / 50</p>
+                <p class="info-text">#e9f4ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-75"></div>
+                <p class="info-text">info / 75</p>
+                <p class="info-text">#c2e2ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-100"></div>
+                <p class="info-text">info / 100</p>
+                <p class="info-text">#a0d2ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-200"></div>
+                <p class="info-text">info / 200</p>
+                <p class="info-text">#71bbff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-300"></div>
+                <p class="info-text">info / 300</p>
+                <p class="info-text">#45a6ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-400"></div>
+                <p class="info-text">info / 400</p>
+                <p class="info-text">#1c92ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-500"></div>
+                <p class="info-text">info / 500</p>
+                <p class="info-text">#0084ff</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-600"></div>
+                <p class="info-text">info / 600</p>
+                <p class="info-text">#0076e2</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-700"></div>
+                <p class="info-text">info / 700</p>
+                <p class="info-text">#0057a7</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-800"></div>
+                <p class="info-text">info / 800</p>
+                <p class="info-text">#0c355a</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-info-900"></div>
+                <p class="info-text">info / 900</p>
+                <p class="info-text">#0d1c2b</p>
+              </li>
+            </ul>
+            <h3>Functional - Success</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-success-25"></div>
+                <p class="info-text">success / 25</p>
+                <p class="info-text">#f3fdf8</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-50"></div>
+                <p class="info-text">success / 50</p>
+                <p class="info-text">#e2fcf0</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-75"></div>
+                <p class="info-text">success / 75</p>
+                <p class="info-text">#c6f1dd</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-100"></div>
+                <p class="info-text">success / 100</p>
+                <p class="info-text">#a6e9c8</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-200"></div>
+                <p class="info-text">success / 200</p>
+                <p class="info-text">#6fdaa6</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-300"></div>
+                <p class="info-text">success / 300</p>
+                <p class="info-text">#4dcc8f</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-400"></div>
+                <p class="info-text">success / 400</p>
+                <p class="info-text">#28c07a</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-500"></div>
+                <p class="info-text">success / 500</p>
+                <p class="info-text">#0baa60</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-600"></div>
+                <p class="info-text">success / 600</p>
+                <p class="info-text">#0a9c55</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-700"></div>
+                <p class="info-text">success / 700</p>
+                <p class="info-text">#0c7844</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-800"></div>
+                <p class="info-text">success / 800</p>
+                <p class="info-text">#104b2f</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-success-900"></div>
+                <p class="info-text">success / 900</p>
+                <p class="info-text">#0d1f11</p>
+              </li>
+            </ul>
+            <h3>Functional - Warning</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-warning-25"></div>
+                <p class="info-text">warning / 25</p>
+                <p class="info-text">#fffaed</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-50"></div>
+                <p class="info-text">warning / 50</p>
+                <p class="info-text">#fff5db</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-75"></div>
+                <p class="info-text">warning / 75</p>
+                <p class="info-text">#ffecba</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-100"></div>
+                <p class="info-text">warning / 100</p>
+                <p class="info-text">#ffdd86</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-200"></div>
+                <p class="info-text">warning / 200</p>
+                <p class="info-text">#ffcb45</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-300"></div>
+                <p class="info-text">warning / 300</p>
+                <p class="info-text">#fdba0f</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-400"></div>
+                <p class="info-text">warning / 400</p>
+                <p class="info-text">#f2aa09</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-500"></div>
+                <p class="info-text">warning / 500</p>
+                <p class="info-text">#e09400</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-600"></div>
+                <p class="info-text">warning / 600</p>
+                <p class="info-text">#d07d00</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-700"></div>
+                <p class="info-text">warning / 700</p>
+                <p class="info-text">#b55e0f</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-800"></div>
+                <p class="info-text">warning / 800</p>
+                <p class="info-text">#5c3111</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-warning-900"></div>
+                <p class="info-text">warning / 900</p>
+                <p class="info-text">#27170b</p>
+              </li>
+            </ul>
+            <h3>Functional - Danger</h3>
+            <ul class="flex-box nowrap col12">
+              <li class="flex-item">
+                <div class="bg-danger-25"></div>
+                <p class="info-text">danger / 25</p>
+                <p class="info-text">#fff9f9</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-50"></div>
+                <p class="info-text">danger / 50</p>
+                <p class="info-text">#fff1f1</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-75"></div>
+                <p class="info-text">danger / 75</p>
+                <p class="info-text">#ffe0e0</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-100"></div>
+                <p class="info-text">danger / 100</p>
+                <p class="info-text">#ffc7c7</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-200"></div>
+                <p class="info-text">danger / 200</p>
+                <p class="info-text">#ffa7a7</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-300"></div>
+                <p class="info-text">danger / 300</p>
+                <p class="info-text">#ff8080</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-400"></div>
+                <p class="info-text">danger / 400</p>
+                <p class="info-text">#f95e5e</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-500"></div>
+                <p class="info-text">danger / 500</p>
+                <p class="info-text">#f03d3d</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-600"></div>
+                <p class="info-text">danger / 600</p>
+                <p class="info-text">#cf2a2a</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-700"></div>
+                <p class="info-text">danger / 700</p>
+                <p class="info-text">#a41f1f</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-800"></div>
+                <p class="info-text">danger / 800</p>
+                <p class="info-text">#591a1a</p>
+              </li>
+              <li class="flex-item">
+                <div class="bg-danger-900"></div>
+                <p class="info-text">danger / 900</p>
+                <p class="info-text">#271111</p>
+              </li>
+            </ul>
+          </section>
+          <!-- // Color [e] -->
+          <!-- GridSystem [s] -->
+          <section id="GridSystem" data-tab-content="1">
+            <h2>Grid System</h2>
+            <div class="round-box">
+              <ul>
+                <li>그리드 시스템의 기준은 <strong> Max width: 1600px , Gutter: 24px, Margin: 20px, Columns: 12cols </strong>을 기준으로 합니다</li>
+                <li>상위 클래스는 <strong>flex-box</strong> , 하위 클래스는 <strong>grid-item-[number]</strong>의 조합으로 이루어져있습니다.</li>
+                <li>하위 클래스의 grid-item은 column을 조합해서 사용 할 수 있습니다.</li>
+                <li>grid-item-12는 단독으로 사용할 수도 있으며 , <strong>grid-item-12-[number]</strong>의 형태로 다양한 그리드를 만들 수도 있습니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Type</th>
+                <th>Columns</th>
+                <th>Position</th>
+                <th>Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>adaptive</td>
+                <td>-</td>
+                <td>parent element</td>
+                <td>flex-box</td>
+                <td>레이아웃의 컨테이너</td>
+              </tr>
+              <tr>
+                <td>responsive</td>
+                <td>-</td>
+                <td>parent element</td>
+                <td>flex-box respon</td>
+                <td>반응형 레이아웃의 컨테이너</td>
+              </tr>
+              <tr>
+                <td>no margin columns</td>
+                <td>
+                  2 <small class="fc-black-48"> | </small> 3 <small class="fc-black-48"> | </small> 4 <small class="fc-black-48"> | </small> 5 <small class="fc-black-48"> | </small> 6
+                  <small class="fc-black-48"> | </small> 10<small class="fc-black-48"> | </small> 12
+                </td>
+                <td>parent element</td>
+                <td>flex-box col[Option-Columns]</td>
+                <td>
+                  여백이 없는 레이아웃의 컨테이너 및 아이템 너비 설정
+                  <br />
+                  * 자식 컨텐츠에게는 별도의 클래스를 부여하지 않아도 됨
+                </td>
+              </tr>
+              <tr>
+                <td>grid-item</td>
+                <td>
+                  1 <small class="fc-black-48"> | </small> 2 <small class="fc-black-48"> | </small> 3 <small class="fc-black-48"> | </small> 4 <small class="fc-black-48"> | </small> 6
+                  <small class="fc-black-48"> | </small> 12
+                </td>
+                <td>child element</td>
+                <td>grid-item[Option-Columns]</td>
+                <td>일반 그리드의 아이템</td>
+              </tr>
+              <tr>
+                <td>12 column grid</td>
+                <td>
+                  2 <small class="fc-black-48"> | </small> 3 <small class="fc-black-48"> | </small> 4 <small class="fc-black-48"> | </small> 5 <small class="fc-black-48"> | </small> 7
+                  <small class="fc-black-48"> | </small> 8 <small class="fc-black-48"> | </small> 9 <small class="fc-black-48"> | </small> 10 <small class="fc-black-48"> | </small> 11
+                </td>
+                <td>child element</td>
+                <td>grid-item-12-[Option-Columns]</td>
+                <td>
+                  12 그리드의 아이템 <br />
+                  단 , grid-item-12-1 은 grid-item-12 와 동일하고 <br />
+                  grid-item-12-12는grid-item-1 와 동일하기 때문에 <br />별도의 클래스를 생성하지 않았습니다.
+                </td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- flex box  --&gt;
+&lt;div class="flex-box col2"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class="flex-box col3"&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- flex box grid system --&gt;
+&lt;div class="flex-box"&gt;
+  &lt;div class="grid-item-2"&gt;&lt;/div&gt;
+  &lt;div class="grid-item-2"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class="flex-box"&gt;
+  &lt;li class="grid-item-3"&gt;&lt;/li&gt;
+  &lt;li class="grid-item-3"&gt;&lt;/li&gt;
+  &lt;li class="grid-item-3"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--flex box responsive grid system --&gt;
+&lt;ul class="flex-box respon"&gt;
+  &lt;li class="grid-item-4"&gt;&lt;/li&gt;
+  &lt;li class="grid-item-4"&gt;&lt;/li&gt;
+  &lt;li class="grid-item-4"&gt;&lt;/li&gt;
+  &lt;li class="grid-item-4"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            <h3>Flex Box</h3>
+            <div class="tab-line tab-header">
+              <button type="button" class="active" data-tab-header="grid0">adaptive</button>
+              <button type="button" data-tab-header="grid1">responsive</button>
+              <button type="button" data-tab-header="grid2">12 column grid</button>
+              <button type="button" data-tab-header="grid3">no margin column</button>
+              <button type="button" data-tab-header="grid4">mix column example</button>
+            </div>
+            <div class="tab-line tab-content mt20">
+              <div class="active adap" data-tab-content="grid0">
+                <p class="section-label">grid-item-1</p>
+                <ul class="flex-box">
+                  <li class="grid-item-1">grid-item 1</li>
+                </ul>
+                <p class="section-label">grid-item-2</p>
+                <ul class="flex-box">
+                  <li class="grid-item-2">grid-item 1</li>
+                  <li class="grid-item-2">grid-item 2</li>
+                </ul>
+                <p class="section-label">grid-item-3</p>
+                <ul class="flex-box">
+                  <li class="grid-item-3">grid-item 1</li>
+                  <li class="grid-item-3">grid-item 2</li>
+                  <li class="grid-item-3">grid-item 3</li>
+                </ul>
+                <p class="section-label">grid-item-4</p>
+                <ul class="flex-box">
+                  <li class="grid-item-4">grid-item 1</li>
+                  <li class="grid-item-4">grid-item 2</li>
+                  <li class="grid-item-4">grid-item 3</li>
+                  <li class="grid-item-4">grid-item 4</li>
+                </ul>
+                <p class="section-label">grid-item-6</p>
+                <ul class="flex-box">
+                  <li class="grid-item-6">grid-item 1</li>
+                  <li class="grid-item-6">grid-item 2</li>
+                  <li class="grid-item-6">grid-item 3</li>
+                  <li class="grid-item-6">grid-item 4</li>
+                  <li class="grid-item-6">grid-item 5</li>
+                  <li class="grid-item-6">grid-item 6</li>
+                </ul>
+                <p class="section-label">grid-item-12</p>
+                <ul class="flex-box">
+                  <li class="grid-item-12">grid-item 1</li>
+                  <li class="grid-item-12">grid-item 2</li>
+                  <li class="grid-item-12">grid-item 3</li>
+                  <li class="grid-item-12">grid-item 4</li>
+                  <li class="grid-item-12">grid-item 5</li>
+                  <li class="grid-item-12">grid-item 6</li>
+                  <li class="grid-item-12">grid-item 7</li>
+                  <li class="grid-item-12">grid-item 8</li>
+                  <li class="grid-item-12">grid-item 9</li>
+                  <li class="grid-item-12">grid-item 10</li>
+                  <li class="grid-item-12">grid-item 11</li>
+                  <li class="grid-item-12">grid-item 12</li>
+                </ul>
+              </div>
+              <div class="responsive" data-tab-content="grid1">
+                <div class="round-box mb12">
+                  <ul>
+                    <li>같은 레벨의 grid-item 일때만 반응형 레이아웃이 가능합니다 (혼합사용 시 불가)</li>
+                    <li>max-width: 1440px : [grid-item-12] -> 6 column</li>
+                    <li>max-width: 1080px : [grid-item-6] , [grid-item-12] -> 3 column</li>
+                    <li>max-width: 960px : [grid-item-4] -> 2 column</li>
+                    <li>max-width: 768px : [grid-item-3] , [grid-item-6] , [grid-item-12] -> 1 column</li>
+                    <li>max-width: 480px : [grid-item-2] , [grid-item-4] -> 1 column</li>
+                  </ul>
+                </div>
+                <div class="respon">
+                  <p class="section-label">grid-item-1</p>
+                  <ul class="flex-box respon">
+                    <li class="grid-item-1">grid-item 1</li>
+                  </ul>
+                  <p class="section-label">grid-item-2</p>
+                  <ul class="flex-box respon">
+                    <li class="grid-item-2">grid-item 1</li>
+                    <li class="grid-item-2">grid-item 2</li>
+                  </ul>
+                  <p class="section-label">grid-item-3</p>
+                  <ul class="flex-box respon">
+                    <li class="grid-item-3">grid-item 1</li>
+                    <li class="grid-item-3">grid-item 2</li>
+                    <li class="grid-item-3">grid-item 3</li>
+                  </ul>
+                  <p class="section-label">grid-item-4</p>
+                  <ul class="flex-box respon">
+                    <li class="grid-item-4">grid-item 1</li>
+                    <li class="grid-item-4">grid-item 2</li>
+                    <li class="grid-item-4">grid-item 3</li>
+                    <li class="grid-item-4">grid-item 4</li>
+                  </ul>
+                  <p class="section-label">grid-item-6</p>
+                  <ul class="flex-box respon">
+                    <li class="grid-item-6">grid-item 1</li>
+                    <li class="grid-item-6">grid-item 2</li>
+                    <li class="grid-item-6">grid-item 3</li>
+                    <li class="grid-item-6">grid-item 4</li>
+                    <li class="grid-item-6">grid-item 5</li>
+                    <li class="grid-item-6">grid-item 6</li>
+                  </ul>
+                  <p class="section-label">grid-item-12</p>
+                  <ul class="flex-box respon">
+                    <li class="grid-item-12">grid-item 1</li>
+                    <li class="grid-item-12">grid-item 2</li>
+                    <li class="grid-item-12">grid-item 3</li>
+                    <li class="grid-item-12">grid-item 4</li>
+                    <li class="grid-item-12">grid-item 5</li>
+                    <li class="grid-item-12">grid-item 6</li>
+                    <li class="grid-item-12">grid-item 7</li>
+                    <li class="grid-item-12">grid-item 8</li>
+                    <li class="grid-item-12">grid-item 9</li>
+                    <li class="grid-item-12">grid-item 10</li>
+                    <li class="grid-item-12">grid-item 11</li>
+                    <li class="grid-item-12">grid-item 12</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mix-12co-grid" data-tab-content="grid2">
+                <p class="section-label">grid-item-12 + grid-item-12-11</p>
+                <ul class="flex-box">
+                  <li class="grid-item-12">grid-item 12</li>
+                  <li class="grid-item-12-11">grid-item 12-11</li>
+                </ul>
+                <p class="section-label">grid-item-12-2 + grid-item-12-10</p>
+                <ul class="flex-box">
+                  <li class="grid-item-12-2">grid-item 12-2</li>
+                  <li class="grid-item-12-10">grid-item 12-10</li>
+                </ul>
+                <p class="section-label">grid-item-12-3 + grid-item-12-9</p>
+                <ul class="flex-box">
+                  <li class="grid-item-12-3">grid-item 12-3</li>
+                  <li class="grid-item-12-9">grid-item 12-9</li>
+                </ul>
+                <p class="section-label">grid-item-12-4 + grid-item-12-8</p>
+                <ul class="flex-box">
+                  <li class="grid-item-12-4">grid-item 12-4</li>
+                  <li class="grid-item-12-8">grid-item 12-8</li>
+                </ul>
+                <p class="section-label">grid-item-12-5 + grid-item-12-7</p>
+                <ul class="flex-box">
+                  <li class="grid-item-12-5">grid-item 12-5</li>
+                  <li class="grid-item-12-7">grid-item 12-7</li>
+                </ul>
+              </div>
+              <div class="no-margin-grid" data-tab-content="grid3">
+                <p class="section-label">col2</p>
+                <ul class="flex-box col2">
+                  <li>col2</li>
+                  <li>col2</li>
+                </ul>
+                <p class="section-label">col3</p>
+                <ul class="flex-box col3">
+                  <li>col3</li>
+                  <li>col3</li>
+                  <li>col3</li>
+                </ul>
+                <p class="section-label">col4</p>
+                <ul class="flex-box col4">
+                  <li>col4</li>
+                  <li>col4</li>
+                  <li>col4</li>
+                  <li>col4</li>
+                </ul>
+                <p class="section-label">col5</p>
+                <ul class="flex-box col5">
+                  <li>col5</li>
+                  <li>col5</li>
+                  <li>col5</li>
+                  <li>col5</li>
+                  <li>col5</li>
+                </ul>
+                <p class="section-label">col6</p>
+                <ul class="flex-box col6">
+                  <li>col6</li>
+                  <li>col6</li>
+                  <li>col6</li>
+                  <li>col6</li>
+                  <li>col6</li>
+                  <li>col6</li>
+                </ul>
+                <p class="section-label">col10</p>
+                <ul class="flex-box col10">
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                  <li>col10</li>
+                </ul>
+                <p class="section-label">col12</p>
+                <ul class="flex-box col12">
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                  <li>col12</li>
+                </ul>
+              </div>
+              <div class="mix-grid-ex" data-tab-content="grid4">
+                <ul>
+                  <li>
+                    <p class="section-label">grid-item-6 * 3 + grid-item-2</p>
+                    <ul class="flex-box">
+                      <li class="grid-item-6">grid-item-6</li>
+                      <li class="grid-item-6">grid-item-6</li>
+                      <li class="grid-item-6">grid-item-6</li>
+                      <li class="grid-item-2">grid-item-2</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="section-label">grid-item-3 + grid-item-6 * 4</p>
+                    <ul class="flex-box">
+                      <li class="grid-item-6">grid-item-6</li>
+                      <li class="grid-item-6">grid-item-6</li>
+                      <li class="grid-item-3">grid-item-3</li>
+                      <li class="grid-item-6">grid-item-6</li>
+                      <li class="grid-item-6">grid-item-6</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="section-label">grid-item-2 + grid-item-3 + grid-item-12 * 2</p>
+                    <ul class="flex-box">
+                      <li class="grid-item-2">grid-item-2</li>
+                      <li class="grid-item-3">grid-item-3</li>
+                      <li class="grid-item-12">grid-item-12</li>
+                      <li class="grid-item-12">grid-item-12</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="section-label">grid-item-12 + grid-item-12-2 + grid-item-12-3 + grid-item-12-4 + grid-item-6</p>
+                    <ul class="flex-box">
+                      <li class="grid-item-12">grid-item-12</li>
+                      <li class="grid-item-12-2">grid-item-12-2</li>
+                      <li class="grid-item-12-3">grid-item-12-3</li>
+                      <li class="grid-item-12-4">grid-item-12-4</li>
+                      <li class="grid-item-6">grid-item-6</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- // GridSystem [e] -->
+          <!-- Icongraphy [s] -->
+          <section id="Icongraphy" data-tab-content="2">
+            <h2>Icongraphy</h2>
+            <div class="round-box">
+              <ul>
+                <li>모든 아이콘의 기본속성은 display:inline-block입니다.</li>
+                <li>별도의 margin 클래스를 사용하지 않는 경우 중앙정렬 됩니다.</li>
+                <li>기본 아이콘의 크기는 <strong>24px</strong>을 기준으로 합니다.</li>
+                <li>아이콘 사용 시 <strong> ic ic-[size] [name] [background-color]</strong>을 한 묶음의 형태로 사용합니다.</li>
+                <li>아이콘을 뜻하는 ic와 아이콘의 사이즈, 아이콘의 명 세가지 중 하나라도 없으면 정상적인 형태가 나오지 않습니다.</li>
+                <li>아이콘의 컬러는 <strong>background-color로 지정</strong>할 수 있으며 기본색상은<strong> #000 (black)</strong>입니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Color</th>
+                <th>Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>icon</td>
+                <td>name</td>
+                <td>
+                  [ic-]:
+                  <br />
+                  xs4 <small class="fc-black-48"> | </small>xs3 <small class="fc-black-48"> | </small>xs2 <small class="fc-black-48"> | </small> xs <br />
+                  sm <small class="fc-black-48"> | </small>md <small class="fc-black-48"> | </small>lg <br />
+                  xl <small class="fc-black-48"> | </small>xl2 <small class="fc-black-48"> | </small> xl3
+                </td>
+                <td>bg-[color name][color number]</td>
+                <td>ic ic-md arrow-top bg-white-88</td>
+                <td>아이콘 설정</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- icon --&gt;
+&lt;div class="ic ic-md arrow-left"&gt;default color&lt;/div&gt;
+&lt;span class="ic ic-md arrow-left bg-primary-100"&gt;custom color&lt;/span&gt;
+</code></pre>
+            <h3>Size</h3>
+            <table class="size">
+              <tr>
+                <td>
+                  <span class="ic ic-xs4 like-full"></span>
+                </td>
+                <td>
+                  <span class="ic ic-xs3 like-full bg-black-12"></span>
+                </td>
+                <td>
+                  <span class="ic ic-xs2 like-full bg-danger-500"></span>
+                </td>
+                <td>
+                  <span class="ic ic-xs like-full bg-warning-500"></span>
+                </td>
+                <td>
+                  <span class="ic ic-sm like-full bg-secondary-500"></span>
+                </td>
+                <td>
+                  <span class="ic ic-md like-full bg-success-500"></span>
+                </td>
+                <td>
+                  <span class="ic ic-lg like-full bg-info-500"></span>
+                </td>
+                <td>
+                  <span class="ic ic-xl like-full bg-primary-500"></span>
+                </td>
+                <td>
+                  <span class="ic ic-xl2 like-full bg-gray-500"></span>
+                </td>
+                <td>
+                  <span class="ic ic-xl3 like-full bg-black-76"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  12px
+                  <p>xs4</p>
+                </td>
+                <td>
+                  14px
+                  <p>xs3</p>
+                </td>
+                <td>
+                  16px
+                  <p>xs2</p>
+                </td>
+                <td>
+                  18px
+                  <p>xs</p>
+                </td>
+                <td>
+                  20px
+                  <p>sm</p>
+                </td>
+                <td>
+                  24px
+                  <p>md</p>
+                </td>
+                <td>
+                  28px
+                  <p>lg</p>
+                </td>
+                <td>
+                  32px
+                  <p>xl</p>
+                </td>
+                <td>
+                  36px
+                  <p>xl2</p>
+                </td>
+                <td>
+                  40px
+                  <p>xl3</p>
+                </td>
+              </tr>
+            </table>
+            <h3>Icon</h3>
+            <table class="name">
+              <tr>
+                <td>
+                  <span class="ic ic-md arrow-left"></span>
+                  <p>arrow-left</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-left-lg"></span>
+                  <p>arrow-left-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-right"></span>
+                  <p>arrow-right</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-right-lg"></span>
+                  <p>arrow-right-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-top"></span>
+                  <p>arrow-top</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-top-lg"></span>
+                  <p>arrow-top-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-bottom"></span>
+                  <p>arrow-bottom</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-bottom-lg"></span>
+                  <p>arrow-bottom-lg</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="ic ic-md arrow-top-left"></span>
+                  <p>arrow-top-left</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-top-left-lg"></span>
+                  <p>arrow-top-left-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-top-right"></span>
+                  <p>arrow-top-right</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-top-right-lg"></span>
+                  <p>arrow-top-right-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-bottom-left"></span>
+                  <p>arrow-bottom-left</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-bottom-left-lg"></span>
+                  <p>arrow-bottom-left-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-bottom-right"></span>
+                  <p>arrow-bottom-right</p>
+                </td>
+                <td>
+                  <span class="ic ic-md arrow-bottom-right-lg"></span>
+                  <p>arrow-bottom-right-lg</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="ic ic-md chevron-left"></span>
+                  <p>chevron-left</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevron-left-lg"></span>
+                  <p>chevron-left-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevron-right"></span>
+                  <p>chevron-right</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevron-right-lg"></span>
+                  <p>chevron-right-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevron-top"></span>
+                  <p>chevron-top</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevron-top-lg"></span>
+                  <p>chevron-top-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevron-bottom"></span>
+                  <p>chevron-bottom</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevron-bottom-lg"></span>
+                  <p>chevron-bottom-lg</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="ic ic-md chevrons-left"></span>
+                  <p>chevrons-left</p>
+                </td>
+                <td>
+                  <span class="ic ic-md chevrons-right"></span>
+                  <p>chevrons-right</p>
+                </td>
+                <td>
+                  <span class="ic ic-md menu"></span>
+                  <p>menu</p>
+                </td>
+                <td>
+                  <span class="ic ic-md menu-lg"></span>
+                  <p>menu-lg</p>
+                </td>
+                <td>
+                  <span class="ic ic-md undo"></span>
+                  <p>undo</p>
+                </td>
+                <td>
+                  <span class="ic ic-md redo"></span>
+                  <p>redo</p>
+                </td>
+                <td>
+                  <span class="ic ic-md plus"></span>
+                  <p>plus</p>
+                </td>
+                <td>
+                  <span class="ic ic-md minus"></span>
+                  <p>minus</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="ic ic-md search"></span>
+                  <p>search</p>
+                </td>
+                <td>
+                  <span class="ic ic-md setting"></span>
+                  <p>setting</p>
+                </td>
+                <td>
+                  <span class="ic ic-md exclamation"></span>
+                  <p>exclamation</p>
+                </td>
+                <td>
+                  <span class="ic ic-md info"></span>
+                  <p>info</p>
+                </td>
+                <td>
+                  <span class="ic ic-md warning"></span>
+                  <p>warning</p>
+                </td>
+                <td>
+                  <span class="ic ic-md eye_view"></span>
+                  <p>eye_view</p>
+                </td>
+                <td>
+                  <span class="ic ic-md eye_hide"></span>
+                  <p>eye_hide</p>
+                </td>
+                <td>
+                  <span class="ic ic-md alarm"></span>
+                  <p>alarm</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="ic ic-md tick"></span>
+                  <p>tick</p>
+                </td>
+                <td>
+                  <span class="ic ic-md x"></span>
+                  <p>x</p>
+                </td>
+                <td>
+                  <span class="ic ic-md user"></span>
+                  <p>user</p>
+                </td>
+                <td>
+                  <span class="ic ic-md link"></span>
+                  <p>link</p>
+                </td>
+                <td>
+                  <span class="ic ic-md download"></span>
+                  <p>download</p>
+                </td>
+                <td>
+                  <span class="ic ic-md page"></span>
+                  <p>page</p>
+                </td>
+                <td>
+                  <span class="ic ic-md copy"></span>
+                  <p>copy</p>
+                </td>
+              </tr>
+            </table>
+          </section>
+          <!-- // Icongraphy [e] -->
+          <!-- Spacing [s] -->
+          <section id="Spacing" data-tab-content="3">
+            <h2>Spacing</h2>
+            <div class="round-box">
+              <ul>
+                <li>그리드 시스템에서 사용하는 여백은 <strong>24px</strong>을 사용합니다.</li>
+                <li>여백은 <strong>속성[m/p], 방향[t/b/ l/r], 수치[0~40]</strong>를 혼합한 상태로 구성되어 있습니다. 단, 수치는 <strong>2의 배수</strong>로 구성되어 있습니다.</li>
+                <li><strong>m20, mt20, p20, pb20</strong>와 같은 형태로 조합하여 사용할 수 있습니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table left w85p">
+              <tr>
+                <th>Attribute</th>
+                <th>Class example</th>
+                <th>Number</th>
+                <th>Description</th>
+                <th class="left">Attribute</th>
+                <th>Class example</th>
+                <th>Number</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>margin</td>
+                <td>m</td>
+                <td rowspan="5" class="no-bd">
+                  0~40 중 0을 포함한 <br />
+                  2의 배수
+                </td>
+                <td>상하 좌우 바깥 여백</td>
+                <td class="left">padding</td>
+                <td>p</td>
+                <td rowspan="5" class="no-bd">
+                  0~40 중 0을 포함한 <br />
+                  2의 배수
+                </td>
+                <td>상하 좌우 안쪽 여백</td>
+              </tr>
+              <tr>
+                <td>margin top</td>
+                <td>mt</td>
+                <td>상향 바깥 여백</td>
+                <td class="left">padding top</td>
+                <td>pt</td>
+                <td>상향 안쪽 여백</td>
+              </tr>
+              <tr>
+                <td>margin bottom</td>
+                <td>mb</td>
+                <td>하향 바깥 여백</td>
+                <td class="left">padding bottom</td>
+                <td>pb</td>
+                <td>하향 안쪽 여백</td>
+              </tr>
+              <tr>
+                <td>margin left</td>
+                <td>ml</td>
+                <td>좌향 바깥 여백</td>
+                <td class="left">padding left</td>
+                <td>pl</td>
+                <td>좌향 안쪽 여백</td>
+              </tr>
+              <tr>
+                <td>margin right</td>
+                <td>mr</td>
+                <td>우향 바깥 여백</td>
+                <td class="left">padding right</td>
+                <td>pr</td>
+                <td>우향 안쪽 여백</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- spacing --&gt;
+&lt;div class="mt24"&gt;content&lt;/div&gt;
+&lt;div class="pb40"&gt;content&lt;/div&gt;
+</code></pre>
+            <h3>Spacing</h3>
+            <table class="grid-spacing">
+              <tr>
+                <td><span class="px2"></span></td>
+                <td><span class="px4"></span></td>
+                <td><span class="px6"></span></td>
+                <td><span class="px8"></span></td>
+                <td><span class="px10"></span></td>
+                <td><span class="px12"></span></td>
+                <td><span class="px14"></span></td>
+                <td><span class="px16"></span></td>
+                <td><span class="px18"></span></td>
+                <td><span class="px20"></span></td>
+              </tr>
+              <tr>
+                <td>2px</td>
+                <td>4px</td>
+                <td>6px</td>
+                <td>8px</td>
+                <td>10px</td>
+                <td>12px</td>
+                <td>14px</td>
+                <td>16px</td>
+                <td>18px</td>
+                <td>20px</td>
+              </tr>
+              <tr>
+                <td><span class="px22"></span></td>
+                <td><span class="px24"></span></td>
+                <td><span class="px26"></span></td>
+                <td><span class="px28"></span></td>
+                <td><span class="px30"></span></td>
+                <td><span class="px32"></span></td>
+                <td><span class="px34"></span></td>
+                <td><span class="px36"></span></td>
+                <td><span class="px38"></span></td>
+                <td><span class="px40"></span></td>
+              </tr>
+              <tr>
+                <td>22px</td>
+                <td>24px</td>
+                <td>26px</td>
+                <td>28px</td>
+                <td>30px</td>
+                <td>32px</td>
+                <td>34px</td>
+                <td>36px</td>
+                <td>38px</td>
+                <td>40px</td>
+              </tr>
+            </table>
+          </section>
+          <!-- // Spacing [e] -->
+          <!-- Typography [s] -->
+          <section id="Typography" data-tab-content="4">
+            <h2>Typography</h2>
+            <div class="round-box">
+              <ul>
+                <li>기본 폰트 사이즈는 16px을 100%로 사용하여 <strong>1rem은 16px</strong> 로 적용합니다.</li>
+                <li>폰트는 <strong>fs-[size]-[lineheight]</strong>의 조합으로 이루어져 있습니다.</li>
+                <li>폰트의 굵기는 <strong>fw-[number]</strong> 의 조합으로 이루어져 있습니다.</li>
+                <li>모든 태그의 기본 속성은 <strong>font-size : 16px, line-height : 1 , color : gray-900, font-weight : 400</strong> 입니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Attribute</th>
+                <th>Size & Direction</th>
+                <th>Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>font-size</td>
+                <td>
+                  [fs-] : <br />
+                  xl6-64 <small class="fc-black-48"> | </small> xl5-40 <small class="fc-black-48"> | </small> xl4-40 <small class="fc-black-48"> | </small> xl3-32
+                  <small class="fc-black-48"> | </small> xl2-32 <small class="fc-black-48"> | </small> xl-32 <br />
+                  lg-24 <small class="fc-black-48"> | </small> md-24 <small class="fc-black-48"> | </small> sm-24 <br />
+                  xs-16 <small class="fc-black-48"> | </small> xs2-16 <small class="fc-black-48"> | </small> xs3-16 <small class="fc-black-48"> | </small>
+                  xs4-16
+                </td>
+                <td>fs-xl6-64</td>
+                <td>폰트 크기 설정</td>
+              </tr>
+              <tr>
+                <td>font-weight</td>
+                <td>
+                  [fw-] : 900 <small class="fc-black-48"> | </small> 800 <small class="fc-black-48"> | </small> 700 <small class="fc-black-48"> | </small> 600
+                  <small class="fc-black-48"> | </small> 500 <small class="fc-black-48"> | </small> 400 <small class="fc-black-48"> | </small> 300 <small class="fc-black-48"> | </small> 200
+                  <small class="fc-black-48"> | </small>
+                  100
+                </td>
+                <td>fw-900</td>
+                <td>폰트 굵기 설정</td>
+              </tr>
+              <tr>
+                <td>font-style</td>
+                <td>[fst-] : no <small class="fc-black-48"> | </small> it <small class="fc-black-48"> | </small> ob</td>
+                <td>fst-ob</td>
+                <td>폰트 스타일 설정</td>
+              </tr>
+              <tr>
+                <td>text-decoration</td>
+                <td>[txt-line-] : top <small class="fc-black-48"> | </small> center <small class="fc-black-48"> | </small> bottom</td>
+                <td>txt-line-top</td>
+                <td>텍스트 라인 설정 (취소선, 밑줄 등)</td>
+              </tr>
+              <tr>
+                <td>text-align</td>
+                <td>[txt-] : lt <small class="fc-black-48"> | </small> ct <small class="fc-black-48"> | </small> rt</td>
+                <td>txt-lt</td>
+                <td>텍스트 수평 위치 설정</td>
+              </tr>
+              <tr>
+                <td>vertical-align</td>
+                <td>
+                  [va-] : ba <small class="fc-black-48"> | </small> t <small class="fc-black-48"> | </small> b <small class="fc-black-48"> | </small> m <small class="fc-black-48"> | </small> s
+                  <small class="fc-black-48"> | </small> sp <small class="fc-black-48"> | </small> tt <small class="fc-black-48"> | </small> tb
+                </td>
+                <td>va-ba</td>
+                <td>텍스트 수직 위치 설정</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- font size --&gt;
+&lt;div class="fs-xl5-40"&gt;content&lt;/div&gt;
+&lt;!-- font color --&gt;
+&lt;div class="fc-secondary-500"&gt;content&lt;/div&gt;
+&lt;!-- font weight --&gt;
+&lt;div class="fw-700"&gt;content&lt;/div&gt;
+&lt;!-- font --&gt;
+&lt;div class="fs-md-24 fc-primary-500 fw-900"&gt;content&lt;/div&gt;
+</code></pre>
+            <h3>Typeface</h3>
+            <table class="line-table">
+              <tr>
+                <th>Primary Typeface</th>
+                <td class="fs-xl2-32 left">Pretendard</td>
+              </tr>
+              <tr>
+                <th>Font Weight</th>
+                <td class="left">
+                  <ul>
+                    <li class="fw-100">fw-100 : Aa 가나 Pretendard - Thin</li>
+                    <li class="fw-200">fw-200 : Aa 가나 Pretendard - Extra Light</li>
+                    <li class="fw-300">fw-300 : Aa 가나 Pretendard - Light</li>
+                    <li class="fw-400">fw-400 : Aa 가나 Pretendard - Regular</li>
+                    <li class="fw-500">fw-500 : Aa 가나 Pretendard - Medium</li>
+                    <li class="fw-600">fw-600 : Aa 가나 Pretendard - Semi Bold</li>
+                    <li class="fw-700">fw-700 : Aa 가나 Pretendard - Bold</li>
+                    <li class="fw-800">fw-800 : Aa 가나 Pretendard - Extra Bold</li>
+                    <li class="fw-900">fw-900 : Aa 가나 Pretendard - Extra Bold</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <h3>Type Scale</h3>
+            <table class="line-table">
+              <tr>
+                <th>Regular</th>
+                <th>Medium</th>
+                <th>Bold</th>
+                <th>Font Name</th>
+                <th>Font Size</th>
+                <th>Line Height</th>
+              </tr>
+              <tr>
+                <td class="fs-xl6-64 fw-400">Display</td>
+                <td class="fs-xl6-64 fw-500">Display</td>
+                <td class="fs-xl6-64 fw-700">Display</td>
+                <td class="fs-md-24">fs-xl6-64</td>
+                <td class="fs-md-24">44</td>
+                <td class="fs-md-24">64 (1.45)</td>
+              </tr>
+              <tr>
+                <td class="fs-xl5-40 fw-400">Heading 1</td>
+                <td class="fs-xl5-40 fw-500">Heading 1</td>
+                <td class="fs-xl5-40 fw-700">Heading 1</td>
+                <td class="fs-md-24">fs-xl5-40</td>
+                <td class="fs-md-24">32</td>
+                <td class="fs-md-24">40 (1.25)</td>
+              </tr>
+              <tr>
+                <td class="fs-xl4-40 fw-400">Heading 2</td>
+                <td class="fs-xl4-40 fw-500">Heading 2</td>
+                <td class="fs-xl4-40 fw-700">Heading 2</td>
+                <td class="fs-md-24">fs-xl4-40</td>
+                <td class="fs-md-24">28</td>
+                <td class="fs-md-24">40 (1.42)</td>
+              </tr>
+              <tr>
+                <td class="fs-xl3-32 fw-400">Heading 3</td>
+                <td class="fs-xl3-32 fw-500">Heading 3</td>
+                <td class="fs-xl3-32 fw-700">Heading 3</td>
+                <td class="fs-md-24">fs-xl3-32</td>
+                <td class="fs-md-24">24</td>
+                <td class="fs-md-24">32 (1.33)</td>
+              </tr>
+              <tr>
+                <td class="fs-xl2-32 fw-400">Heading 4</td>
+                <td class="fs-xl2-32 fw-500">Heading 4</td>
+                <td class="fs-xl2-32 fw-700">Heading 4</td>
+                <td class="fs-md-24">fs-xl2-32</td>
+                <td class="fs-md-24">22</td>
+                <td class="fs-md-24">32 (1.45)</td>
+              </tr>
+              <tr>
+                <td class="fs-xl-32 fw-400">Heading 5</td>
+                <td class="fs-xl-32 fw-500">Heading 5</td>
+                <td class="fs-xl-32 fw-700">Heading 5</td>
+                <td class="fs-md-24">fs-xl-32</td>
+                <td class="fs-md-24">20</td>
+                <td class="fs-md-24">32 (1.6)</td>
+              </tr>
+              <tr>
+                <td class="fs-lg-24 fw-400">Title 1</td>
+                <td class="fs-lg-24 fw-500">Title 1</td>
+                <td class="fs-lg-24 fw-700">Title 1</td>
+                <td class="fs-md-24">fs-lg-24</td>
+                <td class="fs-md-24">20</td>
+                <td class="fs-md-24">24 (1.33)</td>
+              </tr>
+              <tr>
+                <td class="fs-md-24 fw-400">Title 2</td>
+                <td class="fs-md-24 fw-500">Title 2</td>
+                <td class="fs-md-24 fw-700">Title 2</td>
+                <td class="fs-md-24">fs-md-24</td>
+                <td class="fs-md-24">18</td>
+                <td class="fs-md-24">24 (1.5)</td>
+              </tr>
+              <tr>
+                <td class="fs-md-24 fw-400">Body 1</td>
+                <td class="fs-md-24 fw-500">Body 1</td>
+                <td class="fs-md-24 fw-700">Body 1</td>
+                <td class="fs-md-24">fs-md-24</td>
+                <td class="fs-md-24">16</td>
+                <td class="fs-md-24">24 (1.5)</td>
+              </tr>
+              <tr>
+                <td class="fs-sm-24 fw-400">Body 2</td>
+                <td class="fs-sm-24 fw-500">Body 2</td>
+                <td class="fs-sm-24 fw-700">Body 2</td>
+                <td class="fs-md-24">fs-sm-24</td>
+                <td class="fs-md-24">14</td>
+                <td class="fs-md-24">24 (1.71)</td>
+              </tr>
+              <tr>
+                <td class="fs-xs-16 fw-400">Caption 1</td>
+                <td class="fs-xs-16 fw-500">Caption 1</td>
+                <td class="fs-xs-16 fw-700">Caption 1</td>
+                <td class="fs-md-24">fs-xs-16</td>
+                <td class="fs-md-24">13</td>
+                <td class="fs-md-24">24 (1.23)</td>
+              </tr>
+              <tr>
+                <td class="fs-xs2-16 fw-400">Caption 2</td>
+                <td class="fs-xs2-16 fw-500">Caption 2</td>
+                <td class="fs-xs2-16 fw-700">Caption 2</td>
+                <td class="fs-md-24">fs-xs2-16</td>
+                <td class="fs-md-24">12</td>
+                <td class="fs-md-24">16 (1.33)</td>
+              </tr>
+              <tr>
+                <td class="fs-xs3-16 fw-400">Overline 1</td>
+                <td class="fs-xs3-16 fw-500">Overline 1</td>
+                <td class="fs-xs3-16 fw-700">Overline 1</td>
+                <td class="fs-md-24">fs-xs3-16</td>
+                <td class="fs-md-24">11</td>
+                <td class="fs-md-24">16 (1.45)</td>
+              </tr>
+              <tr>
+                <td class="fs-xs4-16 fw-400">Overline 2</td>
+                <td class="fs-xs4-16 fw-500">Overline 2</td>
+                <td class="fs-xs4-16 fw-700">Overline 2</td>
+                <td class="fs-md-24">fs-xs4-16</td>
+                <td class="fs-md-24">10</td>
+                <td class="fs-md-24">16 (1.6)</td>
+              </tr>
+            </table>
+            <h3>Style & Decoration</h3>
+            <table class="line-table">
+              <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+                <th>Class</th>
+                <th>Attribute</th>
+                <th>Value</th>
+                <th>Class</th>
+              </tr>
+              <tr>
+                <td class="fst-no">font-style</td>
+                <td>normal</td>
+                <td>fst-no</td>
+                <td class="txt-line-top">text-decoration</td>
+                <td>overline</td>
+                <td>txt-line-top</td>
+              </tr>
+              <tr>
+                <td class="fst-it">font-style</td>
+                <td>italic</td>
+                <td>fst-it</td>
+                <td class="txt-line-center">text-decoration</td>
+                <td>line-through</td>
+                <td>txt-line-center</td>
+              </tr>
+              <tr>
+                <td class="fst-ob">font-style</td>
+                <td>oblique</td>
+                <td>fst-ob</td>
+                <td class="txt-line-bottom">text-decoration</td>
+                <td>underline</td>
+                <td>txt-line-bottom</td>
+              </tr>
+            </table>
+
+            <h3>Alignment</h3>
+            <table class="line-table">
+              <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+                <th>Class</th>
+              </tr>
+              <tr>
+                <td class="txt-lt">text-align</td>
+                <td>left</td>
+                <td>txt-lt</td>
+              </tr>
+              <tr>
+                <td class="txt-ct">text-align</td>
+                <td>center</td>
+                <td>txt-ct</td>
+              </tr>
+              <tr>
+                <td class="txt-rt">text-align</td>
+                <td>right</td>
+                <td>txt-rt</td>
+              </tr>
+            </table>
+          </section>
+          <!-- // Typography [e] -->
+          <!-- Width [s] -->
+          <section id="Width" data-tab-content="5">
+            <h2>Width</h2>
+            <div class="round-box">
+              <ul>
+                <li>width는 container에 맞게 반응 할 수 있도록 % 로 적용합니다.</li>
+                <li>10 ~ 100까지 5의 배수로 이루어져있습니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Attribute</th>
+                <th>Size</th>
+                <th>Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>
+                  10 <small class="fc-black-48"> | </small> 15 <small class="fc-black-48"> | </small> 20 <small class="fc-black-48"> | </small> 25 <small class="fc-black-48"> | </small> 30
+                  <small class="fc-black-48"> | </small> 35 <small class="fc-black-48"> | </small> 40 <small class="fc-black-48"> | </small> 45 <small class="fc-black-48"> | </small> 50
+                  <small class="fc-black-48"> | </small> 55 <small class="fc-black-48"> | </small> 60 <small class="fc-black-48"> | </small> 65 <small class="fc-black-48"> | </small> 70
+                  <small class="fc-black-48"> | </small> 75 <small class="fc-black-48"> | </small> 80 <small class="fc-black-48"> | </small> 85 <small class="fc-black-48"> | </small> 90
+                  <small class="fc-black-48"> | </small> 95 <small class="fc-black-48"> | </small> 100
+                </td>
+                <td>w10p</td>
+                <td>컨텐츠 크기 설정</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- width --&gt;
+&lt;div class="w50p"&gt;content&lt;/div&gt;
+</code></pre>
+            <h3>Width</h3>
+            <table class="grid-width">
+              <tr>
+                <td><span class="w10p"></span></td>
+                <td><span class="w15p"></span></td>
+                <td><span class="w20p"></span></td>
+                <td><span class="w25p"></span></td>
+                <td><span class="w30p"></span></td>
+                <td><span class="w35p"></span></td>
+                <td><span class="w40p"></span></td>
+                <td><span class="w45p"></span></td>
+                <td><span class="w50p"></span></td>
+                <td><span class="w55p"></span></td>
+              </tr>
+              <tr>
+                <td>w10p</td>
+                <td>w15p</td>
+                <td>w20p</td>
+                <td>w25p</td>
+                <td>w30p</td>
+                <td>w35p</td>
+                <td>w40p</td>
+                <td>w45p</td>
+                <td>w50p</td>
+                <td>w55p</td>
+              </tr>
+              <tr>
+                <td><span class="w60p"></span></td>
+                <td><span class="w65p"></span></td>
+                <td><span class="w70p"></span></td>
+                <td><span class="w75p"></span></td>
+                <td><span class="w80p"></span></td>
+                <td><span class="w85p"></span></td>
+                <td><span class="w90p"></span></td>
+                <td><span class="w95p"></span></td>
+                <td><span class="w100p"></span></td>
+              </tr>
+              <tr>
+                <td>w60p</td>
+                <td>w65p</td>
+                <td>w70p</td>
+                <td>w75p</td>
+                <td>w80p</td>
+                <td>w85p</td>
+                <td>w90p</td>
+                <td>w95p</td>
+                <td>w100p</td>
+              </tr>
+            </table>
+          </section>
+          <!-- // Width [e] -->
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../js/design-system.js"></script>
+  <script src="../../js/lib/prism.js"></script>
+</html>

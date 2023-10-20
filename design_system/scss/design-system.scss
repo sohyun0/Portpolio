@@ -1,0 +1,347 @@
+@charset "utf-8";
+@import "_variables", "_mixins";
+// body {
+//   background-color: $base-background-color;
+// }
+.container {
+  @include setContainerMinMax(max, 1600, 20, true, 1440);
+  padding-bottom: 100px;
+  overflow-x: auto;
+  min-height: 100vh;
+}
+.fix-content {
+  @include setPosition(fixed, left, 50%, top, 0, -50%);
+  width: 100%;
+  background-color: $base-background-color;
+  border-bottom: 1px solid map-get($primary, 500);
+  z-index: 100;
+}
+h1 {
+  @include setFontStyle(map-get($font, xl4-40), map-get($neutral_white, 100), 700);
+  max-width: 1600px;
+  padding: 32px 20px;
+  margin: 0 auto;
+  color: map-get($primary, 50);
+}
+h2 {
+  @include setFontStyle(map-get($font, xl6-64), map-get($gray, 800));
+  margin: 50px 0 24px;
+}
+h3 {
+  @include setFontStyle(map-get($font, xl3-32), map-get($gray, 700));
+  margin: 50px 0 24px;
+}
+h2 + h3 {
+  margin: 0 0 24px;
+}
+.info-text {
+  @include setFontStyle(map-get($font, sm-24), map-get($gray, 700), 300);
+  margin: 4px 0 0 4px;
+  white-space: nowrap;
+  &:first-of-type {
+    margin-top: 12px;
+  }
+}
+.design-system-list {
+  padding-top: 120px;
+  & .section-label {
+    @include setFontStyle(map-get($font, md-24), map-get($gray, 700), 300);
+    margin-bottom: 12px;
+    & * {
+      color: map-get($gray, 75);
+    }
+  }
+  & .info-list li {
+    @include setFontStyle(map-get($font, sm-24), map-get($gray, 50));
+    margin-bottom: 8px;
+  }
+  & table {
+    margin-bottom: 50px;
+    & * {
+      color: map-get($gray, 700);
+      line-height: 1.4;
+    }
+    & th {
+      @include setFontStyle(map-get($font, md-24), map-get($gray, 500));
+      padding: 24px;
+      text-align: left;
+    }
+    & td {
+      padding: 24px;
+      vertical-align: middle;
+      & li {
+        margin-bottom: 12px;
+      }
+    }
+    &.line-table {
+      $bordercolor: $gray400;
+      & tr:last-of-type {
+        & th,
+        & td {
+          border-bottom: 0;
+        }
+      }
+      & th,
+      & td {
+        border-bottom: 1px solid $bordercolor;
+        background-color: $gray25;
+        &.left {
+          border-left: 1px solid $bordercolor;
+        }
+      }
+      & .no-bd {
+        border: 0;
+      }
+    }
+  }
+  & .round-box {
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid map-get($primary, 500);
+    background-color: #272822;
+    & > ul > li {
+      margin-bottom: 12px;
+      color: map-get($neutral_white, 88);
+
+      & * {
+        color: map-get($neutral_white, 100);
+      }
+      &::before {
+        display: inline-block;
+        content: "\b7\a0";
+      }
+      &.no-dot::before {
+        content: "";
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  & .tab-component {
+    &.tab-header {
+      & button {
+        padding: 12px 24px;
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+    &.tab-content {
+      & [data-tab-content] {
+        & > * {
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+/***** foundations *****/
+#Color {
+  .flex-item {
+    & [class*="bg-"] {
+      width: auto;
+      height: 100px;
+    }
+    & p {
+      &:first-of-type {
+        margin-top: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+#GridSystem {
+  & .flex-box {
+    margin-bottom: 12px;
+  }
+  & [class*="grid-item-"],
+  & [class*="col"] li {
+    @include setFontStyle(map-get($font, sm-24), map-get($primary, 900), 300);
+    text-align: center;
+    padding: 30px 10px;
+    background-color: map-get($primary, 75);
+  }
+  & [class*="col"] li {
+    border-left: 2px solid white;
+    &:first-of-type {
+      border: 0;
+    }
+  }
+}
+#Icongraphy {
+  p {
+    @include setFontStyle(map-get($font, md-24), map-get($neutral_black, 76), 300);
+    margin-top: 12px;
+  }
+}
+#Spacing {
+  & .grid-spacing {
+    & td {
+      text-align: center;
+      & span {
+        display: inline-block;
+        background-color: map-get($primary, 500);
+      }
+    }
+  }
+  & .px {
+    &0 {
+      width: 0px;
+      height: 0px;
+    }
+    &2 {
+      width: 2px;
+      height: 2px;
+    }
+    &4 {
+      width: 4px;
+      height: 4px;
+    }
+    &6 {
+      width: 6px;
+      height: 6px;
+    }
+    &8 {
+      width: 8px;
+      height: 8px;
+    }
+    &10 {
+      width: 10px;
+      height: 10px;
+    }
+    &12 {
+      width: 12px;
+      height: 12px;
+    }
+    &14 {
+      width: 14px;
+      height: 14px;
+    }
+    &16 {
+      width: 16px;
+      height: 16px;
+    }
+    &18 {
+      width: 18px;
+      height: 18px;
+    }
+    &20 {
+      width: 20px;
+      height: 20px;
+    }
+    &22 {
+      width: 22px;
+      height: 22px;
+    }
+    &24 {
+      width: 24px;
+      height: 24px;
+    }
+    &26 {
+      width: 26px;
+      height: 26px;
+    }
+    &28 {
+      width: 28px;
+      height: 28px;
+    }
+    &30 {
+      width: 30px;
+      height: 30px;
+    }
+    &32 {
+      width: 32px;
+      height: 32px;
+    }
+    &34 {
+      width: 34px;
+      height: 34px;
+    }
+    &36 {
+      width: 36px;
+      height: 36px;
+    }
+    &38 {
+      width: 38px;
+      height: 38px;
+    }
+    &40 {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+#Width {
+  & .grid-width {
+    & tr:nth-child(1),
+    & tr:nth-child(3) {
+      & td {
+        border: 1px solid #000;
+      }
+    }
+    & span {
+      display: inline-block;
+      height: 20px;
+      background-color: map-get($primary, 500);
+    }
+  }
+}
+#Button {
+  .btn.mix-primary.hover,
+  .btn.text-primary.hover,
+  .btn.bg-primary.hover,
+  .btn.bd-primary.hover {
+    background-color: $primary300;
+  }
+  .btn.mix-primary.active,
+  .btn.text-primary.active,
+  .btn.bg-primary.active,
+  .btn.bd-primary.active {
+    background-color: $primary300;
+    box-shadow: 0px 0px 0px 4px $primary75;
+  }
+  .btn.mix-primary.hover,
+  .btn.mix-primary.active {
+    color: $white100;
+  }
+}
+#InputTextarea {
+  & .tab-line {
+    margin-top: 50px;
+    &.tab-header {
+      display: flex;
+    }
+    & button {
+      flex: 1;
+      border: 2px solid $primary75;
+      background-color: $primary25;
+      margin-right: -4px;
+      &:first-of-type {
+        border-radius: 10px 0 0 10px;
+      }
+      &:last-of-type {
+        border-radius: 0 10px 10px 0;
+      }
+    }
+  }
+  & .input,
+  & .textarea {
+    &.focus {
+      border-color: $primary500;
+      box-shadow: 0px 0px 0px 4px $primary75;
+    }
+  }
+}
+
+/***** components *****/
+#ToolTip {
+
+  h4 ~ table {
+    .tool-tip {
+      position: absolute;
+      display: block;
+    }
+  }
+}

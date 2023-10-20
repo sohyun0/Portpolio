@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>atomic design - Atoms</title>
+    <link rel="stylesheet" href="../../../css/base.css" />
+    <link rel="stylesheet" href="../../../css/common.css" />
+    <link rel="stylesheet" href="../../../css/lib/prism.css" />
+    <link rel="stylesheet" href="../../../css/component.css" />
+    <link rel="stylesheet" href="../../../css/design-system.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="fix-content">
+        <h1>Atomic Design - Atoms</h1>
+      </div>
+      <div class="atomic-design-list atoms">
+        <div class="tab-line tab-header">
+          <button type="button" class="active" data-tab-header="0">Button</button>
+          <button type="button" class="" data-tab-header="1">Chips & Tags</button>
+          <button type="button" class="" data-tab-header="2">Input & Textarea</button>
+          <button type="button" class="" data-tab-header="3">Label</button>
+        </div>
+        <div class="tab-line tab-content">
+          <!-- Button [s] -->
+          <section id="Button" class="active" data-tab-content="0">
+            <h2>Button</h2>
+            <div class="round-box">
+              <ul>
+                <li><strong>btn + btn-[size] [type] | [state]</strong>의 조합으로 이루어져 있습니다.</li>
+                <li><strong>[size] [type] </strong>은 필수로 지정해야 하고, <strong>[state]</strong>는 지정하지 않으면 활성화 상태로 적용됩니다.</li>
+                <li>component에 포함되지 않은 스타일은 아래의 방법으로 제작할 수 있고 별도의 상태별 스타일이 필요할 시 atoms.scss에서 작성 부탁드립니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Type</th>
+                <th>Style</th>
+                <th>Size</th>
+                <th>Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>Default</td>
+                <td>background color & icon</td>
+                <td>
+                  [btn-]:
+                  <br />
+                  x-sm <small class="fc-black-48"> | </small> sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg <small class="fc-black-48"> | </small> xl
+                </td>
+                <td>class="btn btn-md fc-primary100 bg-primary500"</td>
+                <td>
+                  버튼 배경 스타일 설정 및 아이콘 적용 <br />
+                  단 , 아이콘 적용 시 버튼 내부에 배치
+                </td>
+              </tr>
+              <tr>
+                <td>Line</td>
+                <td>border color & icon</td>
+                <td>x-sm <small class="fc-black-48"> | </small> sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg <small class="fc-black-48"> | </small> xl</td>
+                <td>class="btn btn-md fc-primary500 bd-primary500"</td>
+                <td>
+                  버튼 선 스타일 설정 및 아이콘 적용 <br />
+                  단 , 아이콘 적용 시 버튼 내부에 배치
+                </td>
+              </tr>
+              <tr>
+                <td>Text</td>
+                <td>only text</td>
+                <td>
+                  x-sm <small class="fc-black-48"> | </small> sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg <small class="fc-black-48"> | </small> xl
+                  <small class="fc-black-48"> | </small> full
+                </td>
+                <td>class="btn btn-md fc-primary500 text"</td>
+                <td>텍스트 버튼 스타일 설정 ( 내부여백 삭제 )</td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td>hover & active</td>
+                <td>-</td>
+                <td>class="btn btn-md bd-primary500 state"</td>
+                <td>state 클래스 적용시 기본 hover , active 스타일이 부여됩니다. <br />미적용시 별도의 상태 스타일이 적용되지 않습니다.</td>
+              </tr>
+              <tr>
+                <td>Text</td>
+                <td>only text</td>
+                <td>
+                  x-sm <small class="fc-black-48"> | </small> sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg <small class="fc-black-48"> | </small> xl
+                  <small class="fc-black-48"> | </small> full
+                </td>
+                <td>class="btn btn-md fc-primary500 text"</td>
+                <td>텍스트 버튼 스타일 설정 ( 내부여백 삭제 )</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- default => background-color --&gt;
+&lt;button type="button" class="btn btn-md bg-primary-500"&gt;Button&lt;/button&gt;
+
+&lt;!-- line type => border-color  --&gt;
+&lt;button type="button" class="btn btn-md bd-primary-500"&gt;Button&lt;/button&gt;
+
+&lt;!-- text type => text fc-color  --&gt;
+&lt;button type="button" class="btn btn-md text fc-primary-500"&gt;Button&lt;/button&gt;
+
+&lt;!-- icon type => icon tag --&gt;
+&lt;button type="button" class="btn btn-md bd-primary-500"&gt
+  &lt;span class="ic ic-md arrow-top"&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- full size button --&gt;
+&lt;button type="button" class="btn btn-md full bd-primary-500"&gt; Button &lt;/button&gt;
+//원하는 사이즈 + full 클래스 동시 사용
+
+&lt;!-- mix type => background-color & border-color --&gt;
+&lt;button type="button" class="btn btn-md bg-primary50 bd-primary-500 fc-gray-800"&gt;Button&lt;/button&gt;
+// background와 border를 같이 사용할 경우 color도 같이 입력하여 사용
+</code></pre>
+            <h3>Size</h3>
+            <table>
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm bg-primary-500 state">Button</button><br /><br />
+                  x-sm
+                  <br /><br />
+                  <small>
+                    padding : 4px 8px <br />
+                    font-size: 10px
+                  </small>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-sm bg-primary-500 state">Button</button><br /><br />
+                  sm
+                  <br /><br />
+                  <small>
+                    padding : 8px 10px <br />
+                    font-size: 12px
+                  </small>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md bg-primary-500 state">Button</button><br /><br />
+                  md
+                  <br /><br />
+                  <small>
+                    padding : 8px 12px <br />
+                    font-size: 14px
+                  </small>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-lg bg-primary-500 state">Button</button><br /><br />
+                  lg
+                  <br /><br />
+                  <small>
+                    padding : 12px 16px <br />
+                    font-size: 16px
+                  </small>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-xl bg-primary-500 state">Button</button><br /><br />
+                  xl
+                  <br /><br />
+                  <small>
+                    padding : 16px 16px<br />
+                    font-size: 18px
+                  </small>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-xl full bg-primary-500 state">Button</button><br /><br />
+                  full
+                  <br /><br />
+                  <br /><br />
+                </td>
+              </tr>
+            </table>
+            <h3>State <br /></h3>
+            <p class="info-text">* 컴포넌트 확인을 위해 hover클래스와 active클래스 스타일을 임의로 설정했습니다. 실제 작동시엔 별도의 상태 클래스가 필요없습니다.</p>
+            <table>
+              <colgroup>
+                <col width="auto" />
+                <col width="18%" />
+                <col width="18%" />
+                <col width="18%" />
+                <col width="18%" />
+                <col width="18%" />
+              </colgroup>
+              <tr>
+                <th></th>
+                <th class="txt-ct">Default</th>
+                <th class="txt-ct">Border</th>
+                <th class="txt-ct">Text</th>
+                <th class="txt-ct">Background + Border</th>
+                <th class="txt-ct">Icon</th>
+              </tr>
+              <tr>
+                <th>Default</th>
+                <td>
+                  <button type="button" class="btn btn-md primary-bg">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md primary-bd">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md primary-text">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md primary-mix">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md primary-bg">
+                    <span class="ic ic-md like-full bg-white-100"></span>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th>Hover</th>
+                <td>
+                  <button type="button" class="btn btn-md bg-primary hover">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md bg-primary hover">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md mix-primary hover">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md text-primary hover">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md bg-primary hover">
+                    <span class="ic ic-md like-full bg-white-100"></span>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th>Active</th>
+                <td>
+                  <button type="button" class="btn btn-md bg-primary active">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md bg-primary active">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md mix-primary active">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md text-primary active">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-md bg-primary active">
+                    <span class="ic ic-md like-full bg-white-100"></span>
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <h3>Type</h3>
+            <table>
+              <tr>
+                <th>Default</th>
+                <th>Disabled</th>
+                <th>Border</th>
+                <th>Disabled</th>
+                <th>Background + Border</th>
+                <th>Disabled</th>
+                <th>Text</th>
+                <th>Disabled</th>
+                <th>Icon</th>
+                <th>Disabled</th>
+              </tr>
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm bg-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm bg-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-md bg-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg bg-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl bg-primary-500">Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full bg-primary-500">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm bg-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm bg-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-md bg-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg bg-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl bg-primary-500" disabled>Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full bg-primary-500" disabled>Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-md bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl bd-primary-500">Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full bd-primary-500">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-md bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl bd-primary-500" disabled>Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full bd-primary-500" disabled>Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm bg-primary-50 fc-gray-900 bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm bg-primary-50 fc-gray-900 bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-md bg-primary-50 fc-gray-900 bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg bg-primary-50 fc-gray-900 bd-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl bg-primary-50 fc-gray-900 bd-primary-500">Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full bg-primary-50 fc-gray-900 bd-primary-500">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm bg-primary-50 fc-gray-900 bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm bg-primary-50 fc-gray-900 bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-md bg-primary-50 fc-gray-900 bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg bg-primary-50 fc-gray-900 bd-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl bg-primary-50 fc-gray-900 bd-primary-500" disabled>Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full bg-primary-50 fc-gray-900 bd-primary-500" disabled>Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm text fc-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm text fc-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-md text fc-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg text fc-primary-500">Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl text fc-primary-500">Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full text fc-primary-500">Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm text fc-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-sm text fc-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-md text fc-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-lg text fc-primary-500" disabled>Button</button> <br /><br />
+                  <button type="button" class="btn btn-xl text fc-primary-500" disabled>Button</button><br /><br />
+                  <button type="button" class="btn btn-xl full text fc-primary-500" disabled>Button</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm bg-primary-500">
+                    <span class="ic ic-x-sm like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-sm bg-primary-500">
+                    <span class="ic ic-sm like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-md bg-primary-500">
+                    <span class="ic ic-md like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-lg bg-primary-500">
+                    <span class="ic ic-lg like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-xl bg-primary-500">
+                    <span class="ic ic-xl like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-xl full bg-primary-500">
+                    <span class="ic ic-xl like-full bg-white-100"></span>
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm bg-primary-500" disabled>
+                    <span class="ic ic-x-sm like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-sm bg-primary-500" disabled>
+                    <span class="ic ic-sm like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-md bg-primary-500" disabled>
+                    <span class="ic ic-md like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-lg bg-primary-500" disabled>
+                    <span class="ic ic-lg like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-xl bg-primary-500" disabled>
+                    <span class="ic ic-xl like-full bg-white-100"></span>
+                  </button>
+                  <br /><br />
+                  <button type="button" class="btn btn-xl full bg-primary-500" disabled>
+                    <span class="ic ic-xl like-full bg-white-100"></span>
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <h3>Component</h3>
+            <pre><code class="language-html">** Component Example **
+&lt;button type="button" class="btn btn-md primary-bg"&gt;*primary&lt;/button&gt;
+// 버튼 내의 키워드와 스타일을 조합하여 사용 
+</code></pre>
+            <table>
+              <tr>
+                <th>*-bg</th>
+                <th>*-bd</th>
+                <th>*-text</th>
+                <th>*-mix</th>
+              </tr>
+              <!-- primary [s] -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm primary-bg">primary</button> <br /><br />
+                  <button type="button" class="btn btn-sm primary-bg">primary</button> <br /><br />
+                  <button type="button" class="btn btn-md primary-bg">primary</button> <br /><br />
+                  <button type="button" class="btn btn-lg primary-bg">primary</button> <br /><br />
+                  <button type="button" class="btn btn-xl primary-bg">primary</button><br /><br />
+                  <button type="button" class="btn btn-xl full primary-bg">primary</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm primary-bd">primary</button> <br /><br />
+                  <button type="button" class="btn btn-sm primary-bd">primary</button> <br /><br />
+                  <button type="button" class="btn btn-md primary-bd">primary</button> <br /><br />
+                  <button type="button" class="btn btn-lg primary-bd">primary</button> <br /><br />
+                  <button type="button" class="btn btn-xl primary-bd">primary</button><br /><br />
+                  <button type="button" class="btn btn-xl full primary-bd">primary</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm primary-text">primary</button> <br /><br />
+                  <button type="button" class="btn btn-sm primary-text">primary</button> <br /><br />
+                  <button type="button" class="btn btn-md primary-text">primary</button> <br /><br />
+                  <button type="button" class="btn btn-lg primary-text">primary</button> <br /><br />
+                  <button type="button" class="btn btn-xl primary-text">primary</button><br /><br />
+                  <button type="button" class="btn btn-xl full primary-text">primary</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm primary-mix">primary</button> <br /><br />
+                  <button type="button" class="btn btn-sm primary-mix">primary</button> <br /><br />
+                  <button type="button" class="btn btn-md primary-mix">primary</button> <br /><br />
+                  <button type="button" class="btn btn-lg primary-mix">primary</button> <br /><br />
+                  <button type="button" class="btn btn-xl primary-mix">primary</button><br /><br />
+                  <button type="button" class="btn btn-xl full primary-mix">primary</button>
+                </td>
+              </tr>
+              <!-- // primary [e] -->
+              <!-- secondary [s] -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm secondary-bg">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-sm secondary-bg">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-md secondary-bg">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-lg secondary-bg">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-xl secondary-bg">secondary</button><br /><br />
+                  <button type="button" class="btn btn-xl full secondary-bg">secondary</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm secondary-bd">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-sm secondary-bd">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-md secondary-bd">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-lg secondary-bd">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-xl secondary-bd">secondary</button><br /><br />
+                  <button type="button" class="btn btn-xl full secondary-bd">secondary</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm secondary-text">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-sm secondary-text">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-md secondary-text">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-lg secondary-text">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-xl secondary-text">secondary</button><br /><br />
+                  <button type="button" class="btn btn-xl full secondary-text">secondary</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm secondary-mix">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-sm secondary-mix">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-md secondary-mix">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-lg secondary-mix">secondary</button> <br /><br />
+                  <button type="button" class="btn btn-xl secondary-mix">secondary</button><br /><br />
+                  <button type="button" class="btn btn-xl full secondary-mix">secondary</button>
+                </td>
+              </tr>
+              <!-- // secondary [e] -->
+              <!-- gray [s] -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm gray-bg">gray</button> <br /><br />
+                  <button type="button" class="btn btn-sm gray-bg">gray</button> <br /><br />
+                  <button type="button" class="btn btn-md gray-bg">gray</button> <br /><br />
+                  <button type="button" class="btn btn-lg gray-bg">gray</button> <br /><br />
+                  <button type="button" class="btn btn-xl gray-bg">gray</button><br /><br />
+                  <button type="button" class="btn btn-xl full gray-bg">gray</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm gray-bd">gray</button> <br /><br />
+                  <button type="button" class="btn btn-sm gray-bd">gray</button> <br /><br />
+                  <button type="button" class="btn btn-md gray-bd">gray</button> <br /><br />
+                  <button type="button" class="btn btn-lg gray-bd">gray</button> <br /><br />
+                  <button type="button" class="btn btn-xl gray-bd">gray</button><br /><br />
+                  <button type="button" class="btn btn-xl full gray-bd">gray</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm gray-text">gray</button> <br /><br />
+                  <button type="button" class="btn btn-sm gray-text">gray</button> <br /><br />
+                  <button type="button" class="btn btn-md gray-text">gray</button> <br /><br />
+                  <button type="button" class="btn btn-lg gray-text">gray</button> <br /><br />
+                  <button type="button" class="btn btn-xl gray-text">gray</button><br /><br />
+                  <button type="button" class="btn btn-xl full gray-text">gray</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm gray-mix">gray</button> <br /><br />
+                  <button type="button" class="btn btn-sm gray-mix">gray</button> <br /><br />
+                  <button type="button" class="btn btn-md gray-mix">gray</button> <br /><br />
+                  <button type="button" class="btn btn-lg gray-mix">gray</button> <br /><br />
+                  <button type="button" class="btn btn-xl gray-mix">gray</button><br /><br />
+                  <button type="button" class="btn btn-xl full gray-mix">gray</button>
+                </td>
+              </tr>
+              <!-- // gray [e] -->
+              <!-- info [s] -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm info-bg">info</button> <br /><br />
+                  <button type="button" class="btn btn-sm info-bg">info</button> <br /><br />
+                  <button type="button" class="btn btn-md info-bg">info</button> <br /><br />
+                  <button type="button" class="btn btn-lg info-bg">info</button> <br /><br />
+                  <button type="button" class="btn btn-xl info-bg">info</button><br /><br />
+                  <button type="button" class="btn btn-xl full info-bg">info</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm info-bd">info</button> <br /><br />
+                  <button type="button" class="btn btn-sm info-bd">info</button> <br /><br />
+                  <button type="button" class="btn btn-md info-bd">info</button> <br /><br />
+                  <button type="button" class="btn btn-lg info-bd">info</button> <br /><br />
+                  <button type="button" class="btn btn-xl info-bd">info</button><br /><br />
+                  <button type="button" class="btn btn-xl full info-bd">info</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm info-text">info</button> <br /><br />
+                  <button type="button" class="btn btn-sm info-text">info</button> <br /><br />
+                  <button type="button" class="btn btn-md info-text">info</button> <br /><br />
+                  <button type="button" class="btn btn-lg info-text">info</button> <br /><br />
+                  <button type="button" class="btn btn-xl info-text">info</button><br /><br />
+                  <button type="button" class="btn btn-xl full info-text">info</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm info-mix">info</button> <br /><br />
+                  <button type="button" class="btn btn-sm info-mix">info</button> <br /><br />
+                  <button type="button" class="btn btn-md info-mix">info</button> <br /><br />
+                  <button type="button" class="btn btn-lg info-mix">info</button> <br /><br />
+                  <button type="button" class="btn btn-xl info-mix">info</button><br /><br />
+                  <button type="button" class="btn btn-xl full info-mix">info</button>
+                </td>
+              </tr>
+              <!-- // info [e] -->
+              <!-- success [s] -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm success-bg">success</button> <br /><br />
+                  <button type="button" class="btn btn-sm success-bg">success</button> <br /><br />
+                  <button type="button" class="btn btn-md success-bg">success</button> <br /><br />
+                  <button type="button" class="btn btn-lg success-bg">success</button> <br /><br />
+                  <button type="button" class="btn btn-xl success-bg">success</button><br /><br />
+                  <button type="button" class="btn btn-xl full success-bg">success</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm success-bd">success</button> <br /><br />
+                  <button type="button" class="btn btn-sm success-bd">success</button> <br /><br />
+                  <button type="button" class="btn btn-md success-bd">success</button> <br /><br />
+                  <button type="button" class="btn btn-lg success-bd">success</button> <br /><br />
+                  <button type="button" class="btn btn-xl success-bd">success</button><br /><br />
+                  <button type="button" class="btn btn-xl full success-bd">success</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm success-text">success</button> <br /><br />
+                  <button type="button" class="btn btn-sm success-text">success</button> <br /><br />
+                  <button type="button" class="btn btn-md success-text">success</button> <br /><br />
+                  <button type="button" class="btn btn-lg success-text">success</button> <br /><br />
+                  <button type="button" class="btn btn-xl success-text">success</button><br /><br />
+                  <button type="button" class="btn btn-xl full success-text">success</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm success-mix">success</button> <br /><br />
+                  <button type="button" class="btn btn-sm success-mix">success</button> <br /><br />
+                  <button type="button" class="btn btn-md success-mix">success</button> <br /><br />
+                  <button type="button" class="btn btn-lg success-mix">success</button> <br /><br />
+                  <button type="button" class="btn btn-xl success-mix">success</button><br /><br />
+                  <button type="button" class="btn btn-xl full success-mix">success</button>
+                </td>
+              </tr>
+              <!-- // success [e] -->
+              <!-- warning [s] -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm warning-bg">warning</button> <br /><br />
+                  <button type="button" class="btn btn-sm warning-bg">warning</button> <br /><br />
+                  <button type="button" class="btn btn-md warning-bg">warning</button> <br /><br />
+                  <button type="button" class="btn btn-lg warning-bg">warning</button> <br /><br />
+                  <button type="button" class="btn btn-xl warning-bg">warning</button><br /><br />
+                  <button type="button" class="btn btn-xl full warning-bg">warning</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm warning-bd">warning</button> <br /><br />
+                  <button type="button" class="btn btn-sm warning-bd">warning</button> <br /><br />
+                  <button type="button" class="btn btn-md warning-bd">warning</button> <br /><br />
+                  <button type="button" class="btn btn-lg warning-bd">warning</button> <br /><br />
+                  <button type="button" class="btn btn-xl warning-bd">warning</button><br /><br />
+                  <button type="button" class="btn btn-xl full warning-bd">warning</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm warning-text">warning</button> <br /><br />
+                  <button type="button" class="btn btn-sm warning-text">warning</button> <br /><br />
+                  <button type="button" class="btn btn-md warning-text">warning</button> <br /><br />
+                  <button type="button" class="btn btn-lg warning-text">warning</button> <br /><br />
+                  <button type="button" class="btn btn-xl warning-text">warning</button><br /><br />
+                  <button type="button" class="btn btn-xl full warning-text">warning</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm warning-mix">warning</button> <br /><br />
+                  <button type="button" class="btn btn-sm warning-mix">warning</button> <br /><br />
+                  <button type="button" class="btn btn-md warning-mix">warning</button> <br /><br />
+                  <button type="button" class="btn btn-lg warning-mix">warning</button> <br /><br />
+                  <button type="button" class="btn btn-xl warning-mix">warning</button><br /><br />
+                  <button type="button" class="btn btn-xl full warning-mix">warning</button>
+                </td>
+              </tr>
+              <!-- // warning [e] -->
+              <!-- danger [s] -->
+              <tr>
+                <td>
+                  <button type="button" class="btn btn-x-sm danger-bg">danger</button> <br /><br />
+                  <button type="button" class="btn btn-sm danger-bg">danger</button> <br /><br />
+                  <button type="button" class="btn btn-md danger-bg">danger</button> <br /><br />
+                  <button type="button" class="btn btn-lg danger-bg">danger</button> <br /><br />
+                  <button type="button" class="btn btn-xl danger-bg">danger</button><br /><br />
+                  <button type="button" class="btn btn-xl full danger-bg">danger</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm danger-bd">danger</button> <br /><br />
+                  <button type="button" class="btn btn-sm danger-bd">danger</button> <br /><br />
+                  <button type="button" class="btn btn-md danger-bd">danger</button> <br /><br />
+                  <button type="button" class="btn btn-lg danger-bd">danger</button> <br /><br />
+                  <button type="button" class="btn btn-xl danger-bd">danger</button><br /><br />
+                  <button type="button" class="btn btn-xl full danger-bd">danger</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm danger-text">danger</button> <br /><br />
+                  <button type="button" class="btn btn-sm danger-text">danger</button> <br /><br />
+                  <button type="button" class="btn btn-md danger-text">danger</button> <br /><br />
+                  <button type="button" class="btn btn-lg danger-text">danger</button> <br /><br />
+                  <button type="button" class="btn btn-xl danger-text">danger</button><br /><br />
+                  <button type="button" class="btn btn-xl full danger-text">danger</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-x-sm danger-mix">danger</button> <br /><br />
+                  <button type="button" class="btn btn-sm danger-mix">danger</button> <br /><br />
+                  <button type="button" class="btn btn-md danger-mix">danger</button> <br /><br />
+                  <button type="button" class="btn btn-lg danger-mix">danger</button> <br /><br />
+                  <button type="button" class="btn btn-xl danger-mix">danger</button><br /><br />
+                  <button type="button" class="btn btn-xl full danger-mix">danger</button>
+                </td>
+              </tr>
+              <!-- // danger [e] -->
+            </table>
+          </section>
+          <!-- // Button [e] -->
+          <!-- Chips & Tags[s] -->
+          <section id="ChipsTags" class="" data-tab-content="1">
+            <h2>Chips</h2>
+            <div class="round-box">
+              <ul>
+                <li>칩은 사용자가 선택을 하거나 콘텐츠를 필터링하거나 동작을 트리거하는 데 도움이 됩니다.</li>
+                <li><strong>data-chip-color + chip </strong> or <strong>chip + [color type] </strong>의 조합으로 이루어져 있습니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Type</th>
+                <th>Style</th>
+                <th>Dataset & Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>Dataset</td>
+                <td>
+                  primary
+                  <small class="fc-black-48"> | </small> secondary <small class="fc-black-48"> | </small> info <small class="fc-black-48"> | </small> success
+                  <small class="fc-black-48"> | </small> warning <small class="fc-black-48"> | </small> danger
+                </td>
+                <td>
+                  data-chip-color="primary" <br />
+                  class = chip
+                </td>
+                <td>컴포넌트의 색상 사용시 chip 클래스 사용 후 dataset에 해당 컬러의 이름 적용</td>
+              </tr>
+              <tr>
+                <td>Class</td>
+                <td>background & border & icon</td>
+                <td>class = chip bd-primary100 bg-primary75</td>
+                <td>컴포넌트 외 컬러 사용시에는 별도의 스타일 클래스 적용</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- Chip => only dataset--&gt;
+&lt;span data-chip-color="primary" class="chip"&gt;Chip&lt;/span&gt;
+&lt;!-- Chip => only class--&gt;
+&lt;span class="chip bd-gray-75 bg-gray-50"&gt;Chip&lt;/span&gt;
+&lt;!-- Chip => dataset + class--&gt;
+&lt;span data-chip-color="primary" class="chip bg-primary-600 fc-white-100"&gt;Chip&lt;/span&gt;
+</code></pre>
+            <h3>Component</h3>
+            <table>
+              <tr>
+                <th>data-chip-color + class</th>
+                <th>class</th>
+                <th>data-tag-color + custom class</th>
+              </tr>
+              <tr>
+                <td>
+                  <span data-chip-color="gray" class="chip">Chips</span>
+                  <span data-chip-color="primary" class="chip">Chips</span>
+                  <span data-chip-color="secondary" class="chip">Chips</span>
+                  <span data-chip-color="info" class="chip">Chips</span>
+                  <br />
+                  <br />
+                  <span data-chip-color="success" class="chip">Chips</span>
+                  <span data-chip-color="warning" class="chip">Chips</span>
+                  <span data-chip-color="danger" class="chip">Chips</span>
+                  <span data-chip-color="disabled" class="chip">Chips</span>
+                </td>
+                <td>
+                  <span class="chip bd-gray-75">Chips</span>
+                  <span class="chip bd-primary-500 bg-primary-200">Chips</span>
+                  <span class="chip bd-secondary-500 bg-secondary-200">Chips</span>
+                  <span class="chip bd-info-500 bg-info-200">Chips</span>
+                  <br />
+                  <br />
+                  <span class="chip bd-success-500 bg-success-200">Chips</span>
+                  <span class="chip bd-warning-500 bg-warning-200">Chips</span>
+                  <span class="chip bd-danger-500 bg-danger-200">Chips</span>
+                  <span class="chip disabled">Chips</span>
+                </td>
+                <td>
+                  <span data-chip-color="gray" class="chip bd-gray-75">Chips</span>
+                  <span data-chip-color="primary" class="chip bd-primary-500">Chips</span>
+                  <span data-chip-color="secondary" class="chip bd-secondary-500">Chips</span>
+                  <span data-chip-color="info" class="chip bd-info-500">Chips</span>
+                  <br />
+                  <br />
+                  <span data-chip-color="success" class="chip bd-success-500">Chips</span>
+                  <span data-chip-color="warning" class="chip bd-warning-500">Chips</span>
+                  <span data-chip-color="danger" class="chip bd-danger-500">Chips</span>
+                  <span data-chip-color="disabled" class="chip disabled">Chips</span>
+                </td>
+              </tr>
+            </table>
+            <h2>Tags</h2>
+            <div class="round-box">
+              <ul>
+                <li>태그는 정보를 선별하는 데 도움이 되는 작은 레이블입니다.</li>
+                <li><strong>data-tag-color + tag </strong> or <strong>tag + [color type] </strong>의 조합으로 이루어져 있습니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Type</th>
+                <th>Style</th>
+                <th>Dataset & Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>Dataset</td>
+                <td>
+                  primary
+                  <small class="fc-black-48"> | </small> secondary <small class="fc-black-48"> | </small> info <small class="fc-black-48"> | </small> success
+                  <small class="fc-black-48"> | </small> warning <small class="fc-black-48"> | </small> danger
+                </td>
+                <td>
+                  data-tag-color="primary" <br />
+                  class = tag
+                </td>
+                <td>컴포넌트의 색상 사용시 tag 클래스 사용 후 dataset에 해당 컬러의 이름 적용</td>
+              </tr>
+              <tr>
+                <td>Class</td>
+                <td>background & border & icon</td>
+                <td>class = tag bd-primary100 bg-primary75</td>
+                <td>컴포넌트 외 컬러 사용시에는 별도의 스타일 클래스 적용</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- Tag => only dataset--&gt;
+&lt;span data-tag-color="primary" class="tag"&gt;Tag&lt;/span&gt;
+&lt;!-- Tag => only class--&gt;
+&lt;span class="tag bd-gray-75 bg-gray-50"&gt;Tag&lt;/span&gt;
+&lt;!-- Tag => dataset + class--&gt;
+&lt;span data-tag-color="primary" class="tag bg-primary-600 fc-white-100"&gt;Tag&lt;/span&gt;
+</code></pre>
+            <h3>Component</h3>
+            <table>
+              <tr>
+                <th>data-tag-color + class</th>
+                <th>class</th>
+                <th>data-tag-color + custom class</th>
+              </tr>
+              <tr>
+                <td>
+                  <span data-tag-color="gray" class="tag">Tags</span>
+                  <span data-tag-color="primary" class="tag">Tags</span>
+                  <span data-tag-color="secondary" class="tag">Tags</span>
+                  <span data-tag-color="info" class="tag">Tags</span>
+                  <span data-tag-color="success" class="tag">Tags</span>
+                  <span data-tag-color="warning" class="tag">Tags</span>
+                  <span data-tag-color="danger" class="tag">Tags</span>
+                  <span data-tag-color="disabled" class="tag">Tags</span>
+                </td>
+                <td>
+                  <span class="tag bd-gray-75">Tags</span>
+                  <span class="tag bd-primary-500 bg-primary-200">Tags</span>
+                  <span class="tag bd-secondary-500 bg-secondary-200">Tags</span>
+                  <span class="tag bd-info-500 bg-info-200">Tags</span>
+                  <span class="tag bd-success-500 bg-success-200">Tags</span>
+                  <span class="tag bd-warning-500 bg-warning-200">Tags</span>
+                  <span class="tag bd-danger-500 bg-danger-200">Tags</span>
+                  <span class="tag disabled">Tags</span>
+                </td>
+                <td>
+                  <span data-tag-color="gray" class="tag bd-gray-75">Tags</span>
+                  <span data-tag-color="primary" class="tag bd-primary-500">Tags</span>
+                  <span data-tag-color="secondary" class="tag bd-secondary-500">Tags</span>
+                  <span data-tag-color="info" class="tag bd-info-500">Tags</span>
+                  <span data-tag-color="success" class="tag bd-success-500">Tags</span>
+                  <span data-tag-color="warning" class="tag bd-warning-500">Tags</span>
+                  <span data-tag-color="danger" class="tag bd-danger-500">Tags</span>
+                  <span data-tag-color="disabled" class="tag disabled">Tags</span>
+                </td>
+              </tr>
+            </table>
+          </section>
+          <!-- // Chips & Tags[e] -->
+          <!-- Input & Select & Textarea [s] -->
+          <section id="InputTextarea" class="" data-tab-content="2">
+            <div class="tab-line tab-header">
+              <button type="button" class="active" data-tab-header="input0">Input fields</button>
+              <button type="button" data-tab-header="input1">Textarea</button>
+              <button type="button" data-tab-header="input2">Checkbox & Radio</button>
+            </div>
+            <div class="tab-line tab-content">
+              <!-- Input  [s] -->
+              <section id="InputFields" class="active" data-tab-content="input0">
+                <h2>Input fields</h2>
+                <div class="round-box">
+                  <ul>
+                    <li>input field는 화면에 텍스트를 추가 할 수 있으며, 한 줄로 작성 할 수 있는 데이터에 적합합니다.</li>
+                    <li><strong>input + [state] </strong>의 조합으로 이루어져 있습니다.</li>
+                  </ul>
+                </div>
+                <h3>Option</h3>
+                <table class="line-table w85p">
+                  <tr>
+                    <th>Type</th>
+                    <th>State</th>
+                    <th>Size</th>
+                    <th>Class example</th>
+                    <th>Description</th>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Default</td>
+                    <td>
+                      [inp-]:
+                      <br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="input"</td>
+                    <td>input의 기본 상태</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Focus</td>
+                    <td>
+                      [inp-]:
+                      <br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="input"</td>
+                    <td>input의 focus 상태</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Default</td>
+                    <td>
+                      [inp-]:
+                      <br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="input inp-success"</td>
+                    <td>input의 유효성 검사 통과</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Default</td>
+                    <td>
+                      [inp-]:
+                      <br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="input danger"</td>
+                    <td>input의 유효성 검사 실패</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Disabled</td>
+                    <td>
+                      [inp-]:
+                      <br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="input" disabled</td>
+                    <td>input의 비활성화</td>
+                  </tr>
+                </table>
+                <h3>Example</h3>
+                <pre><code class="language-html">&lt;!-- Input --&gt;
+&lt;input type="text" class="input inp-md" /&gt;
+&lt;!-- Input => success--&gt;
+&lt;input type="text" class="input inp-md success" /&gt;
+&lt;!-- Input => danger--&gt;
+&lt;input type="text" class="input inp-md danger" /&gt;
+&lt;!-- Input => disabled--&gt;
+&lt;input type="text" class="input inp-md" disabled /&gt;
+</code></pre>
+                <h3>Component</h3>
+                <p class="info-text">* 컴포넌트 확인을 위해 hover클래스와 active클래스 스타일을 임의로 설정했습니다. 실제 작동시엔 별도의 상태 클래스가 필요없습니다.</p>
+                <table>
+                  <colgroup>
+                    <col width="15%" />
+                    <col width="auto" />
+                  </colgroup>
+                  <tr>
+                    <th>Size / State</th>
+                    <td>Default</td>
+                    <td>Focus</td>
+                    <td>Success</td>
+                    <td>Danger</td>
+                    <td>Readonly</td>
+                    <td>Disabled</td>
+                  </tr>
+                  <tr>
+                    <th>
+                      sm <br /><br />
+                      <small>
+                        padding : 8px 10px <br />
+                        font-size: 12px
+                      </small>
+                    </th>
+                    <td>
+                      <input type="text" class="input inp-sm" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-sm focus" placeholder="input text " />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-sm success" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-sm danger" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-sm" readonly value="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-sm" disabled placeholder="input text" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      md <br /><br />
+                      <small>
+                        padding : 8px 12px <br />
+                        font-size: 14px
+                      </small>
+                    </th>
+                    <td>
+                      <input type="text" class="input inp-md" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-md focus" placeholder="input text " />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-md success" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-md danger" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-md" readonly value="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-md" disabled placeholder="input text" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      lg <br /><br />
+                      <small>
+                        padding : 12px 16px <br />
+                        font-size: 16px
+                      </small>
+                    </th>
+                    <td>
+                      <input type="text" class="input inp-lg" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-lg focus" placeholder="input text " />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-lg success" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-lg danger" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-lg" readonly value="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-lg" disabled placeholder="input text" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      xl <br /><br />
+                      <small>
+                        padding : 12px 16px <br />
+                        font-size: 18px
+                      </small>
+                    </th>
+                    <td>
+                      <input type="text" class="input inp-xl" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-xl focus" placeholder="input text " />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-xl success" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-xl danger" placeholder="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-xl" readonly value="input text" />
+                    </td>
+                    <td>
+                      <input type="text" class="input inp-xl" disabled placeholder="input text" />
+                    </td>
+                  </tr>
+                </table>
+              </section>
+              <!-- // Input  [e] -->
+              <!-- Textarea [s] -->
+              <section id="Textarea" class="" data-tab-content="input1">
+                <h2>Textarea</h2>
+                <div class="round-box">
+                  <ul>
+                    <li>textarea는 화면에 텍스트를 추가 할 수 있으며, 두 줄이상으로 작성 할 수 있는 데이터에 적합합니다.</li>
+                    <li><strong>textarea + [state] | area-[size] </strong>의 조합으로 이루어져 있습니다.</li>
+                  </ul>
+                </div>
+                <h3>Option</h3>
+                <table class="line-table w85p">
+                  <tr>
+                    <th>Type</th>
+                    <th>State</th>
+                    <th>Size</th>
+                    <th>Class example</th>
+                    <th>Description</th>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Default</td>
+                    <td>
+                      [area-]:<br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="textarea"</td>
+                    <td>textarea의 기본 상태</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Focus</td>
+                    <td>
+                      [area-]:<br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="textarea"</td>
+                    <td>textarea의 focus 상태</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>Disabled</td>
+                    <td>
+                      [area-]:<br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>class="textarea" disabled</td>
+                    <td>textarea의 비활성화</td>
+                  </tr>
+                </table>
+                <h3>Example</h3>
+                <pre><code class="language-html">&lt;!-- Input --&gt;
+    &lt;textarea class="textarea"&gt;&lt;/textarea&gt;
+    &lt;!-- Input => disabled--&gt;
+    &lt;textarea class="textarea" disabled&gt;&lt;/textarea&gt;
+    </code></pre>
+                <h3>Component</h3>
+                <p class="info-text">* 컴포넌트 확인을 위해 hover클래스와 active클래스 스타일을 임의로 설정했습니다. 실제 작동시엔 별도의 상태 클래스가 필요없습니다.</p>
+                <table>
+                  <tr>
+                    <th>Size / State</th>
+                    <td>Default</td>
+                    <td>Focus</td>
+                    <td>Readonly</td>
+                    <td>Disabled</td>
+                  </tr>
+                  <tr>
+                    <th>
+                      sm <br /><br />
+                      <small>
+                        padding : 8px 10px <br />
+                        font-size: 12px
+                      </small>
+                    </th>
+                    <td>
+                      <textarea class="textarea area-sm" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-sm focus" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-sm" readonly>input text</textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-sm" disabled placeholder="input text"></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      md <br /><br />
+                      <small>
+                        padding : 8px 12px <br />
+                        font-size: 14px
+                      </small>
+                    </th>
+                    <td>
+                      <textarea class="textarea area-md" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-md focus" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-md" readonly>input text</textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-md" disabled placeholder="input text"></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      lg <br /><br />
+                      <small>
+                        padding : 12px 16px <br />
+                        font-size: 16px
+                      </small>
+                    </th>
+                    <td>
+                      <textarea class="textarea area-lg" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-lg focus" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-lg" readonly>input text</textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-lg" disabled placeholder="input text"></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      xl <br /><br />
+                      <small>
+                        padding : 12px 16px <br />
+                        font-size: 18px
+                      </small>
+                    </th>
+                    <td>
+                      <textarea class="textarea area-xl" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-xl focus" placeholder="input text"></textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-xl" readonly>input text</textarea>
+                    </td>
+                    <td>
+                      <textarea class="textarea area-xl" disabled placeholder="input text"></textarea>
+                    </td>
+                  </tr>
+                </table>
+              </section>
+              <!-- // Textarea [e] -->
+              <!-- Checkbox & Radio [s] -->
+              <section id="CheckboxRadio" class="" data-tab-content="input2">
+                <h2>Radio & Checkbox & Toggle</h2>
+                <div class="round-box">
+                  <ul>
+                    <li>Radio는 단수 선택시에 사용합니다.</li>
+                    <li>Checkbox는 복수 선택 , 토글 기능에 사용합니다.</li>
+                    <li><strong>type + [style] | [direction] +[size]</strong> 의 조합으로 이루어져 있습니다.</li>
+                    <li>direction은 아이콘과 토글에서 사용합니다.</li>
+                    <li>size는 아이콘에서만 사용합니다.</li>
+                  </ul>
+                </div>
+                <h3>Option</h3>
+                <table class="line-table w85p">
+                  <tr>
+                    <th>Type</th>
+                    <th>Style</th>
+                    <th>Size</th>
+                    <th>State</th>
+                    <th>Class example</th>
+                    <th>Description</th>
+                  </tr>
+                  <tr>
+                    <td>radio</td>
+                    <td>
+                      [icon] : circle <small class="fc-black-48"> | </small> square
+                      <br />
+                      [text]
+                    </td>
+                    <td>
+                      [inp-ic-]:
+                      <br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+                    <td>off <small class="fc-black-48"> | </small> on</td>
+                    <td>class="icon circle"</td>
+                    <td>radio의 스타일 설정</td>
+                  </tr>
+                  <tr>
+                    <td>checkbox</td>
+                    <td>
+                      [icon] : circle <small class="fc-black-48"> | </small> square <br />
+                      [text]
+                      <br />
+                      [toggle]
+                    </td>
+                    <td>
+                      [inp-ic-]: <br />
+                      sm <small class="fc-black-48"> | </small> md<small class="fc-black-48"> | </small> lg
+                    </td>
+
+                    <td>off <small class="fc-black-48"> | </small> on</td>
+                    <td>class="icon circle"</td>
+                    <td>checkbox의 스타일 설정</td>
+                  </tr>
+                </table>
+                <h3>Example</h3>
+                <pre><code class="language-html">&lt;!-- radio button --&gt;
+&lt;input type="radio" class="icon circle" /&gt;
+&lt;!-- checkbox --&gt;
+&lt;input type="checkbox" class="icon circle" /&gt;
+&lt;!-- checkbox toggle --&gt;
+&lt;input type="checkbox" class="toggle" /&gt;
+</code></pre>
+                <h3>Component</h3>
+                <table class="w60p">
+                  <tr>
+                    <th>Type</th>
+                    <th>Size / State</th>
+                    <th>Radio on</th>
+                    <th>Radio off</th>
+                    <th>Checkbox on</th>
+                    <th>Checkbox off</th>
+                  </tr>
+                  <tr>
+                    <th>text</th>
+                    <td>-</td>
+                    <td>
+                      <input type="radio" id="rdo0-1" name="radio0" class="text" />
+                      <label for="rdo0-1">Radio1</label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo0-2" name="radio0" class="text" checked />
+                      <label for="rdo0-2">Radio2</label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk0-1" name="checkbox0" class="text" />
+                      <label for="chk0-1">Checkbox1</label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk0-2" name="checkbox0" class="text" checked />
+                      <label for="chk0-2">Checkbox2</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th rowspan="3">circle</th>
+                    <th>sm</th>
+                    <td>
+                      <input type="radio" id="rdo1-1" name="radio1" class="icon circle inp-ic-sm" />
+                      <label for="rdo1-1">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo1-2" name="radio1" class="icon circle inp-ic-sm" checked />
+                      <label for="rdo1-2">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk1-1" name="checkbox1" class="icon circle inp-ic-sm" />
+                      <label for="chk1-1">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk1-2" name="checkbox1" class="icon circle inp-ic-sm" checked />
+                      <label for="chk1-2">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>md</th>
+                    <td>
+                      <input type="radio" id="rdo2-1" name="radio2" class="icon circle inp-ic-md" />
+                      <label for="rdo2-1">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo2-2" name="radio2" class="icon circle inp-ic-md" checked />
+                      <label for="rdo2-2">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk2-1" name="checkbox2" class="icon circle inp-ic-md" />
+                      <label for="chk2-1">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk2-2" name="checkbox2" class="icon circle inp-ic-md" checked />
+                      <label for="chk2-2">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>lg</th>
+                    <td>
+                      <input type="radio" id="rdo3-1" name="radio3" class="icon circle inp-ic-lg" />
+                      <label for="rdo3-1">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo3-2" name="radio3" class="icon circle inp-ic-lg" checked />
+                      <label for="rdo3-2">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk3-1" name="checkbox3" class="icon circle inp-ic-lg" />
+                      <label for="chk3-1">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk3-2" name="checkbox3" class="icon circle inp-ic-lg" checked />
+                      <label for="chk3-2">
+                        <span class="circle"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th rowspan="3">circle-check</th>
+                    <th>sm</th>
+                    <td>
+                      <input type="radio" id="rdo4-1" name="radio4" class="icon circle-check inp-ic-sm" />
+                      <label for="rdo4-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo4-2" name="radio4" class="icon circle-check inp-ic-sm" checked />
+                      <label for="rdo4-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk4-1" name="checkbox4" class="icon circle-check inp-ic-sm" />
+                      <label for="chk4-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk4-2" name="checkbox4" class="icon circle-check inp-ic-sm" checked />
+                      <label for="chk4-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>md</th>
+                    <td>
+                      <input type="radio" id="rdo5-1" name="radio5" class="icon circle-check inp-ic-md" />
+                      <label for="rdo5-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo5-2" name="radio5" class="icon circle-check inp-ic-md" checked />
+                      <label for="rdo5-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk5-1" name="checkbox5" class="icon circle-check inp-ic-md" />
+                      <label for="chk5-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk5-2" name="checkbox5" class="icon circle-check inp-ic-md" checked />
+                      <label for="chk5-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>lg</th>
+                    <td>
+                      <input type="radio" id="rdo6-1" name="radio6" class="icon circle-check inp-ic-lg" />
+                      <label for="rdo6-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo6-2" name="radio6" class="icon circle-check inp-ic-lg" checked />
+                      <label for="rdo6-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk6-1" name="checkbox6" class="icon circle-check inp-ic-lg" />
+                      <label for="chk6-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk6-2" name="checkbox6" class="icon circle-check inp-ic-lg" checked />
+                      <label for="chk6-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th rowspan="3">square-check</th>
+                    <th>sm</th>
+                    <td>
+                      <input type="radio" id="rdo7-1" name="radio7" class="icon square-check inp-ic-sm" />
+                      <label for="rdo7-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo7-2" name="radio7" class="icon square-check inp-ic-sm" checked />
+                      <label for="rdo7-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk7-1" name="checkbox7" class="icon square-check inp-ic-sm" />
+                      <label for="chk7-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk7-2" name="checkbox7" class="icon square-check inp-ic-sm" checked />
+                      <label for="chk7-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>md</th>
+                    <td>
+                      <input type="radio" id="rdo8-1" name="radio8" class="icon square-check inp-ic-md" />
+                      <label for="rdo8-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo8-2" name="radio8" class="icon square-check inp-ic-md" checked />
+                      <label for="rdo8-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk8-1" name="checkbox8" class="icon square-check inp-ic-md" />
+                      <label for="chk8-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk8-2" name="checkbox8" class="icon square-check inp-ic-md" checked />
+                      <label for="chk8-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>lg</th>
+                    <td>
+                      <input type="radio" id="rdo9-1" name="radio9" class="icon square-check inp-ic-lg" />
+                      <label for="rdo9-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="radio" id="rdo9-2" name="radio9" class="icon square-check inp-ic-lg" checked />
+                      <label for="rdo9-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk9-1" name="checkbox9" class="icon square-check inp-ic-lg" />
+                      <label for="chk9-1">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="chk9-2" name="checkbox9" class="icon square-check inp-ic-lg" checked />
+                      <label for="chk9-2">
+                        <span class="check"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>toggle (only checkbox)</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>
+                      <input type="checkbox" id="toggle1-1" name="checkbox3" class="toggle left" />
+                      <label for="toggle1-1"></label>
+                    </td>
+                    <td>
+                      <input type="checkbox" id="toggle1-2" name="checkbox3" class="toggle left" checked />
+                      <label for="toggle1-2"></label>
+                    </td>
+                  </tr>
+                </table>
+              </section>
+              <!-- // Checkbox & Radio [e] -->
+            </div>
+          </section>
+          <!-- // Input & Select & Textarea [e] -->
+          <!-- Label [s] -->
+          <section id="Label" class="" data-tab-content="3">
+            <h2>Label</h2>
+            <div class="round-box">
+              <ul>
+                <li>컴포넌트의 제목이나 설명 등을 표시할 때 사용합니다.</li>
+                <li><strong>label + [Direction] + [size] | [color]</strong>의 조합으로 이루어져 있습니다.</li>
+              </ul>
+            </div>
+            <h3>Option</h3>
+            <table class="line-table w85p">
+              <tr>
+                <th>Direction</th>
+                <th>Size</th>
+                <th>Class example</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>top-left <small class="fc-black-48"> | </small> top-right <small class="fc-black-48"> | </small> bottom-left <small class="fc-black-48"> | </small> bottom-right</td>
+                <td>
+                  [lab-]:
+                  <br />
+                  sm
+                  <small class="fc-black-48"> | </small> md <small class="fc-black-48"> | </small> lg <small class="fc-black-48"> | </small> xl
+                </td>
+                <td>class = label bottom</td>
+                <td>input이나 드롭다운등 컴포넌트의 레이블</td>
+              </tr>
+            </table>
+            <h3>Example</h3>
+            <pre><code class="language-html">&lt;!-- Label --&gt;
+&lt;p class="label bottom-right lab-md"&gt;Label&lt;/p&gt;
+</code></pre>
+            <h3>Component</h3>
+            <table class="line-table w50p">
+              <tr>
+                <th>Size</th>
+                <th>Label</th>
+                <th>Direction</th>
+                <th>Label</th>
+              </tr>
+              <tr>
+                <th>sm</th>
+                <td>
+                  <p class="label lab-sm">Label</p>
+                </td>
+                <th>top-left</th>
+                <td>
+                  <p class="label lab-md top-left">Label</p>
+                </td>
+              </tr>
+              <tr>
+                <th>md</th>
+                <td>
+                  <p class="label lab-md">Label</p>
+                </td>
+                <th>top-right</th>
+                <td>
+                  <p class="label lab-md top-right">Label</p>
+                </td>
+              </tr>
+              <tr>
+                <th>lg</th>
+                <td>
+                  <p class="label lab-lg">Label</p>
+                </td>
+                <th>bottom-left</th>
+                <td>
+                  <p class="label lab-md bottom-left">Label</p>
+                </td>
+              </tr>
+              <tr>
+                <th>-</th>
+                <td>-</td>
+                <th>bottom-right</th>
+                <td>
+                  <p class="label lab-md bottom-right">Label</p>
+                </td>
+              </tr>
+            </table>
+          </section>
+          <!-- // Label [e] -->
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../../js/front-view.js"></script>
+  <script src="../../../js/lib/prism.js"></script>
+
+</html>

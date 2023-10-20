@@ -1,0 +1,455 @@
+@charset "utf-8";
+@import "../atoms/atoms.scss";
+// /***** Tab menu ******/
+.tab-content {
+  & [data-tab-content] {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+[class*="tab-line"] {
+  &.tab-header {
+    & button {
+      @include setFontStyle(map-get($font, lg-24), map-get($gray, 400));
+      padding: 12px 24px;
+      &.active {
+        border-bottom: 2px solid map-get($primary, 500);
+        color: map-get($primary, 500);
+        font-weight: bold;
+      }
+    }
+  }
+}
+[class*="tab-bg"] {
+  &.tab-header {
+    & button {
+      @include setFontStyle(map-get($font, lg-24), map-get($gray, 400));
+      border: 2px solid map-get($primary, 500);
+      padding: 12px 24px;
+      margin-right: -4px;
+      &:first-of-type {
+        border-radius: 12px 0 0 12px;
+      }
+      &:last-of-type {
+        border-radius: 0 12px 12px 0;
+      }
+      &.active {
+        background-color: $primary500;
+        color: $white100;
+        font-weight: bold;
+      }
+    }
+  }
+}
+// /***** pagenation ******/
+.pagenation {
+  padding: 16px 0;
+  & .icon {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid $gray100;
+    margin: 0 8px;
+  }
+  &.page-ellipsis,
+  & .num {
+    @include setFontStyle(map-get($font, sm-24));
+    padding: 4px 12px;
+  }
+  & .num {
+    &.active {
+      background-color: $primary500;
+      color: $white100;
+      border-radius: 4px;
+    }
+    &:first-of-type {
+      margin-left: 8px;
+    }
+    &:last-of-type {
+      margin-right: 8px;
+    }
+  }
+}
+// /***** Dropdown ******/
+.dropdown {
+  @include setSelectStyle;
+  & .option-list {
+    max-height: 200px;
+  }
+}
+// /***** alert ******/
+.alert {
+  width: 90%;
+  padding: 24px;
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 2px solid $gray50;
+  background: $white100;
+  box-shadow: 0px 16px 20px -8px rgba(17, 12, 34, 0.1);
+  & .title {
+    @include setFontStyle(map-get($font, md-24), $isFontWeight: 700);
+    position: relative;
+    margin-bottom: 8px;
+    padding-right: 24px;
+    & .ic {
+      vertical-align: sub;
+      margin-right: 6px;
+    }
+    & .x {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  & .content {
+    @include setFontStyle(map-get($font, sm-24), $gray700);
+  }
+  & .btn-group {
+    margin-top: 16px;
+  }
+}
+// /***** toast ******/
+.toast {
+  @include setFlexLayout;
+  width: 90%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid $gray50;
+  background: $white100;
+  box-shadow: 0px 16px 20px -8px rgba(17, 12, 34, 0.1);
+  & .content {
+    @include setFontStyle(map-get($font, md-24), $isFontWeight: 700);
+    width: calc(100% - 24px);
+    & .ic {
+      vertical-align: sub;
+      margin-right: 6px;
+    }
+  }
+}
+// /***** tooltip ******/
+.tool {
+  @mixin toolbox {
+    @include setFontStyle(map-get($font, xs-16));
+    border-radius: 12px;
+    padding: 12px 16px;
+    min-width: 250px;
+    & button {
+      margin-top: 12px;
+    }
+    &.light {
+      background-color: $white100;
+      box-shadow: 0px 8px 20px -8px rgba(17, 12, 34, 0.1);
+      border: 1px solid $gray50;
+    }
+    &.dark {
+      background-color: $gray800;
+      color: $white100;
+    }
+    @content;
+  }
+  &-btn {
+    position: relative;
+    &:hover {
+      & .tool-tip {
+        display: block;
+      }
+    }
+  }
+  &-box {
+    @include toolbox;
+  }
+  &-tip {
+    @include toolbox {
+      display: none;
+      position: absolute;
+      text-align: left;
+      z-index: 1;
+      & .tip {
+        position: absolute;
+        z-index: 1;
+      }
+    }
+
+    &[data-dir="top"] {
+      top: 37px;
+      left: 21px;
+      transform: translateX(-50%);
+      & .tip {
+        @include drawingRoundTriangle(30px, topCenter, 4px);
+        top: -3px;
+        left: calc(50% - 12px);
+      }
+    }
+    &[data-dir="top-left"] {
+      left: -21px;
+      top: 37px;
+      & .tip {
+        @include drawingRoundTriangle(30px, top, 4px);
+        top: -10px;
+        left: 24px;
+      }
+    }
+    &[data-dir="top-right"] {
+      right: -21px;
+      top: 37px;
+      & .tip {
+        @include drawingRoundTriangle(30px, top, 4px);
+        top: -10px;
+        right: 24px;
+      }
+    }
+    &[data-dir="bottom"] {
+      left: 12px;
+      bottom: 37px;
+      transform: translateX(-50%);
+      & .tip {
+        @include drawingRoundTriangle(30px, bottomCenter, 4px);
+        bottom: 2px;
+        left: calc(50% - 12px);
+      }
+    }
+    &[data-dir="bottom-left"] {
+      left: -21px;
+      bottom: 37px;
+      & .tip {
+        @include drawingRoundTriangle(30px, bottom, 4px);
+        bottom: -5px;
+        left: 24px;
+      }
+    }
+    &[data-dir="bottom-right"] {
+      right: -21px;
+      bottom: 37px;
+      & .tip {
+        @include drawingRoundTriangle(30px, bottom, 4px);
+        bottom: -5px;
+        right: 24px;
+      }
+    }
+    &[data-dir="left"] {
+      left: 38px;
+      top: 50%;
+      transform: translateY(-50%);
+      & .tip {
+        @include drawingRoundTriangle(30px, left, 4px);
+        top: calc(50% - 2px);
+
+        left: -3px;
+      }
+    }
+    &[data-dir="right"] {
+      right: 38px;
+      top: 50%;
+      transform: translateY(-50%);
+      & .tip {
+        @include drawingRoundTriangle(30px, right, 4px);
+        top: calc(50% - 5px);
+        right: -4px;
+        &::before {
+          border: 0;
+        }
+        &::after {
+          border-top: 1px solid $gray50;
+          border-right: 1px solid $gray50;
+        }
+      }
+    }
+    &.light {
+      & .tip {
+        background-color: #fff;
+        &::before {
+          border-top: 1px solid $gray50;
+          border-right: 1px solid $gray50;
+        }
+      }
+      &[data-dir="left"],
+      &[data-dir="right"] {
+        & .tip {
+          &::before {
+            border: 0;
+          }
+          &::after {
+            border-top: 1px solid $gray50;
+            border-right: 1px solid $gray50;
+          }
+        }
+      }
+    }
+    &.dark {
+      & .tip {
+        background-color: $gray800;
+        &::before {
+          border-top: 1px solid $gray800;
+          border-right: 1px solid $gray800;
+        }
+      }
+      &[data-dir="left"],
+      &[data-dir="right"] {
+        & .tip {
+          &::before {
+            border: 0;
+          }
+          &::after {
+            border-top: 1px solid $gray800;
+            border-right: 1px solid $gray800;
+          }
+        }
+      }
+    }
+  }
+}
+
+// /***** calendar ******/
+@mixin calendar() {
+}
+@mixin setCalendarStyle($isFontBgEffect: true, $isStringFont: false) {
+  padding: 4px;
+  margin: 5px 0;
+  line-height: 1;
+  @if ($isFontBgEffect) {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      @include createPseudoElement;
+      @include setPositionCenter;
+      width: 26px;
+      height: 26px;
+      z-index: -1;
+    }
+  }
+  @if ($isStringFont) {
+    font-weight: 600;
+  }
+}
+[class*="calendar-container"] {
+  padding: 20px;
+  border-radius: 4px;
+  background-color: $white100;
+  box-shadow: 0px 2px 5px -8px rgba(0, 0, 0, 0.02), 0px 8px 16px -2px rgba(0, 0, 0, 0.1);
+
+  & .opacity {
+    & .prev {
+      opacity: 0;
+    }
+    & .next {
+      opacity: 0;
+    }
+  }
+  //주말표시
+  & .day,
+  & .weekday {
+    &.weekend {
+      color: $danger500;
+    }
+  }
+
+  // 평일표시
+  & .day {
+    @include setCalendarStyle;
+    @include setFontStyle(map-get($font, sm-24));
+    &.disabled {
+      color: $gray400;
+      pointer-events: none;
+    }
+    &.today {
+      color: $primary500;
+      &:hover::before,
+      &::before {
+        background-color: $gray50;
+        border-radius: 4px;
+      }
+    }
+    &.active {
+      color: $gray700;
+      &:hover::before,
+      &::before {
+        background-color: $primary50;
+        border-radius: 4px;
+      }
+      &.start,
+      &.end {
+        color: $white100;
+        &::before {
+          background-color: $primary600;
+          border-radius: 4px;
+        }
+      }
+      //   &.start::before {
+      //     border-radius: 50% 0 0 50%;
+      //   }
+      //   &.end::before {
+      //     border-radius: 0 50% 50% 0;
+      //   }
+    }
+    &:hover {
+      cursor: pointer;
+      &::before {
+        background-color: $gray50;
+        border-radius: 4px;
+      }
+    }
+  }
+  & .weekday {
+    @include setCalendarStyle(true);
+    @include setFontStyle(map-get($font, sm-24), $gray700);
+  }
+  & .month {
+    @include setFontStyle(map-get($font, md-24));
+  }
+  & .year {
+    @include setFontStyle(map-get($font, md-24));
+    padding: 0 4px;
+  }
+  & [class*="-wrapper"] {
+    @include setFlexLayout(flex, wrap);
+    & .weekday,
+    & .day {
+      width: calc(100% / 7);
+    }
+  }
+  & .cal-nav {
+    @include setFlexLayout(flex, nowrap, space-between);
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+    & .btn-width {
+      width: calc(100% / 7);
+      text-align: center;
+    }
+    & button {
+      padding: 4px;
+      border-radius: 4px;
+      border: 1px solid $gray100;
+      & .ic {
+        vertical-align: text-bottom;
+      }
+      & * {
+        pointer-events: none;
+      }
+    }
+  }
+  &.date-range-picker {
+    & .day {
+      &.active {
+        border-radius: 0;
+      }
+    }
+  }
+  &:not(.date-range-picker) {
+    & .day {
+      &.active {
+        color: $white100;
+        &:hover::before,
+        &::before {
+          background-color: $primary500;
+        }
+      }
+    }
+  }
+}

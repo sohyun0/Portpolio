@@ -1,0 +1,380 @@
+@charset "utf-8";
+// /*******  color  *******/
+$gray: (
+  25: #f8f8f8,
+  50: #f3f3f4,
+  75: #ececed,
+  100: #e2e2e4,
+  200: #d9d8dc,
+  300: #c6c5ca,
+  400: #b3b1b8,
+  500: #8d8a95,
+  600: #676472,
+  700: #4f4b5c,
+  800: #2e293d,
+  900: #110c22,
+);
+$gray25: #f8f8f8;
+$gray50: #f3f3f4;
+$gray75: #ececed;
+$gray100: #e2e2e4;
+$gray200: #d9d8dc;
+$gray300: #c6c5ca;
+$gray400: #b3b1b8;
+$gray500: #8d8a95;
+$gray600: #676472;
+$gray700: #4f4b5c;
+$gray800: #2e293d;
+$gray900: #110c22;
+$primary: (
+  25: #f9f8ff,
+  50: #f1eeff,
+  75: #e2dcff,
+  100: #c6bbff,
+  200: #bcafff,
+  300: #a797ff,
+  400: #8b75ff,
+  500: #7357ff,
+  600: #6347f4,
+  700: #553ade,
+  800: #3c28a4,
+  900: #21194d,
+);
+$primary25: #f9f8ff;
+$primary50: #f1eeff;
+$primary75: #e2dcff;
+$primary100: #c6bbff;
+$primary200: #bcafff;
+$primary300: #a797ff;
+$primary400: #8b75ff;
+$primary500: #7357ff;
+$primary600: #6347f4;
+$primary700: #553ade;
+$primary800: #3c28a4;
+$primary900: #21194d;
+$secondary: (
+  25: #f4fff5,
+  50: #e9ffea,
+  75: #cfffd1,
+  100: #adfcb0,
+  200: #98f89c,
+  300: #7ff183,
+  400: #5ce762,
+  500: #48d64e,
+  600: #3bc641,
+  700: #37b13d,
+  800: #2d8331,
+  900: #143e16,
+);
+$secondary25: #f4fff5;
+$secondary50: #e9ffea;
+$secondary75: #cfffd1;
+$secondary100: #adfcb0;
+$secondary200: #98f89c;
+$secondary300: #7ff183;
+$secondary400: #5ce762;
+$secondary500: #48d64e;
+$secondary600: #3bc641;
+$secondary700: #37b13d;
+$secondary800: #2d8331;
+$secondary900: #143e16;
+$neutral_black: (
+  4: rgba(0, 0, 0, 0.04),
+  7: rgba(0, 0, 0, 0.07),
+  12: rgba(0, 0, 0, 0.12),
+  16: rgba(0, 0, 0, 0.16),
+  20: rgba(0, 0, 0, 0.2),
+  24: rgba(0, 0, 0, 0.24),
+  32: rgba(0, 0, 0, 0.32),
+  48: rgba(0, 0, 0, 0.48),
+  64: rgba(0, 0, 0, 0.64),
+  76: rgba(0, 0, 0, 0.76),
+  88: rgba(0, 0, 0, 0.88),
+  100: rgba(0, 0, 0, 1),
+);
+$black4: rgba(0, 0, 0, 0.04);
+$black7: rgba(0, 0, 0, 0.07);
+$black12: rgba(0, 0, 0, 0.12);
+$black16: rgba(0, 0, 0, 0.16);
+$black20: rgba(0, 0, 0, 0.2);
+$black24: rgba(0, 0, 0, 0.24);
+$black32: rgba(0, 0, 0, 0.32);
+$black48: rgba(0, 0, 0, 0.48);
+$black64: rgba(0, 0, 0, 0.64);
+$black76: rgba(0, 0, 0, 0.76);
+$black88: rgba(0, 0, 0, 0.88);
+$black100: rgba(0, 0, 0, 1);
+$neutral_white: (
+  4: rgba(255, 255, 255, 0.04),
+  7: rgba(255, 255, 255, 0.07),
+  12: rgba(255, 255, 255, 0.12),
+  16: rgba(255, 255, 255, 0.16),
+  20: rgba(255, 255, 255, 0.2),
+  24: rgba(255, 255, 255, 0.24),
+  32: rgba(255, 255, 255, 0.32),
+  48: rgba(255, 255, 255, 0.48),
+  64: rgba(255, 255, 255, 0.64),
+  76: rgba(255, 255, 255, 0.76),
+  88: rgba(255, 255, 255, 0.88),
+  100: rgba(255, 255, 255, 1),
+);
+$white4: rgba(255, 255, 255, 0.04);
+$white7: rgba(255, 255, 255, 0.07);
+$white12: rgba(255, 255, 255, 0.12);
+$white16: rgba(255, 255, 255, 0.16);
+$white20: rgba(255, 255, 255, 0.2);
+$white24: rgba(255, 255, 255, 0.24);
+$white32: rgba(255, 255, 255, 0.32);
+$white48: rgba(255, 255, 255, 0.48);
+$white64: rgba(255, 255, 255, 0.64);
+$white76: rgba(255, 255, 255, 0.76);
+$white88: rgba(255, 255, 255, 0.88);
+$white100: rgba(255, 255, 255, 1);
+$info: (
+  25: #f5faff,
+  50: #e9f4ff,
+  75: #c2e2ff,
+  100: #a0d2ff,
+  200: #71bbff,
+  300: #45a6ff,
+  400: #1c92ff,
+  500: #0084ff,
+  600: #0076e2,
+  700: #0057a7,
+  800: #0c355a,
+  900: #0d1c2b,
+);
+$info25: #f5faff;
+$info50: #e9f4ff;
+$info75: #c2e2ff;
+$info100: #a0d2ff;
+$info200: #71bbff;
+$info300: #45a6ff;
+$info400: #1c92ff;
+$info500: #0084ff;
+$info600: #0076e2;
+$info700: #0057a7;
+$info800: #0c355a;
+$info900: #0d1c2b;
+$success: (
+  25: #f3fdf8,
+  50: #e2fcf0,
+  75: #c6f1dd,
+  100: #a6e9c8,
+  200: #6fdaa6,
+  300: #4dcc8f,
+  400: #28c07a,
+  500: #0baa60,
+  600: #0a9c55,
+  700: #0c7844,
+  800: #104b2f,
+  900: #0d1f11,
+);
+$success25: #f3fdf8;
+$success50: #e2fcf0;
+$success75: #c6f1dd;
+$success100: #a6e9c8;
+$success200: #6fdaa6;
+$success300: #4dcc8f;
+$success400: #28c07a;
+$success500: #0baa60;
+$success600: #0a9c55;
+$success700: #0c7844;
+$success800: #104b2f;
+$success900: #0d1f11;
+$warning: (
+  25: #fffaed,
+  50: #fff5db,
+  75: #ffecba,
+  100: #ffdd86,
+  200: #ffcb45,
+  300: #fdba0f,
+  400: #f2aa09,
+  500: #e09400,
+  600: #d07d00,
+  700: #b55e0f,
+  800: #5c3111,
+  900: #27170b,
+);
+$warning25: #fffaed;
+$warning50: #fff5db;
+$warning75: #ffecba;
+$warning100: #ffdd86;
+$warning200: #ffcb45;
+$warning300: #fdba0f;
+$warning400: #f2aa09;
+$warning500: #e09400;
+$warning600: #d07d00;
+$warning700: #b55e0f;
+$warning800: #5c3111;
+$warning900: #27170b;
+$danger: (
+  25: #fff9f9,
+  50: #fff1f1,
+  75: #ffe0e0,
+  100: #ffc7c7,
+  200: #ffa7a7,
+  300: #ff8080,
+  400: #f95e5e,
+  500: #f03d3d,
+  600: #cf2a2a,
+  700: #a41f1f,
+  800: #591a1a,
+  900: #271111,
+);
+$danger25: #fff9f9;
+$danger50: #fff1f1;
+$danger75: #ffe0e0;
+$danger100: #ffc7c7;
+$danger200: #ffa7a7;
+$danger300: #ff8080;
+$danger400: #f95e5e;
+$danger500: #f03d3d;
+$danger600: #cf2a2a;
+$danger700: #a41f1f;
+$danger800: #591a1a;
+$danger900: #271111;
+$base-text-color: map-get($gray, 900);
+$base-font-family: "Pretendard", "Noto Sans KR";
+$base-background-color: rgb(44 43 46);
+$base-disabled: $gray400 !important;
+$base-disabled-bg: $gray75 !important;
+// /*******  typography  *******/
+// font-size / lineHeight size
+
+$font: (
+  xl6-64: 44 calc(64 / 44),
+  xl5-40: 32 calc(40 / 32),
+  xl4-40: 28 calc(40 / 28),
+  xl3-32: 24 calc(32 / 24),
+  xl2-32: 22 calc(32 / 22),
+  xl-32: 20 calc(32 / 20),
+  lg-24: 18 calc(24 / 18),
+  md-24: 16 calc(24 / 16),
+  sm-24: 14 calc(24 / 14),
+  xs-16: 13 calc(16 / 13),
+  xs2-16: 12 calc(16 / 12),
+  xs3-16: 11 calc(16 / 11),
+  xs4-16: 10 calc(16 / 10),
+);
+$fontWeight: (
+  black: 900,
+  extraBold: 800,
+  bold: 700,
+  semiBold: 600,
+  medium: 500,
+  regular: 400,
+  light: 300,
+  extraLight: 200,
+  thin: 100,
+);
+$textDecoration: (
+  top: overline,
+  center: line-through,
+  bottom: underline,
+);
+$fontStyle: (
+  no: normal,
+  it: italic,
+  ob: oblique,
+);
+
+$textAlignment: (
+  lt: left,
+  rt: right,
+  ct: center,
+);
+$verticalAlignment: (
+  ba: baseline,
+  t: top,
+  b: bottom,
+  m: middle,
+  s: sub,
+  sp: super,
+  tt: text-top,
+  tb: text-bottom,
+);
+
+// /*******  icon size *******/
+$iconSize: (
+  xl3: 40px,
+  xl2: 36px,
+  xl: 32px,
+  lg: 28px,
+  md: 24px,
+  sm: 20px,
+  xs: 18px,
+  xs2: 16px,
+  xs3: 14px,
+  xs4: 12px,
+);
+
+// /*******  button size  *******/
+$buttonSize: (
+  xl: 16px 16px 18,
+  lg: 12px 16px 16,
+  md: 8px 12px 14,
+  sm: 8px 10px 12,
+  x-sm: 4px 8px 10,
+);
+
+// /*******  input & textarea size  *******/
+$inputnSize: (
+  xl: 18px 20px 18,
+  lg: 14px 18px 16,
+  md: 10px 14px 14,
+  sm: 10px 12px 12,
+);
+
+// /*******  textarea height  *******/
+$textareaHeight: (
+  xl: 200px,
+  lg: 150px,
+  md: 100px,
+  sm: 50px,
+);
+
+// /*******  checkbox & radio size *******/
+$checkboxIconSize: (
+  lg: 24px,
+  md: 20px,
+  sm: 18px,
+);
+
+// /*******  label font size *******/
+$labelSize: (
+  lg: 16 calc(24 / 16),
+  md: 14  calc(24 / 14),
+  sm: 12  calc(16 / 12),
+);
+$persent: (
+  10p: 10%,
+  15p: 15%,
+  20p: 20%,
+  25p: 25%,
+  30p: 30%,
+  35p: 35%,
+  40p: 40%,
+  45p: 45%,
+  50p: 50%,
+  55p: 55%,
+  60p: 60%,
+  65p: 65%,
+  70p: 70%,
+  75p: 75%,
+  80p: 80%,
+  85p: 85%,
+  90p: 90%,
+  95p: 95%,
+  100p: 100%,
+);
+$spacingName: (
+  m: margin,
+  p: padding,
+);
+$position: (
+  l: left,
+  r: right,
+  t: top,
+  b: bottom,
+);

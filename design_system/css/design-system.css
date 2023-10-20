@@ -1,0 +1,339 @@
+@charset "UTF-8";
+.container {
+  max-width: 1600px;
+  min-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+  padding-bottom: 100px;
+  overflow-x: auto;
+  min-height: 100vh;
+}
+
+.fix-content {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 100%;
+  background-color: rgb(44, 43, 46);
+  border-bottom: 1px solid #7357ff;
+  z-index: 100;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.4285714286;
+  max-width: 1600px;
+  padding: 32px 20px;
+  margin: 0 auto;
+  color: #f1eeff;
+}
+
+h2 {
+  color: #2e293d;
+  font-weight: 500;
+  font-size: 2.75rem;
+  line-height: 1.4545454545;
+  margin: 50px 0 24px;
+}
+
+h3 {
+  color: #4f4b5c;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.3333333333;
+  margin: 50px 0 24px;
+}
+
+h2 + h3 {
+  margin: 0 0 24px;
+}
+
+.info-text {
+  color: #4f4b5c;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+  margin: 4px 0 0 4px;
+  white-space: nowrap;
+}
+.info-text:first-of-type {
+  margin-top: 12px;
+}
+
+.design-system-list {
+  padding-top: 120px;
+}
+.design-system-list .section-label {
+  color: #4f4b5c;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.design-system-list .section-label * {
+  color: #ececed;
+}
+.design-system-list .info-list li {
+  color: #f3f3f4;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+  margin-bottom: 8px;
+}
+.design-system-list table {
+  margin-bottom: 50px;
+}
+.design-system-list table * {
+  color: #4f4b5c;
+  line-height: 1.4;
+}
+.design-system-list table th {
+  color: #8d8a95;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 24px;
+  text-align: left;
+}
+.design-system-list table td {
+  padding: 24px;
+  vertical-align: middle;
+}
+.design-system-list table td li {
+  margin-bottom: 12px;
+}
+.design-system-list table.line-table tr:last-of-type th, .design-system-list table.line-table tr:last-of-type td {
+  border-bottom: 0;
+}
+.design-system-list table.line-table th, .design-system-list table.line-table td {
+  border-bottom: 1px solid #b3b1b8;
+  background-color: #f8f8f8;
+}
+.design-system-list table.line-table th.left, .design-system-list table.line-table td.left {
+  border-left: 1px solid #b3b1b8;
+}
+.design-system-list table.line-table .no-bd {
+  border: 0;
+}
+.design-system-list .round-box {
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #7357ff;
+  background-color: #272822;
+}
+.design-system-list .round-box > ul > li {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.88);
+}
+.design-system-list .round-box > ul > li * {
+  color: rgb(255, 255, 255);
+}
+.design-system-list .round-box > ul > li::before {
+  display: inline-block;
+  content: "· ";
+}
+.design-system-list .round-box > ul > li.no-dot::before {
+  content: "";
+}
+.design-system-list .round-box > ul > li:last-of-type {
+  margin-bottom: 0;
+}
+.design-system-list .tab-component.tab-header button {
+  padding: 12px 24px;
+}
+.design-system-list .tab-component.tab-header button.active {
+  font-weight: bold;
+}
+.design-system-list .tab-component.tab-content [data-tab-content] > * {
+  padding: 20px;
+}
+
+/***** foundations *****/
+#Color .flex-item [class*=bg-] {
+  width: auto;
+  height: 100px;
+}
+#Color .flex-item p:first-of-type {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+#GridSystem .flex-box {
+  margin-bottom: 12px;
+}
+#GridSystem [class*=grid-item-], #GridSystem [class*=col] li {
+  color: #21194d;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+  text-align: center;
+  padding: 30px 10px;
+  background-color: #e2dcff;
+}
+#GridSystem [class*=col] li {
+  border-left: 2px solid white;
+}
+#GridSystem [class*=col] li:first-of-type {
+  border: 0;
+}
+
+#Icongraphy p {
+  color: rgba(0, 0, 0, 0.76);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+#Spacing .grid-spacing td {
+  text-align: center;
+}
+#Spacing .grid-spacing td span {
+  display: inline-block;
+  background-color: #7357ff;
+}
+#Spacing .px0 {
+  width: 0px;
+  height: 0px;
+}
+#Spacing .px2 {
+  width: 2px;
+  height: 2px;
+}
+#Spacing .px4 {
+  width: 4px;
+  height: 4px;
+}
+#Spacing .px6 {
+  width: 6px;
+  height: 6px;
+}
+#Spacing .px8 {
+  width: 8px;
+  height: 8px;
+}
+#Spacing .px10 {
+  width: 10px;
+  height: 10px;
+}
+#Spacing .px12 {
+  width: 12px;
+  height: 12px;
+}
+#Spacing .px14 {
+  width: 14px;
+  height: 14px;
+}
+#Spacing .px16 {
+  width: 16px;
+  height: 16px;
+}
+#Spacing .px18 {
+  width: 18px;
+  height: 18px;
+}
+#Spacing .px20 {
+  width: 20px;
+  height: 20px;
+}
+#Spacing .px22 {
+  width: 22px;
+  height: 22px;
+}
+#Spacing .px24 {
+  width: 24px;
+  height: 24px;
+}
+#Spacing .px26 {
+  width: 26px;
+  height: 26px;
+}
+#Spacing .px28 {
+  width: 28px;
+  height: 28px;
+}
+#Spacing .px30 {
+  width: 30px;
+  height: 30px;
+}
+#Spacing .px32 {
+  width: 32px;
+  height: 32px;
+}
+#Spacing .px34 {
+  width: 34px;
+  height: 34px;
+}
+#Spacing .px36 {
+  width: 36px;
+  height: 36px;
+}
+#Spacing .px38 {
+  width: 38px;
+  height: 38px;
+}
+#Spacing .px40 {
+  width: 40px;
+  height: 40px;
+}
+
+#Width .grid-width tr:nth-child(1) td, #Width .grid-width tr:nth-child(3) td {
+  border: 1px solid #000;
+}
+#Width .grid-width span {
+  display: inline-block;
+  height: 20px;
+  background-color: #7357ff;
+}
+
+#Button .btn.mix-primary.hover,
+#Button .btn.text-primary.hover,
+#Button .btn.bg-primary.hover,
+#Button .btn.bd-primary.hover {
+  background-color: #a797ff;
+}
+#Button .btn.mix-primary.active,
+#Button .btn.text-primary.active,
+#Button .btn.bg-primary.active,
+#Button .btn.bd-primary.active {
+  background-color: #a797ff;
+  box-shadow: 0px 0px 0px 4px #e2dcff;
+}
+#Button .btn.mix-primary.hover,
+#Button .btn.mix-primary.active {
+  color: rgb(255, 255, 255);
+}
+
+#InputTextarea .tab-line {
+  margin-top: 50px;
+}
+#InputTextarea .tab-line.tab-header {
+  display: flex;
+}
+#InputTextarea .tab-line button {
+  flex: 1;
+  border: 2px solid #e2dcff;
+  background-color: #f9f8ff;
+  margin-right: -4px;
+}
+#InputTextarea .tab-line button:first-of-type {
+  border-radius: 10px 0 0 10px;
+}
+#InputTextarea .tab-line button:last-of-type {
+  border-radius: 0 10px 10px 0;
+}
+#InputTextarea .input.focus, #InputTextarea .textarea.focus {
+  border-color: #7357ff;
+  box-shadow: 0px 0px 0px 4px #e2dcff;
+}
+
+/***** components *****/
+#ToolTip h4 ~ table .tool-tip {
+  position: absolute;
+  display: block;
+}

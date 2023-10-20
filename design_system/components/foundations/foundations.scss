@@ -1,0 +1,674 @@
+@charset "utf-8";
+@import "../../scss/mixins";
+// /*****color *****/
+@each $colorNum, $colorCode in $gray {
+  .fc {
+    &-gray-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-gray-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-gray-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $primary {
+  .fc {
+    &-primary-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-primary-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-primary-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $secondary {
+  .fc {
+    &-secondary-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-secondary-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-secondary-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $neutral_black {
+  .fc {
+    &-black-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-black-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-black-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $neutral_white {
+  .fc {
+    &-white-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-white-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-white-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $info {
+  .fc {
+    &-info-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-info-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-info-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $success {
+  .fc {
+    &-success-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-success-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-success-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $warning {
+  .fc {
+    &-warning-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-warning-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-warning-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+@each $colorNum, $colorCode in $danger {
+  .fc {
+    &-danger-#{$colorNum} {
+      color: $colorCode !important;
+    }
+  }
+  .bg {
+    &-danger-#{$colorNum} {
+      background-color: $colorCode !important;
+    }
+  }
+  .bd {
+    &-danger-#{$colorNum} {
+      border-color: $colorCode !important;
+    }
+  }
+}
+*[class*="bd-"] {
+  border-width: 1px;
+  border-style: solid;
+}
+// /***** GridSystem ******/
+.flex-box {
+  @include setFlexLayout;
+  &.start {
+    justify-content: flex-start;
+  }
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+  &.center {
+    align-items: center;
+  }
+  &.self-center {
+    align-self: center;
+  }
+  &.respon [class*="grid-item-"] {
+    margin-bottom: 12px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  & .grid-item-1 {
+    width: gridCalculator(1);
+  }
+  & .grid-item-2 {
+    width: gridCalculator(2);
+  }
+  & .grid-item-3 {
+    width: gridCalculator(3);
+  }
+  & .grid-item-4 {
+    width: gridCalculator(4);
+  }
+  & .grid-item-6 {
+    width: gridCalculator(6);
+  }
+  & .grid-item-12 {
+    width: gridCalculator(12);
+    @for $i from 2 to 12 {
+      &-#{$i} {
+        width: gridCalculator(12, $i);
+      }
+    }
+  }
+}
+.col2 {
+  & > * {
+    @include dividerBox(2);
+  }
+  & .wide {
+    width: calc((100% / 3) * 2);
+  }
+  & .narrow {
+    width: calc(100% / 3);
+  }
+  & .narrow.half {
+    width: calc(50% / 2);
+  }
+  & .wide.double {
+    width: calc(100% - (50% / 2));
+  }
+}
+.col3 {
+  & > * {
+    @include dividerBox(3);
+  }
+}
+.col4 {
+  & > * {
+    @include dividerBox(4);
+    &.half {
+      width: 50%;
+    }
+  }
+}
+.col5 {
+  & > * {
+    @include dividerBox(5);
+  }
+}
+.col6 {
+  & > * {
+    @include dividerBox(6);
+  }
+}
+.col10 {
+  & > * {
+    @include dividerBox(10);
+  }
+}
+.col12 {
+  & > * {
+    @include dividerBox(12);
+  }
+}
+@include respond(1920) {
+}
+@include respond(1600) {
+}
+@include respond(1440) {
+  .flex-box {
+    &.respon {
+      & .grid-item-12 {
+        &:nth-of-type(6) {
+          margin-right: 0;
+        }
+        width: gridCalculator(6);
+      }
+    }
+  }
+}
+@include respond(1080) {
+  .flex-box {
+    &.respon {
+      & .grid-item-6,
+      & .grid-item-12 {
+        &:nth-of-type(3) {
+          margin-right: 0;
+        }
+        width: gridCalculator(3);
+      }
+    }
+  }
+}
+@include respond(1024) {
+}
+@include respond(960) {
+  .flex-box {
+    &.respon {
+      & .grid-item-4 {
+        &:nth-of-type(2) {
+          margin-right: 0;
+        }
+        width: gridCalculator(2);
+      }
+    }
+  }
+}
+@include respond(768) {
+  .flex-box {
+    &.respon {
+      & .grid-item-3,
+      & .grid-item-6,
+      & .grid-item-12 {
+        margin-right: 0;
+        width: gridCalculator(1);
+      }
+    }
+  }
+}
+@include respond(720) {
+}
+@include respond(640) {
+  .flex-box {
+    &.respon {
+      & .grid-item-2,
+      & .grid-item-4 {
+        margin-right: 0;
+        width: gridCalculator(1);
+      }
+    }
+  }
+}
+@include respond(480) {
+}
+@include respond(320) {
+}
+
+// /***** icon ******/
+.ic {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: black;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  &:not([class*="mr"]):not([class*="ml"]) {
+    margin: 0 auto;
+  }
+  @each $iconSizeName, $size in $iconSize {
+    &-#{$iconSizeName} {
+      width: $size;
+      height: $size;
+    }
+  }
+  &.arrow {
+    &-left {
+      @include createSvgImage(arrow_left);
+    }
+    &-left-lg {
+      @include createSvgImage(arrow_left_lg);
+    }
+    &-right {
+      @include createSvgImage(arrow_right);
+    }
+    &-right-lg {
+      @include createSvgImage(arrow_right_lg);
+    }
+    &-top {
+      @include createSvgImage(arrow_top);
+    }
+    &-top-lg {
+      @include createSvgImage(arrow_top_lg);
+    }
+    &-bottom {
+      @include createSvgImage(arrow_bottom);
+    }
+    &-bottom-lg {
+      @include createSvgImage(arrow_bottom_lg);
+    }
+    &-top-left {
+      @include createSvgImage(arrow_top_left);
+    }
+    &-top-left-lg {
+      @include createSvgImage(arrow_top_left_lg);
+    }
+    &-top-right {
+      @include createSvgImage(arrow_top_right);
+    }
+    &-top-right-lg {
+      @include createSvgImage(arrow_top_right_lg);
+    }
+    &-bottom-left {
+      @include createSvgImage(arrow_bottom_left);
+    }
+    &-bottom-left-lg {
+      @include createSvgImage(arrow_bottom_left_lg);
+    }
+    &-bottom-right {
+      @include createSvgImage(arrow_bottom_right);
+    }
+    &-bottom-right-lg {
+      @include createSvgImage(arrow_bottom_right_lg);
+    }
+  }
+  &.chevron {
+    &-left {
+      @include createSvgImage(chevron_left);
+    }
+    &-left-lg {
+      @include createSvgImage(chevron_left_lg);
+    }
+    &-right {
+      @include createSvgImage(chevron_right);
+    }
+    &-right-lg {
+      @include createSvgImage(chevron_right_lg);
+    }
+    &-top {
+      @include createSvgImage(chevron_top);
+    }
+    &-top-lg {
+      @include createSvgImage(chevron_top_lg);
+    }
+    &-bottom {
+      @include createSvgImage(chevron_bottom);
+    }
+    &-bottom-lg {
+      @include createSvgImage(chevron_bottom_lg);
+    }
+  }
+  &.chevrons {
+    &-left {
+      @include createSvgImage(chevrons_left);
+    }
+    &-right {
+      @include createSvgImage(chevrons_right);
+    }
+  }
+  &.like {
+    &-full {
+      @include createSvgImage(like_full);
+    }
+  }
+  &.menu {
+    @include createSvgImage(menu);
+    &-lg {
+      @include createSvgImage(menu_lg);
+    }
+  }
+  &.undo {
+    @include createSvgImage(undo);
+  }
+  &.redo {
+    @include createSvgImage(redo);
+  }
+  &.search {
+    @include createSvgImage(search);
+  }
+  &.setting {
+    @include createSvgImage(setting);
+  }
+  &.exclamation {
+    @include createSvgImage(exclamation);
+  }
+  &.info {
+    @include createSvgImage(info);
+  }
+  &.warning {
+    @include createSvgImage(warning);
+  }
+  &.plus {
+    @include createSvgImage(plus);
+  }
+  &.minus {
+    @include createSvgImage(minus);
+  }
+  &.x {
+    @include createSvgImage(x);
+  }
+  &.tick {
+    @include createSvgImage(tick);
+  }
+  &.eye_view {
+    @include createSvgImage(eye_view);
+  }
+  &.eye_hide {
+    @include createSvgImage(eye_hide);
+  }
+  &.user {
+    @include createSvgImage(user);
+  }
+  &.link {
+    @include createSvgImage(link);
+  }
+  &.download {
+    @include createSvgImage(download);
+  }
+  &.alarm {
+    @include createSvgImage(alarm);
+  }
+  &.page {
+    @include createSvgImage(page);
+  }
+  &.copy {
+    @include createSvgImage(copy);
+  }
+}
+// .draw {
+//   &-arrow {
+//     &-top {
+//       @include drawingChevron(20px, 2px, $gray900, top);
+//     }
+//     &-bottom {
+//       @include drawingChevron(20px, 2px, $gray900, bottom);
+//     }
+//     &-left {
+//       @include drawingChevron(20px, 2px, $gray900, left);
+//     }
+//     &-right {
+//       @include drawingChevron(20px, 2px, $gray900, right);
+//     }
+//   }
+//   &-circle {
+//     &-stroke {
+//       @include drawingCircle(stroke, $primary500, 2px);
+//     }
+//     &-fill {
+//       @include drawingCircle(fill, $primary500);
+//     }
+//     &-mix {
+//       @include drawingCircle(mix, $primary500, 2px, $primary75);
+//     }
+//   }
+//   &-check {
+//     @include drawingCheck(20px, 2px, $primary500);
+//   }
+//   &-rectangle {
+//     &-stroke {
+//       @include drawingRectangle(20px, 20px, stroke, $primary500, 2px);
+//     }
+//     &-fill {
+//       @include drawingRectangle(20px, 20px, fill, $primary500);
+//     }
+//     &-mix {
+//       @include drawingRectangle(20px, 20px, mix, $primary500, 2px, $primary75);
+//     }
+//   }
+//   &-triangle {
+//     @include drawingTriangle(200px, $primary500);
+//   }
+//   &-radius {
+//     &-arrow {
+//       &-top {
+//         @include drawingChevron(20px, 2px, $gray900, top, 2px);
+//       }
+//       &-bottom {
+//         @include drawingChevron(20px, 2px, $gray900, bottom, 2px);
+//       }
+//       &-left {
+//         @include drawingChevron(20px, 2px, $gray900, left, 2px);
+//       }
+//       &-right {
+//         @include drawingChevron(20px, 2px, $gray900, right, 2px);
+//       }
+//     }
+//     &-check {
+//       @include drawingCheck(20px, 2px, $primary500, 2px);
+//     }
+//     &-rectangle {
+//       &-stroke {
+//         @include drawingRectangle(20px, 20px, stroke, $primary500, 2px, none, 2px);
+//       }
+//       &-fill {
+//         @include drawingRectangle(20px, 20px, fill, $primary500, none, none, 2px);
+//       }
+//       &-mix {
+//         @include drawingRectangle(20px, 20px, mix, $primary500, 2px, $primary75, 2px);
+//       }
+//     }
+//   }
+// }
+// /***** Spacing ******/
+@include createSpacingClassList($spacingName, $position, createSpacingNum(0, 40, true, 2), false);
+@include respond(480) {
+  @include createSpacingClassList($spacingName, $position, createSpacingNum(0, 40, true, 2));
+}
+// /***** Typography ******/
+.ff {
+  &-noto {
+    font-family: "Noto Sans Display" !important;
+  }
+  &-pre {
+    font-family: "Pretendard" !important;
+  }
+  &-notokr {
+    font-family: "Noto Sans KR" !important;
+  }
+}
+@each $fontName, $fontInfo in $font {
+  .fs {
+    &-#{$fontName} {
+      font-size: #{convertPxToRem(nth($fontInfo, 1))};
+      line-height: #{nth($fontInfo, 2)};
+    }
+  }
+}
+@each $alignName, $align in $textAlignment {
+  .txt {
+    &-#{$alignName} {
+      text-align: $align;
+    }
+  }
+}
+@each $weightName, $weight in $fontWeight {
+  .fw {
+    &-#{$weight} {
+      font-weight: $weight !important;
+    }
+  }
+}
+@each $alignName, $align in $verticalAlignment {
+  .va {
+    &-#{$alignName} {
+      vertical-align: $align !important;
+    }
+  }
+}
+@each $decoName, $align in $textDecoration {
+  .txt-line {
+    &-#{$decoName} {
+      text-decoration: $align;
+    }
+  }
+}
+@each $styleName, $style in $fontStyle {
+  .fst {
+    &-#{$styleName} {
+      font-style: $style;
+    }
+  }
+}
+// /***** width ******/
+.w {
+  @each $persent, $size in $persent {
+    &#{$persent} {
+      width: $size;
+    }
+  }
+}
+
+.dp-n {
+  display: none;
+}
+.dp-b {
+  display: block;
+}
+.po-rl {
+  position: relative;
+}
+.po-ab {
+  position: absolute;
+}
+.scroll {
+  @include setScrollStyle;
+}
+.blind {
+  @include applyBlindText;
+}
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.no-space {
+  white-space: nowrap;
+}
+.space {
+  white-space: nowrap;
+}
