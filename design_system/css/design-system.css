@@ -339,51 +339,9 @@ h2 + h3 {
 }
 
 /***** Cover *****/
-@keyframes titleMotionBefore {
-  0% {
-    left: -70px;
-    top: 70px;
-  }
-  99% {
-    left: 0;
-    top: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes titleMotionAfter {
-  0% {
-    left: 70px;
-    top: -70px;
-  }
-  99% {
-    left: 0;
-    top: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes titleMotion {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  0% {
-    transform: scale(1);
-  }
-}
 @keyframes btnShow {
   100% {
     opacity: 1;
-  }
-}
-@keyframes linkShow {
-  100% {
-    right: 0%;
   }
 }
 .cover {
@@ -394,103 +352,148 @@ h2 + h3 {
 .cover * {
   font-family: "Kaushan Script", "Pretendard", "Noto Sans KR" !important;
 }
-.cover .center-content {
+.cover .content {
+  width: 100%;
+  height: 100%;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.cover .title {
-  color: #e2dcff;
-  font-weight: 700;
-  font-size: 2.75rem;
-  line-height: 1.4545454545;
-  font-size: 8.8541666667vw;
-  animation: titleMotion 1.4s cubic-bezier(0, 0.45, 0.32, 0.97) 1.4s;
-  white-space: nowrap;
-}
-.cover .title::before, .cover .title::after {
-  position: absolute;
   left: 0;
-  top: 0;
+  top: 30px;
   transform: translate(0, 0);
-  content: attr(data-title);
-  font-size: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  white-space: nowrap;
 }
-.cover .title::before {
-  animation: titleMotionBefore 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-.cover .title::after {
-  animation: titleMotionAfter 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-.cover .gopage-wrapper {
-  align-items: center;
-  margin-top: 3.3333333333vw;
-}
-.cover .gopage-wrapper.active {
-  justify-content: space-evenly;
-}
-.cover .start-btn {
-  opacity: 0;
-  animation: btnShow 1s ease-in 2.4s forwards;
-  padding: 1.0416666667vw 1.25vw;
-  font-size: 1.6666666667vw;
-  font-weight: 300;
-}
-.cover .start-btn .ic-md {
-  width: 1.6666666667vw;
-  height: 1.6666666667vw;
-}
-.cover .start-btn.active + .link-group {
-  display: block;
-}
-.cover .start-btn.active + .link-group a {
-  animation: linkShow 0.7s cubic-bezier(0.18, 0.89, 0.53, 1.05) 0s forwards;
-}
-.cover .link-group {
-  display: none;
-  overflow: hidden;
-}
-.cover .link-group a {
-  display: block;
-  position: relative;
-  top: 0;
-  right: -100%;
-  padding: 1.0416666667vw 1.25vw;
-  font-size: 2.2916666667vw;
-  font-weight: 300;
-}
-.cover .link-group a:first-of-type {
-  border-bottom: 5px dotted rgba(226, 220, 255, 0.2);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.cover .link-group a:hover {
-  border-radius: 6px;
+.cover .drawing-line-wrapper {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: flex-start;
+  align-items: baseline;
 }
 
-@media all and (max-width: 768px) {
-  .cover .title {
-    font-size: 12.5vw;
+.path-cover .drawing-line {
+  max-height: 70vh;
+}
+.path-cover .link-wrapper {
+  position: relative;
+  top: -80px;
+  text-align: center;
+}
+.path-cover .link-wrapper a {
+  color: #f1eeff;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.4285714286;
+  display: block;
+  opacity: 0;
+  animation: btnShow 1s linear forwards 4.2s;
+}
+.path-cover .link-wrapper a:last-of-type {
+  margin-top: 24px;
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 2171.6831054688;
   }
-  .cover .gopage-wrapper {
-    margin-top: 5.8823529412vw;
+  100% {
+    stroke-dashoffset: 0;
   }
-  .cover .start-btn {
-    opacity: 0;
-    font-size: 2.9411764706vw;
-    padding: 1.7647058824vw 2.3529411765vw;
+}
+@keyframes pen1 {
+  0% {
+    stroke-dashoffset: 60.4098167419;
   }
-  .cover .start-btn .ic-md {
-    width: 2.9411764706vw;
-    height: 2.9411764706vw;
+  100% {
+    stroke-dashoffset: 0;
   }
-  .cover .link-group a {
-    padding: 1.7647058824vw 2.3529411765vw;
-    font-size: 4.7058823529vw;
-    font-weight: 300;
+}
+@keyframes pen2 {
+  0% {
+    stroke-dashoffset: 74.5153503418;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pen3 {
+  0% {
+    stroke-dashoffset: 25.1401786804;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pen4 {
+  0% {
+    stroke-dashoffset: 11.6638278961;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.path-cover .dash {
+  stroke-dasharray: 2171.6831054688; /*이 값은 path의 길이와 동일합니다*/
+  stroke-dashoffset: 2171.6831054688;
+  animation: dash 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.path-cover .pen1 {
+  stroke-dasharray: 60.4098167419;
+  stroke-dashoffset: 60.4098167419;
+  animation: pen1 0.3s linear forwards 2.5s;
+}
+.path-cover .pen2 {
+  stroke-dasharray: 74.5153503418;
+  stroke-dashoffset: 74.5153503418;
+  animation: pen2 0.3s linear forwards 2.8s;
+}
+.path-cover .pen3 {
+  stroke-dasharray: 25.1401786804;
+  stroke-dashoffset: 25.1401786804;
+  animation: pen3 0.3s linear forwards 3.1s;
+}
+.path-cover .pen4 {
+  stroke-dasharray: 11.6638278961;
+  stroke-dashoffset: 11.6638278961;
+  animation: pen4 0.3s linear forwards 3.4s;
+}
+@keyframes textDash {
+  0% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    fill: transparent;
+    stroke: white;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: white;
+    fill: rgba(255, 255, 255, 0.8);
+  }
+}
+.path-cover .text-dash {
+  stroke-dasharray: 100;
+  animation: textDash 2.5s linear forwards 3.1s;
+}
+
+@media all and (max-width: 1620px) {
+  .path-cover .drawing-line {
+    width: calc(100% - 400px);
+  }
+}
+@media all and (max-width: 998px) {
+  .path-cover .drawing-line,
+  .path-cover .link-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .path-cover .drawing-line {
+    width: 100%;
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scaleY(-1) rotate(20deg);
+  }
+}
+@media all and (max-width: 400px) {
+  .link-wrapper {
+    width: 90%;
+  }
+  .link-wrapper svg {
+    width: 100%;
   }
 }

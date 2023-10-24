@@ -131,3 +131,7 @@ hr {
   height: 1px;
   background: #e2e2e4;
 }
+
+* {
+  cursor: url(../img/icon/mouse_cursor-pen-shadow.svg) 25 25, auto;
+}

@@ -119,3 +119,7 @@ hr {
   height: 1px;
   background: $gray100;
 }
+// 마우스 커서 변경
+* {
+  cursor: url(../img/icon/mouse_cursor-pen-shadow.svg) 25 25, auto;
+}
