@@ -302,7 +302,7 @@
 //아이콘 삽입
 /// @param {String} $isName  - 이미지 명
 /// @param {String} $isPath  - 이미지 경로
-@mixin createSvgImage($isName, $isPath: "/design_system/img/icon/") {
+@mixin createSvgImage($isName, $isPath: "../design_system/img/icon/") {
   -webkit-mask-image: url("#{$isPath}#{$isName}.svg");
   mask-image: url("#{$isPath}#{$isName}.svg");
 }

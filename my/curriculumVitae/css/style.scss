@@ -1,7 +1,10 @@
 @charset "utf-8";
 @import "../../../design_system/scss/_variables.scss", "../../../design_system/scss/_mixins.scss";
+$bg-color-light: $gray50;
+$bg-color-dark: $base-background-color;
+
 .wrapper {
-  background-color: $gray50;
+  background-color: $bg-color-light;
   padding: 100px 0;
 }
 .container {
@@ -115,7 +118,7 @@
         & span {
           display: block;
           margin-top: convertPxToVw(4, 480);
-          padding-left: convertPxToVw(20, 480);
+          padding-left: 2px;
         }
       }
       & a {
@@ -133,5 +136,20 @@
     .btn-md {
       padding: convertPxToVw(8, 480) convertPxToVw(12, 480);
     }
+  }
+}
+
+@media all and (prefers-color-scheme: dark) {
+  $color-dark: $gray300;
+  .wrapper {
+    background-color: $bg-color-dark;
+  }
+  .company-info,
+  .work-list li p,
+  .work-list.etc li p {
+    color: $color-dark;
+  }
+  .info-title {
+    color: $gray25;
   }
 }

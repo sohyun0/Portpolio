@@ -141,7 +141,7 @@
   .work-list li p span {
     display: block;
     margin-top: 0.8333333333vw;
-    padding-left: 4.1666666667vw;
+    padding-left: 2px;
   }
   .work-list li a {
     margin-top: 3.3333333333vw;
@@ -154,5 +154,18 @@
   }
   .work-list .btn-md {
     padding: 1.6666666667vw 2.5vw;
+  }
+}
+@media all and (prefers-color-scheme: dark) {
+  .wrapper {
+    background-color: #0f0b24;
+  }
+  .company-info,
+  .work-list li p,
+  .work-list.etc li p {
+    color: #c6c5ca;
+  }
+  .info-title {
+    color: #f8f8f8;
   }
 }
