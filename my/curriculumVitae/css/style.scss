@@ -2,6 +2,7 @@
 @import "../../../design_system/scss/_variables.scss", "../../../design_system/scss/_mixins.scss";
 $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
+$color-dark: $gray300;
 
 .wrapper {
   background-color: $bg-color-light;
@@ -10,6 +11,16 @@ $bg-color-dark: $base-background-color;
 .container {
   @include setContainerMinMax($isContainerWidth: 768, $isSideMargin: 24);
   min-height: 100vh;
+}
+.mode-toggle {
+  @include setPosition(fixed, right, 50px, top, 50px);
+  & input.toggle.right + label::after {
+    border: 1px solid $gray500;
+  }
+  & span {
+    vertical-align: middle;
+    @include setFontStyle(map-get($font, sm-24));
+  }
 }
 .title {
   @include setFontStyle(map-get($font, xl6-64), $primary600, 700);
@@ -139,10 +150,14 @@ $bg-color-dark: $base-background-color;
   }
 }
 
-@media all and (prefers-color-scheme: dark) {
-  $color-dark: $gray300;
-  .wrapper {
+.dark {
+  &.wrapper {
     background-color: $bg-color-dark;
+  }
+  .mode-toggle {
+    & span {
+      color: $color-dark;
+    }
   }
   .company-info,
   .work-list li p,

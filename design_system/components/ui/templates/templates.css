@@ -677,6 +677,7 @@ input.toggle + label {
 input.toggle + label::before, input.toggle + label::after {
   content: "";
   display: inline-block;
+  transition: all 0.3s;
 }
 input.toggle + label.text {
   color: #b3b1b8 !important;

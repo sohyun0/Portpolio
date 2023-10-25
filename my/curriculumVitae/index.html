@@ -11,7 +11,12 @@
   <body>
     <div class="wrapper">
       <div class="container">
-        <div class="mode-toggle"></div>
+        <div class="mode-toggle">
+          <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" checked="" onchange="" />
+          <label for="darkMode">
+            <span> 다크모드 </span>
+          </label>
+        </div>
         <div class="title">경력기술서</div>
         <div class="company-info">
           TCK는 BPO 사업을 하는 회사로 비즈니스 IT 솔루션 및 웹/앱 구축과 유지보수 서비스를 제공하는 팀에서 퍼블리싱 작업을 했습니다.
@@ -148,5 +153,21 @@
         </ul>
       </div>
     </div>
+    <script>
+      let wrapper = document.querySelector(".wrapper");
+      let darkModeToggle = document.getElementById("darkMode");
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        wrapper.classList.add("dark");
+      } else {
+        wrapper.classList.remove("dark");
+      }
+      darkModeToggle.onchange = function () {
+        if (darkModeToggle.checked) {
+          wrapper.classList.add("dark");
+        } else {
+          wrapper.classList.remove("dark");
+        }
+      };
+    </script>
   </body>
 </html>

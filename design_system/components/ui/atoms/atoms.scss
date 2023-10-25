@@ -498,6 +498,7 @@ input {
       &::before,
       &::after {
         @include createPseudoElement;
+        transition: all 0.3s;
       }
       &.text {
         color: $base-disabled;

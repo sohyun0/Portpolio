@@ -13,6 +13,23 @@
   min-height: 100vh;
 }
 
+.mode-toggle {
+  position: fixed;
+  right: 50px;
+  top: 50px;
+  transform: translate(0, 0);
+}
+.mode-toggle input.toggle.right + label::after {
+  border: 1px solid #8d8a95;
+}
+.mode-toggle span {
+  vertical-align: middle;
+  color: #110c22;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+}
+
 .title {
   color: #6347f4;
   font-weight: 700;
@@ -156,16 +173,17 @@
     padding: 1.6666666667vw 2.5vw;
   }
 }
-@media all and (prefers-color-scheme: dark) {
-  .wrapper {
-    background-color: #0f0b24;
-  }
-  .company-info,
-  .work-list li p,
-  .work-list.etc li p {
-    color: #c6c5ca;
-  }
-  .info-title {
-    color: #f8f8f8;
-  }
+.dark.wrapper {
+  background-color: #0f0b24;
+}
+.dark .mode-toggle span {
+  color: #c6c5ca;
+}
+.dark .company-info,
+.dark .work-list li p,
+.dark .work-list.etc li p {
+  color: #c6c5ca;
+}
+.dark .info-title {
+  color: #f8f8f8;
 }
