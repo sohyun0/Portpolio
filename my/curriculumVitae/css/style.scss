@@ -15,7 +15,7 @@ $color-dark: $gray300;
 .mode-toggle {
   @include setPosition(absolute, right, 40px, top, 40px);
   & input.toggle.right + label::after {
-    border: 1px solid $gray500;
+    border: 1px solid $gray300;
   }
   & span {
     vertical-align: middle;
@@ -70,7 +70,6 @@ $color-dark: $gray300;
       }
     }
     & a {
-      @include setFontStyle(map-get($font, sm-24), $gray700);
       display: block;
       margin-top: 16px;
       & .ic.page {
@@ -115,6 +114,10 @@ $color-dark: $gray300;
   .container {
     padding: 0 convertPxToVw(24, 480);
   }
+  .mode-toggle {
+    right: convertPxToVw(30, 480);
+    top: convertPxToVw(30, 480);
+  }
   .info-title {
     padding: convertPxToVw(48, 480) convertPxToVw(20, 480) 0;
   }
@@ -137,15 +140,15 @@ $color-dark: $gray300;
         & .ic.page {
           margin-right: convertPxToVw(4, 480);
         }
+        &.btn {
+          padding: convertPxToVw(8, 480) convertPxToVw(10, 480);
+        }
       }
     }
     &.etc {
       & li {
         margin-top: convertPxToVw(16, 480);
       }
-    }
-    .btn-md {
-      padding: convertPxToVw(8, 480) convertPxToVw(12, 480);
     }
   }
 }
