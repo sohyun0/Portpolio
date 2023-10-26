@@ -351,86 +351,90 @@
   }
   &.arrow {
     &-left {
-      @include createSvgImage(arrow_left);
-    }
-    &-left-lg {
-      @include createSvgImage(arrow_left_lg);
+      @include createSvgImage(arrow-left);
     }
     &-right {
-      @include createSvgImage(arrow_right);
+      @include createSvgImage(arrow-right);
     }
-    &-right-lg {
-      @include createSvgImage(arrow_right_lg);
+    &-up {
+      @include createSvgImage(arrow-up);
     }
-    &-top {
-      @include createSvgImage(arrow_top);
+    &-down {
+      @include createSvgImage(arrow-down);
     }
-    &-top-lg {
-      @include createSvgImage(arrow_top_lg);
+    &-up-left {
+      @include createSvgImage(arrow-up-left);
     }
-    &-bottom {
-      @include createSvgImage(arrow_bottom);
+    &-up-right {
+      @include createSvgImage(arrow-up-right);
     }
-    &-bottom-lg {
-      @include createSvgImage(arrow_bottom_lg);
+    &-down-left {
+      @include createSvgImage(arrow-down-left);
     }
-    &-top-left {
-      @include createSvgImage(arrow_top_left);
+    &-down-right {
+      @include createSvgImage(arrow-down-right);
     }
-    &-top-left-lg {
-      @include createSvgImage(arrow_top_left_lg);
+  }
+  &.arrow-circle {
+    &-left {
+      @include createSvgImage(arrow-left-circle);
     }
-    &-top-right {
-      @include createSvgImage(arrow_top_right);
+    &-right {
+      @include createSvgImage(arrow-right-circle);
     }
-    &-top-right-lg {
-      @include createSvgImage(arrow_top_right_lg);
+    &-up {
+      @include createSvgImage(arrow-up-circle);
     }
-    &-bottom-left {
-      @include createSvgImage(arrow_bottom_left);
-    }
-    &-bottom-left-lg {
-      @include createSvgImage(arrow_bottom_left_lg);
-    }
-    &-bottom-right {
-      @include createSvgImage(arrow_bottom_right);
-    }
-    &-bottom-right-lg {
-      @include createSvgImage(arrow_bottom_right_lg);
+    &-down {
+      @include createSvgImage(arrow-down-circle);
     }
   }
   &.chevron {
     &-left {
-      @include createSvgImage(chevron_left);
-    }
-    &-left-lg {
-      @include createSvgImage(chevron_left_lg);
+      @include createSvgImage(chevron-left);
     }
     &-right {
-      @include createSvgImage(chevron_right);
+      @include createSvgImage(chevron-right);
     }
-    &-right-lg {
-      @include createSvgImage(chevron_right_lg);
+    &-up {
+      @include createSvgImage(chevron-up);
     }
-    &-top {
-      @include createSvgImage(chevron_top);
-    }
-    &-top-lg {
-      @include createSvgImage(chevron_top_lg);
-    }
-    &-bottom {
-      @include createSvgImage(chevron_bottom);
-    }
-    &-bottom-lg {
-      @include createSvgImage(chevron_bottom_lg);
+    &-down {
+      @include createSvgImage(chevron-down);
     }
   }
   &.chevrons {
     &-left {
-      @include createSvgImage(chevrons_left);
+      @include createSvgImage(chevrons-left);
     }
     &-right {
-      @include createSvgImage(chevrons_right);
+      @include createSvgImage(chevrons-right);
+    }
+    &-up {
+      @include createSvgImage(chevrons-up);
+    }
+    &-down {
+      @include createSvgImage(chevrons-down);
+    }
+  }
+  &.alarm {
+    @include createSvgImage(alarm);
+  }
+  &.download {
+    @include createSvgImage(download);
+  }
+  &.upload {
+    @include createSvgImage(upload);
+  }
+  &.edit {
+    @include createSvgImage(edit);
+  }
+  &.eye {
+    &-hide {
+      @include createSvgImage(eye-hide);
+    }
+    &-view {
+      @include createSvgImage(eye-view);
     }
   }
   &.like {
@@ -440,21 +444,18 @@
   }
   &.menu {
     @include createSvgImage(menu);
-    &-lg {
-      @include createSvgImage(menu_lg);
-    }
   }
-  &.undo {
-    @include createSvgImage(undo);
+  &.user {
+    @include createSvgImage(user);
   }
-  &.redo {
-    @include createSvgImage(redo);
+  &.link {
+    @include createSvgImage(link);
   }
   &.search {
     @include createSvgImage(search);
   }
   &.setting {
-    @include createSvgImage(setting);
+    @include createSvgImage(settings);
   }
   &.exclamation {
     @include createSvgImage(exclamation);
@@ -477,29 +478,11 @@
   &.tick {
     @include createSvgImage(tick);
   }
-  &.eye_view {
-    @include createSvgImage(eye_view);
-  }
-  &.eye_hide {
-    @include createSvgImage(eye_hide);
-  }
-  &.user {
-    @include createSvgImage(user);
-  }
-  &.link {
-    @include createSvgImage(link);
-  }
-  &.download {
-    @include createSvgImage(download);
-  }
-  &.alarm {
-    @include createSvgImage(alarm);
+  &.trash {
+    @include createSvgImage(trash);
   }
   &.page {
     @include createSvgImage(page);
-  }
-  &.copy {
-    @include createSvgImage(copy);
   }
 }
 // .draw {
