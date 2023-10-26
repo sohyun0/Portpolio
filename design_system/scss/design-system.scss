@@ -347,11 +347,11 @@ h2 + h3 {
 
 /***** Cover *****/
 $delay: (
-  1: 2.5s,
-  2: 2.8s,
-  3: 3.1s,
-  4: 3.4s,
-  5: 4.2s,
+  1: 2s,
+  2: 2.3s,
+  3: 2.9s,
+  4: 3.1s,
+  5: 3.4s,
 );
 @keyframes btnShow {
   100% {
@@ -443,7 +443,7 @@ $delay: (
   .dash {
     stroke-dasharray: $dash-array; /*이 값은 path의 길이와 동일합니다*/
     stroke-dashoffset: $dash-array;
-    animation: dash 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: dash 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     // animation: dash 2.5s cubic-bezier(0, 0.45, 0.32, 0.97) forwards;
     // titleMotion 1.4s cubic-bezier(0, 0.45, 0.32, 0.97) 1.4s
   }

@@ -382,7 +382,7 @@ h2 + h3 {
   line-height: 1.4285714286;
   display: block;
   opacity: 0;
-  animation: btnShow 1s linear forwards 4.2s;
+  animation: btnShow 1s linear forwards 3.4s;
 }
 .path-cover .link-wrapper a:last-of-type {
   margin-top: 24px;
@@ -430,27 +430,27 @@ h2 + h3 {
 .path-cover .dash {
   stroke-dasharray: 2171.6831054688; /*이 값은 path의 길이와 동일합니다*/
   stroke-dashoffset: 2171.6831054688;
-  animation: dash 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: dash 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 .path-cover .pen1 {
   stroke-dasharray: 60.4098167419;
   stroke-dashoffset: 60.4098167419;
-  animation: pen1 0.3s linear forwards 2.5s;
+  animation: pen1 0.3s linear forwards 2s;
 }
 .path-cover .pen2 {
   stroke-dasharray: 74.5153503418;
   stroke-dashoffset: 74.5153503418;
-  animation: pen2 0.3s linear forwards 2.8s;
+  animation: pen2 0.3s linear forwards 2.3s;
 }
 .path-cover .pen3 {
   stroke-dasharray: 25.1401786804;
   stroke-dashoffset: 25.1401786804;
-  animation: pen3 0.3s linear forwards 3.1s;
+  animation: pen3 0.3s linear forwards 2.9s;
 }
 .path-cover .pen4 {
   stroke-dasharray: 11.6638278961;
   stroke-dashoffset: 11.6638278961;
-  animation: pen4 0.3s linear forwards 3.4s;
+  animation: pen4 0.3s linear forwards 3.1s;
 }
 @keyframes textDash {
   0% {
@@ -467,7 +467,7 @@ h2 + h3 {
 }
 .path-cover .text-dash {
   stroke-dasharray: 100;
-  animation: textDash 2.5s linear forwards 3.1s;
+  animation: textDash 2.5s linear forwards 2.9s;
 }
 
 @media all and (max-width: 1620px) {
