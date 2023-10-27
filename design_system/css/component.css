@@ -1835,7 +1835,3 @@ input.square-check.inp-ic-lg:checked + label .check::after {
 .pop-footer .btn-group button:last-of-type, .pop-footer .btn-group button:only-of-type {
   margin-right: 0;
 }
-
-* {
-  cursor: url(../img/icon/mouse_cursor-pen-shadow.svg) 25 25, auto;
-}

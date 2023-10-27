@@ -119,3 +119,16 @@ hr {
   height: 1px;
   background: $gray100;
 }
+// 마우스 커서 변경
+html,
+body {
+  cursor: url(../img/icon/mouse-auto.svg) 25 25, auto;
+}
+a,
+button {
+  cursor: url(../img/icon/mouse-pointer.svg) 25 25, pointer;
+}
+input,
+textarea {
+  cursor: url(../img/icon/mouse-text.svg) 25 25, text;
+}
