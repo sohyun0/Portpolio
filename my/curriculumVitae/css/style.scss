@@ -40,12 +40,14 @@ $color-dark: $gray300;
 }
 .work-list {
   padding: 0 30px 14px;
-  & li {
+  & > li {
     margin-top: 24px;
+    @include setFlexLayout;
+    align-items: center;
     &:first-of-type {
       margin-top: 16px;
     }
-    & p {
+    & .work-title {
       @include setFontStyle(map-get($font, md-24), $gray700, 400);
       text-indent: -18px;
       padding-left: 18px;
@@ -69,28 +71,53 @@ $color-dark: $gray300;
         }
       }
     }
-    & a {
+    & .more-content-btn {
+      border-radius: 50%;
+    }
+    &.etc {
       display: block;
+    }
+  }
+  & .details {
+    width: 100%;
+    padding-left: 20px;
+    & a {
+      @include setFlexLayout;
+      width: 100%;
       margin-top: 16px;
-      & .ic.page {
-        margin-right: 4px;
+      & .ic {
         background: $primary500;
+        &.page {
+          margin-right: 4px;
+        }
       }
       &:hover {
-        & .ic.page {
+        & .ic {
           background-color: #fff;
         }
       }
     }
-    &:not(.etc) {
-      @include setFlexLayout;
-      align-items: center;
+  }
+  & .hyphen-list {
+    margin-top: 16px;
+    & li {
+      @include setFontStyle(map-get($font, sm-24), $gray700, 400);
+      padding-left: 4px;
+      text-indent: -4px;
+      &::before {
+        content: "-";
+      }
     }
+  }
+  & .text {
+    @include setFontStyle(map-get($font, sm-24), $gray600, 400);
+    margin-top: 16px;
+    word-break: keep-all;
   }
   &.etc {
     & li {
       margin-top: 16px;
-      & p {
+      & .work-title {
         @include setFontStyle(map-get($font, sm-24), $gray700);
       }
     }
@@ -99,10 +126,9 @@ $color-dark: $gray300;
 @include respond(640) {
   .work-list {
     padding: 0 15px 14px;
-    & li:not(.etc) {
-      justify-content: end;
-      & p {
-        width: 100%;
+    & li {
+      & .work-title {
+        width: calc(100% - 44px);
       }
     }
   }
@@ -128,22 +154,30 @@ $color-dark: $gray300;
       &:first-of-type {
         margin-top: convertPxToVw(16, 480);
       }
-      & p {
+      & .work-title {
         & span {
           display: block;
           margin-top: convertPxToVw(4, 480);
           padding-left: 2px;
         }
       }
-      & a {
-        margin-top: convertPxToVw(16, 480);
-        & .ic.page {
-          margin-right: convertPxToVw(4, 480);
-        }
-        &.btn {
-          padding: convertPxToVw(8, 480) convertPxToVw(10, 480);
+      & .details {
+        & a {
+          margin-top: convertPxToVw(16, 480);
+          & .ic.page {
+            margin-right: convertPxToVw(4, 480);
+          }
+          &.btn {
+            padding: convertPxToVw(8, 480) convertPxToVw(10, 480);
+          }
         }
       }
+    }
+    & .hyphen-list {
+      margin-top: convertPxToVw(16, 480);
+    }
+    & .text {
+      margin-top: convertPxToVw(16, 480);
     }
     &.etc {
       & li {
@@ -152,7 +186,6 @@ $color-dark: $gray300;
     }
   }
 }
-
 .dark {
   &.wrapper {
     background-color: $bg-color-dark;
@@ -163,9 +196,13 @@ $color-dark: $gray300;
     }
   }
   .company-info,
-  .work-list li p,
-  .work-list.etc li p {
+  .work-list li .work-title,
+  .work-list.etc li .work-title,
+  .work-list .hyphen-list li {
     color: $color-dark;
+  }
+  .work-list .text {
+    color: $gray400;
   }
   .info-title {
     color: $gray25;
