@@ -73,7 +73,6 @@ $color-dark: $gray300;
     }
     & .more-content-btn {
       border-radius: 50%;
-      cursor: pointer;
       &.active {
         & + .details {
           display: block;

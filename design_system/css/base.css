@@ -134,12 +134,12 @@ hr {
 
 html,
 body {
-  cursor: url(../img/icon/mouse-auto.svg) 25 25, auto;
+  cursor: url(../img/icon/mouse-auto.svg) 0 40, auto;
 }
 
 a,
 button {
-  cursor: url(../img/icon/mouse-pointer.svg) 25 25, pointer;
+  cursor: url(../img/icon/mouse-pointer.svg) 20 20, pointer;
 }
 
 input,

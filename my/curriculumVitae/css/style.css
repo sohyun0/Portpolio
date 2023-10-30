@@ -100,7 +100,6 @@
 }
 .work-list > li .more-content-btn {
   border-radius: 50%;
-  cursor: pointer;
 }
 .work-list > li .more-content-btn.active + .details {
   display: block;
