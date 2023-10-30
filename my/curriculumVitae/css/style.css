@@ -117,7 +117,7 @@
   flex-flow: wrap row;
   justify-content: space-between;
   width: 100%;
-  margin-top: 16px;
+  margin: 16px 0;
 }
 .work-list .details a .ic {
   background: #7357ff;
@@ -197,7 +197,7 @@
     padding-left: 2px;
   }
   .work-list li .details a {
-    margin-top: 3.3333333333vw;
+    margin: 3.3333333333vw 0;
   }
   .work-list li .details a .ic.page {
     margin-right: 0.8333333333vw;

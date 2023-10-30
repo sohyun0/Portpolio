@@ -90,7 +90,7 @@ $color-dark: $gray300;
     & a {
       @include setFlexLayout;
       width: 100%;
-      margin-top: 16px;
+      margin: 16px 0;
       & .ic {
         background: $primary500;
         &.page {
@@ -169,7 +169,7 @@ $color-dark: $gray300;
       }
       & .details {
         & a {
-          margin-top: convertPxToVw(16, 480);
+          margin: convertPxToVw(16, 480) 0;
           & .ic.page {
             margin-right: convertPxToVw(4, 480);
           }
