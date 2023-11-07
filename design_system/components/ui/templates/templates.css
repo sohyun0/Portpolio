@@ -462,8 +462,8 @@
 }
 
 .tag {
-  color: inherit 600;
-  font-weight: 500;
+  color: inherit;
+  font-weight: 600;
   font-size: 0.75rem;
   line-height: 1.3333333333;
   display: inline-block;

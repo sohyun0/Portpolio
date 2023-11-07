@@ -1647,6 +1647,10 @@
   -webkit-mask-image: url("../img/icon/warning.svg");
   mask-image: url("../img/icon/warning.svg");
 }
+.ic.help-circle {
+  -webkit-mask-image: url("../img/icon/help-circle.svg");
+  mask-image: url("../img/icon/help-circle.svg");
+}
 .ic.plus {
   -webkit-mask-image: url("../img/icon/plus.svg");
   mask-image: url("../img/icon/plus.svg");
@@ -1670,6 +1674,14 @@
 .ic.page {
   -webkit-mask-image: url("../img/icon/page.svg");
   mask-image: url("../img/icon/page.svg");
+}
+.ic.pin {
+  -webkit-mask-image: url("../img/icon/pin.svg");
+  mask-image: url("../img/icon/pin.svg");
+}
+.ic.refresh {
+  -webkit-mask-image: url("../img/icon/refresh.svg");
+  mask-image: url("../img/icon/refresh.svg");
 }
 
 .m0 {

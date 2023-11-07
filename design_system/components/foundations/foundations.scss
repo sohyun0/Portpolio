@@ -466,6 +466,9 @@
   &.warning {
     @include createSvgImage(warning);
   }
+  &.help-circle {
+    @include createSvgImage(help-circle);
+  }
   &.plus {
     @include createSvgImage(plus);
   }
@@ -483,6 +486,12 @@
   }
   &.page {
     @include createSvgImage(page);
+  }
+  &.pin {
+    @include createSvgImage(pin);
+  }
+  &.refresh {
+    @include createSvgImage(refresh);
   }
 }
 // .draw {
