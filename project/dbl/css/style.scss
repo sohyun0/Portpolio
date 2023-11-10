@@ -9,7 +9,7 @@ $color-dark: $gray300;
   padding: 100px 0;
 }
 .container {
-  @include setContainerMinMax($isContainerWidth: 1028, $isSideMargin: 24);
+  @include setContainerMinMax($isContainerWidth: 768, $isSideMargin: 24);
   min-height: 100vh;
 }
 .mode-toggle {
@@ -37,13 +37,9 @@ $color-dark: $gray300;
   padding: 48px 20px 0;
   margin-top: 48px;
   border-top: 1px solid $primary600;
-  & .tag-wrapper {
-    display: inline-block;
-    margin-left: 20px;
-  }
 }
 .work-list {
-  padding: 0 0 14px 30px;
+  padding: 0 30px 14px;
   & > li {
     margin-top: 24px;
     @include setFlexLayout;
@@ -53,31 +49,20 @@ $color-dark: $gray300;
     }
     & .work-title {
       @include setFontStyle(map-get($font, md-24), $gray700, 400);
-      width: 75%;
-      position: relative;
-      text-indent: -23px;
-      padding-left: 23px;
+      text-indent: -18px;
+      padding-left: 18px;
       word-break: keep-all;
-
       &::before {
         content: "✨";
-        margin-right: 8px;
+        margin-right: 4px;
       }
-      &::after {
-        @include createPseudoElement;
-        @include setPosition(absolute, left, -2px, top, 2px);
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        box-shadow: -2px 2px 0px 0 rgb(205 205 205 / 36%);
-      }
-      & span:not(.tag) {
+      & span {
         display: inline-block;
         font-size: convertPxToRem(12);
         font-weight: 400;
         line-height: 1;
+        vertical-align: middle;
         text-indent: 0;
-        margin-right: 10px;
         &::before {
           content: "[";
         }
@@ -86,22 +71,16 @@ $color-dark: $gray300;
         }
       }
     }
-    & .tag-wrapper {
-      width: 25%;
-      & .tag {
-        text-indent: 0;
-        border-radius: 50%;
-      }
-    }
     & .more-content-btn {
       border-radius: 50%;
+      cursor: pointer;
       &.active {
         & + .details {
           display: block;
         }
       }
     }
-    &.history {
+    &.etc {
       display: block;
     }
   }
@@ -112,7 +91,7 @@ $color-dark: $gray300;
     & a {
       @include setFlexLayout;
       width: 100%;
-      margin: 16px 0;
+      margin-top: 16px;
       & .ic {
         background: $primary500;
         &.page {
@@ -142,7 +121,7 @@ $color-dark: $gray300;
     margin-top: 16px;
     word-break: keep-all;
   }
-  &.history {
+  &.etc {
     & li {
       margin-top: 16px;
       & .work-title {
@@ -152,23 +131,11 @@ $color-dark: $gray300;
   }
 }
 @include respond(640) {
-  .info-title {
-    & .tag-wrapper {
-      display: block;
-      margin-top: 10px;
-      margin-left: 0;
-    }
-  }
   .work-list {
     padding: 0 15px 14px;
     & li {
       & .work-title {
         width: calc(100% - 44px);
-      }
-      & .tag-wrapper {
-        width: 100%;
-        margin-top: 8px;
-        padding-left: 23px;
       }
     }
   }
@@ -186,12 +153,6 @@ $color-dark: $gray300;
   }
   .info-title {
     padding: convertPxToVw(48, 480) convertPxToVw(20, 480) 0;
-    & .tag-wrapper {
-      margin-top: convertPxToVw(10, 480);
-      & .tag {
-        margin-bottom: convertPxToVw(4, 480);
-      }
-    }
   }
   .work-list {
     padding: 0 0 convertPxToVw(14, 480);
@@ -201,18 +162,15 @@ $color-dark: $gray300;
         margin-top: convertPxToVw(16, 480);
       }
       & .work-title {
-        &::before {
-          margin-right: convertPxToVw(8, 480);
-        }
-        & span:not(.tag) {
+        & span {
           display: block;
           margin-top: convertPxToVw(4, 480);
+          padding-left: 2px;
         }
       }
-
       & .details {
         & a {
-          margin: convertPxToVw(16, 480) 0;
+          margin-top: convertPxToVw(16, 480);
           & .ic.page {
             margin-right: convertPxToVw(4, 480);
           }
@@ -228,14 +186,11 @@ $color-dark: $gray300;
     & .text {
       margin-top: convertPxToVw(16, 480);
     }
-    &.history {
+    &.etc {
       & li {
         margin-top: convertPxToVw(16, 480);
       }
     }
-  }
-  .tag-wrapper {
-    margin-top: convertPxToVw(8, 480);
   }
 }
 .dark {
@@ -249,21 +204,12 @@ $color-dark: $gray300;
   }
   .company-info,
   .work-list li .work-title,
-  .work-list.history li .work-title,
+  .work-list.etc li .work-title,
   .work-list .hyphen-list li {
     color: $color-dark;
   }
-  .work-list {
-    & .text {
-      color: $gray400;
-    }
-    & > li .work-title {
-      font-size: 0.875rem;
-
-      &::after {
-        display: none;
-      }
-    }
+  .work-list .text {
+    color: $gray400;
   }
   .info-title {
     color: $gray25;
