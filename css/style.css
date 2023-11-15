@@ -157,20 +157,6 @@
 .work-list .details a:hover .ic {
   background-color: #fff;
 }
-.work-list .hyphen-list {
-  margin-top: 16px;
-}
-.work-list .hyphen-list li {
-  color: #4f4b5c;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.7142857143;
-  padding-left: 4px;
-  text-indent: -4px;
-}
-.work-list .hyphen-list li::before {
-  content: "-";
-}
 .work-list .text {
   color: #676472;
   font-weight: 400;
@@ -187,6 +173,39 @@
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.7142857143;
+}
+
+.hyphen-list {
+  margin-top: 16px;
+}
+.hyphen-list li {
+  color: #4f4b5c;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.2307692308;
+  padding-left: 4px;
+  text-indent: -4px;
+}
+.hyphen-list li::before {
+  content: "-";
+}
+
+.decimal-list {
+  margin-top: 16px;
+  padding: 16px 16px 16px 35px;
+  border: 2px dashed #4f4b5c;
+  border-radius: 16px;
+}
+.decimal-list li {
+  color: #4f4b5c;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+  list-style: decimal;
+  margin-bottom: 8px;
+}
+.decimal-list li:last-of-type {
+  margin-bottom: 0;
 }
 
 @media all and (max-width: 768px) {
@@ -260,14 +279,25 @@
   .work-list li .details a.btn {
     padding: 1.6666666667vw 2.0833333333vw;
   }
-  .work-list .hyphen-list {
-    margin-top: 3.3333333333vw;
-  }
   .work-list .text {
     margin-top: 3.3333333333vw;
   }
   .work-list.history li {
     margin-top: 3.3333333333vw;
+  }
+  .hyphen-list {
+    margin-top: 3.3333333333vw;
+  }
+  .decimal-list {
+    margin-top: 3.3333333333vw;
+    padding-left: 3.3333333333vw 3.3333333333vw 3.3333333333vw 7.2916666667vw;
+    border-radius: 3.3333333333vw;
+  }
+  .decimal-list li {
+    margin-bottom: 1.6666666667vw;
+  }
+  .decimal-list li:last-of-type {
+    margin-bottom: 0;
   }
   .tag-wrapper {
     margin-top: 1.6666666667vw;
@@ -279,10 +309,14 @@
 .dark .mode-toggle span {
   color: #c6c5ca;
 }
+.dark .decimal-list {
+  border-color: #c6c5ca;
+}
 .dark .company-info,
 .dark .work-list li .work-title,
 .dark .work-list.history li .work-title,
-.dark .work-list .hyphen-list li {
+.dark .hyphen-list li,
+.dark .decimal-list li {
   color: #c6c5ca;
 }
 .dark .work-list .text {

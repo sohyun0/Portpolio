@@ -128,17 +128,7 @@ $color-dark: $gray300;
       }
     }
   }
-  & .hyphen-list {
-    margin-top: 16px;
-    & li {
-      @include setFontStyle(map-get($font, sm-24), $gray700, 400);
-      padding-left: 4px;
-      text-indent: -4px;
-      &::before {
-        content: "-";
-      }
-    }
-  }
+
   & .text {
     @include setFontStyle(map-get($font, sm-24), $gray600, 400);
     margin-top: 16px;
@@ -150,6 +140,31 @@ $color-dark: $gray300;
       & .work-title {
         @include setFontStyle(map-get($font, sm-24), $gray700);
       }
+    }
+  }
+}
+.hyphen-list {
+  margin-top: 16px;
+  & li {
+    @include setFontStyle(map-get($font, xs-16), $gray700, 400);
+    padding-left: 4px;
+    text-indent: -4px;
+    &::before {
+      content: "-";
+    }
+  }
+}
+.decimal-list {
+  margin-top: 16px;
+  padding: 16px 16px 16px 35px;
+  border: 2px dashed $gray700;
+  border-radius: 16px;
+  & li {
+    @include setFontStyle(map-get($font, sm-24), $gray700, 400);
+    list-style: decimal;
+    margin-bottom: 8px;
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }
@@ -230,15 +245,27 @@ $color-dark: $gray300;
         }
       }
     }
-    & .hyphen-list {
-      margin-top: convertPxToVw(16, 480);
-    }
+
     & .text {
       margin-top: convertPxToVw(16, 480);
     }
     &.history {
       & li {
         margin-top: convertPxToVw(16, 480);
+      }
+    }
+  }
+  .hyphen-list {
+    margin-top: convertPxToVw(16, 480);
+  }
+  .decimal-list {
+    margin-top: convertPxToVw(16, 480);
+    padding-left: convertPxToVw(16, 480) convertPxToVw(16, 480) convertPxToVw(16, 480) convertPxToVw(35, 480);
+    border-radius: convertPxToVw(16, 480);
+    & li {
+      margin-bottom: convertPxToVw(8, 480);
+      &:last-of-type {
+        margin-bottom: 0;
       }
     }
   }
@@ -255,10 +282,14 @@ $color-dark: $gray300;
       color: $color-dark;
     }
   }
+  .decimal-list {
+    border-color: $color-dark;
+  }
   .company-info,
   .work-list li .work-title,
   .work-list.history li .work-title,
-  .work-list .hyphen-list li {
+  .hyphen-list li,
+  .decimal-list li {
     color: $color-dark;
   }
   .work-list {
@@ -267,7 +298,6 @@ $color-dark: $gray300;
     }
     & > li .work-title {
       font-size: 0.875rem;
-
       &::after {
         display: none;
       }
