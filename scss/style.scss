@@ -1,9 +1,11 @@
 @charset "utf-8";
-@import "../../../design_system/scss/_variables.scss", "../../../design_system/scss/_mixins.scss";
+@import "../design_system/scss/_variables.scss", "../design_system/scss/_mixins.scss";
 $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
 $color-dark: $gray300;
-
+.only-tablet-mobile {
+  display: none;
+}
 .wrapper {
   background-color: $bg-color-light;
   padding: 100px 0;
@@ -108,7 +110,7 @@ $color-dark: $gray300;
   & .details {
     display: none;
     width: 100%;
-    padding-left: 20px;
+    padding: 0 20px;
     & a {
       @include setFlexLayout;
       width: 100%;
@@ -149,6 +151,11 @@ $color-dark: $gray300;
         @include setFontStyle(map-get($font, sm-24), $gray700);
       }
     }
+  }
+}
+@include respond(768) {
+  .only-tablet-mobile {
+    display: block;
   }
 }
 @include respond(640) {
@@ -211,6 +218,7 @@ $color-dark: $gray300;
       }
 
       & .details {
+        padding-right: convertPxToVw(20, 480);
         & a {
           margin: convertPxToVw(16, 480) 0;
           & .ic.page {

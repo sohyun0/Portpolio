@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.only-tablet-mobile {
+  display: none;
+}
+
 .wrapper {
   background-color: #f3f3f4;
   padding: 100px 0;
@@ -135,7 +139,7 @@
 .work-list .details {
   display: none;
   width: 100%;
-  padding-left: 20px;
+  padding: 0 20px;
 }
 .work-list .details a {
   display: flex;
@@ -185,6 +189,11 @@
   line-height: 1.7142857143;
 }
 
+@media all and (max-width: 768px) {
+  .only-tablet-mobile {
+    display: block;
+  }
+}
 @media all and (max-width: 640px) {
   .info-title .tag-wrapper {
     display: block;
@@ -238,6 +247,9 @@
   .work-list li .work-title span:not(.tag) {
     display: block;
     margin-top: 0.8333333333vw;
+  }
+  .work-list li .details {
+    padding-right: 4.1666666667vw;
   }
   .work-list li .details a {
     margin: 3.3333333333vw 0;
