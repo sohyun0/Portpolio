@@ -146,7 +146,7 @@ $color-dark: $gray300;
 .hyphen-list {
   margin-top: 16px;
   & li {
-    @include setFontStyle(map-get($font, xs-16), $gray700, 400);
+    @include setFontStyle(map-get($font, sm-24), $gray700, 400);
     padding-left: 4px;
     text-indent: -4px;
     &::before {
