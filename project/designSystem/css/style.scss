@@ -8,31 +8,35 @@ $color-dark: $gray300;
     background-color: $secondary600;
   }
   & .title {
-    @include setFontStyle(map-get($font, xl2-32), $secondary600, 600);
+    @include setFontStyle(map-get($font, xl2-32));
+    margin-bottom: 12px;
   }
   & .description {
     @include setFontStyle(map-get($font, sm-24));
     display: none;
   }
   & .tag-wrapper {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    & .tag {
+      margin: 4px;
+      border: 1px solid $gray75;
+    }
   }
   & .more-btn {
     @include setFlexLayout;
+    background: $secondary600;
     width: 100%;
     margin: 16px 0;
-    &:hover {
-      & .ic {
-        background-color: #fff;
-      }
-    }
     & .ic {
-      background: $secondary500;
+      background: $white100;
       &.page {
         margin-right: 4px;
       }
     }
     &.active {
+      & .arrow-down {
+        transform: rotate(180deg);
+      }
       & + .description {
         display: block;
       }
@@ -41,6 +45,9 @@ $color-dark: $gray300;
 }
 .dark {
   &.dsy {
+    & .title {
+      color: $white100;
+    }
     & .description {
       color: $color-dark;
     }

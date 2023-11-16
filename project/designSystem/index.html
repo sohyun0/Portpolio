@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/base.css" />
     <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/common.css" />
     <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/component.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../../css/common.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -31,7 +32,23 @@
           <span data-tag-color="warning" class="tag">Figma</span>
           <span data-tag-color="warning" class="tag">VScode</span>
         </div>
-        <button type="button" class="btn btn-sm secondary-bd more-btn" target="_blank">
+        <!-- <div class="swiper img-group">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div> -->
+        <button type="button" class="btn btn-sm secondary-bg more-btn" target="_blank">
           <div>
             <span class="ic ic-sm page"></span>
             <span>자세한 설명 보기</span>
@@ -63,10 +80,24 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../../js/common.js"></script>
     <script>
-      let moreBtn = document.querySelector(".more-btn");
-      moreBtn
-     </script>
+      document.querySelector(".more-btn").onclick = function () {
+        classToggle(this);
+      };
+      var swiper = new Swiper(".img-group", {
+        loop: true,
+        effect: "cards",
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>

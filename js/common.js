@@ -12,3 +12,10 @@ darkModeToggle.onchange = function () {
     wrapper.classList.remove("dark");
   }
 };
+function classToggle(target) {
+  if (!target.classList.contains("active")) {
+    target.classList.add("active");
+  } else {
+    target.classList.remove("active");
+  }
+}

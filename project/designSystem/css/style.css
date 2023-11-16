@@ -2,10 +2,11 @@
   background-color: #3bc641;
 }
 .dsy .title {
-  color: #3bc641;
-  font-weight: 600;
+  color: #110c22;
+  font-weight: 500;
   font-size: 1.375rem;
   line-height: 1.4545454545;
+  margin-bottom: 12px;
 }
 .dsy .description {
   color: #110c22;
@@ -15,28 +16,36 @@
   display: none;
 }
 .dsy .tag-wrapper {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+}
+.dsy .tag-wrapper .tag {
+  margin: 4px;
+  border: 1px solid #ececed;
 }
 .dsy .more-btn {
   display: flex;
   flex-flow: wrap row;
   justify-content: space-between;
+  background: #3bc641;
   width: 100%;
   margin: 16px 0;
 }
-.dsy .more-btn:hover .ic {
-  background-color: #fff;
-}
 .dsy .more-btn .ic {
-  background: #48d64e;
+  background: rgb(255, 255, 255);
 }
 .dsy .more-btn .ic.page {
   margin-right: 4px;
+}
+.dsy .more-btn.active .arrow-down {
+  transform: rotate(180deg);
 }
 .dsy .more-btn.active + .description {
   display: block;
 }
 
+.dark.dsy .title {
+  color: rgb(255, 255, 255);
+}
 .dark.dsy .description {
   color: #c6c5ca;
 }
