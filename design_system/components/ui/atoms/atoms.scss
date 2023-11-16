@@ -185,16 +185,16 @@
     }
     &.secondary {
       &-bg {
-        @include setButtonStateStyle(bg, $secondary300, $secondary75);
+        @include setButtonStateStyle(bg, $secondary700, $secondary75);
       }
       &-bd {
-        @include setButtonStateStyle(bd, $secondary300, $secondary75, $white100);
+        @include setButtonStateStyle(bd, $secondary700, $secondary75, $white100);
       }
       &-text {
-        @include setButtonStateStyle(text, $secondary300, $secondary75, $white100);
+        @include setButtonStateStyle(text, $secondary700, $secondary75, $white100);
       }
       &-mix {
-        @include setButtonStateStyle(mix, $secondary300, $secondary75, $white100);
+        @include setButtonStateStyle(mix, $secondary700, $secondary75, $white100);
       }
     }
     &.gray {

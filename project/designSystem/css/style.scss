@@ -3,215 +3,46 @@
 $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
 $color-dark: $gray300;
-
-.wrapper {
-  background-color: $bg-color-light;
-  padding: 100px 0;
-}
-.container {
-  @include setContainerMinMax($isContainerWidth: 768, $isSideMargin: 24);
-  min-height: 100vh;
-}
-.mode-toggle {
-  @include setPosition(absolute, right, 40px, top, 40px);
-  & input.toggle.right + label::after {
-    border: 1px solid $gray300;
+.dsy {
+  & input.toggle.right:checked + label::after {
+    background-color: $secondary600;
   }
-  & span {
-    vertical-align: middle;
+  & .title {
+    @include setFontStyle(map-get($font, xl2-32), $secondary600, 600);
+  }
+  & .description {
     @include setFontStyle(map-get($font, sm-24));
+    display: none;
   }
-}
-.title {
-  @include setFontStyle(map-get($font, xl6-64), $primary600, 700);
-  letter-spacing: 2px;
-  margin-bottom: 24px;
-}
-.company-info {
-  @include setFontStyle(map-get($font, md-24));
-  word-break: keep-all;
-  margin-bottom: 48px;
-}
-.info-title {
-  @include setFontStyle(map-get($font, xl-32));
-  padding: 48px 20px 0;
-  margin-top: 48px;
-  border-top: 1px solid $primary600;
-}
-.work-list {
-  padding: 0 30px 14px;
-  & > li {
-    margin-top: 24px;
+  & .tag-wrapper {
+    margin-bottom: 24px;
+  }
+  & .more-btn {
     @include setFlexLayout;
-    align-items: center;
-    &:first-of-type {
-      margin-top: 16px;
+    width: 100%;
+    margin: 16px 0;
+    &:hover {
+      & .ic {
+        background-color: #fff;
+      }
     }
-    & .work-title {
-      @include setFontStyle(map-get($font, md-24), $gray700, 400);
-      text-indent: -18px;
-      padding-left: 18px;
-      word-break: keep-all;
-      &::before {
-        content: "✨";
+    & .ic {
+      background: $secondary500;
+      &.page {
         margin-right: 4px;
       }
-      & span {
-        display: inline-block;
-        font-size: convertPxToRem(12);
-        font-weight: 400;
-        line-height: 1;
-        vertical-align: middle;
-        text-indent: 0;
-        &::before {
-          content: "[";
-        }
-        &::after {
-          content: "]";
-        }
-      }
     }
-    & .more-content-btn {
-      border-radius: 50%;
-      cursor: pointer;
-      &.active {
-        & + .details {
-          display: block;
-        }
-      }
-    }
-    &.etc {
-      display: block;
-    }
-  }
-  & .details {
-    display: none;
-    width: 100%;
-    padding-left: 20px;
-    & a {
-      @include setFlexLayout;
-      width: 100%;
-      margin-top: 16px;
-      & .ic {
-        background: $primary500;
-        &.page {
-          margin-right: 4px;
-        }
-      }
-      &:hover {
-        & .ic {
-          background-color: #fff;
-        }
-      }
-    }
-  }
-  & .hyphen-list {
-    margin-top: 16px;
-    & li {
-      @include setFontStyle(map-get($font, sm-24), $gray700, 400);
-      padding-left: 4px;
-      text-indent: -4px;
-      &::before {
-        content: "-";
-      }
-    }
-  }
-  & .text {
-    @include setFontStyle(map-get($font, sm-24), $gray600, 400);
-    margin-top: 16px;
-    word-break: keep-all;
-  }
-  &.etc {
-    & li {
-      margin-top: 16px;
-      & .work-title {
-        @include setFontStyle(map-get($font, sm-24), $gray700);
-      }
-    }
-  }
-}
-@include respond(640) {
-  .work-list {
-    padding: 0 15px 14px;
-    & li {
-      & .work-title {
-        width: calc(100% - 44px);
-      }
-    }
-  }
-}
-@include respond(480) {
-  .wrapper {
-    padding: convertPxToVw(100, 480) 0;
-  }
-  .container {
-    padding: 0 convertPxToVw(24, 480);
-  }
-  .mode-toggle {
-    right: convertPxToVw(30, 480);
-    top: convertPxToVw(30, 480);
-  }
-  .info-title {
-    padding: convertPxToVw(48, 480) convertPxToVw(20, 480) 0;
-  }
-  .work-list {
-    padding: 0 0 convertPxToVw(14, 480);
-    & li {
-      margin-top: convertPxToVw(24, 480);
-      &:first-of-type {
-        margin-top: convertPxToVw(16, 480);
-      }
-      & .work-title {
-        & span {
-          display: block;
-          margin-top: convertPxToVw(4, 480);
-          padding-left: 2px;
-        }
-      }
-      & .details {
-        & a {
-          margin-top: convertPxToVw(16, 480);
-          & .ic.page {
-            margin-right: convertPxToVw(4, 480);
-          }
-          &.btn {
-            padding: convertPxToVw(8, 480) convertPxToVw(10, 480);
-          }
-        }
-      }
-    }
-    & .hyphen-list {
-      margin-top: convertPxToVw(16, 480);
-    }
-    & .text {
-      margin-top: convertPxToVw(16, 480);
-    }
-    &.etc {
-      & li {
-        margin-top: convertPxToVw(16, 480);
+    &.active {
+      & + .description {
+        display: block;
       }
     }
   }
 }
 .dark {
-  &.wrapper {
-    background-color: $bg-color-dark;
-  }
-  .mode-toggle {
-    & span {
+  &.dsy {
+    & .description {
       color: $color-dark;
     }
-  }
-  .company-info,
-  .work-list li .work-title,
-  .work-list.etc li .work-title,
-  .work-list .hyphen-list li {
-    color: $color-dark;
-  }
-  .work-list .text {
-    color: $gray400;
-  }
-  .info-title {
-    color: $gray25;
   }
 }
