@@ -1,0 +1,221 @@
+@charset "utf-8";
+@import "../design_system/scss/_variables.scss", "../design_system/scss/_mixins.scss";
+$bg-color-light: $gray50;
+$bg-color-dark: $base-background-color;
+$color-dark: $gray300;
+
+.container {
+  min-height: 100vh;
+}
+.company-info {
+  @include setFontStyle(map-get($font, md-24));
+  word-break: keep-all;
+  margin-bottom: 48px;
+}
+.info-title {
+  @include setFontStyle(map-get($font, xl-32));
+  padding: 48px 20px 0;
+  margin-top: 48px;
+  border-top: 1px solid $primary600;
+  & .tag-wrapper {
+    display: inline-block;
+    margin-left: 20px;
+  }
+}
+.work-list {
+  padding: 0 0 14px 30px;
+  & > li {
+    margin-top: 24px;
+    @include setFlexLayout;
+    align-items: center;
+    &:first-of-type {
+      margin-top: 16px;
+    }
+    & .work-title {
+      @include setFontStyle(map-get($font, md-24), $gray700, 400);
+      width: 75%;
+      position: relative;
+      text-indent: -23px;
+      padding-left: 23px;
+      word-break: keep-all;
+
+      &::before {
+        content: "✨";
+        margin-right: 8px;
+      }
+      &::after {
+        @include createPseudoElement;
+        @include setPosition(absolute, left, -2px, top, 2px);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        box-shadow: -2px 2px 0px 0 rgb(205 205 205 / 18%);
+      }
+      & span:not(.tag) {
+        display: inline-block;
+        font-size: convertPxToRem(12);
+        font-weight: 400;
+        line-height: 1;
+        text-indent: 0;
+        margin-right: 10px;
+        &::before {
+          content: "[";
+        }
+        &::after {
+          content: "]";
+        }
+      }
+    }
+    & .tag-wrapper {
+      width: 25%;
+      & .tag {
+        text-indent: 0;
+        border-radius: 50%;
+        border: 1px solid $gray75;
+      }
+    }
+    & .more-content-btn {
+      border-radius: 50%;
+      &.active {
+        & + .details {
+          display: block;
+        }
+      }
+    }
+    &.history {
+      display: block;
+    }
+  }
+  & .details {
+    display: none;
+    width: 100%;
+    padding: 0 20px;
+    & a {
+      @include setFlexLayout;
+      width: 100%;
+      margin: 16px 0;
+      & .ic {
+        background: $primary500;
+        &.page {
+          margin-right: 4px;
+        }
+      }
+      &:hover {
+        & .ic {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  & .text {
+    @include setFontStyle(map-get($font, sm-24), $gray600, 400);
+    margin-top: 16px;
+    word-break: keep-all;
+  }
+  &.history {
+    & li {
+      margin-top: 16px;
+      & .work-title {
+        @include setFontStyle(map-get($font, sm-24), $gray700);
+      }
+    }
+  }
+}
+@include respond(640) {
+  .info-title {
+    & .tag-wrapper {
+      display: block;
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+  .work-list {
+    padding: 0 15px 14px;
+    & li {
+      & .work-title {
+        width: calc(100% - 44px);
+      }
+      & .tag-wrapper {
+        width: 100%;
+        margin-top: 8px;
+        padding-left: 23px;
+      }
+    }
+  }
+}
+@include respond(480) {
+  .info-title {
+    padding: convertPxToVw(48, 480) convertPxToVw(20, 480) 0;
+    & .tag-wrapper {
+      margin-top: convertPxToVw(10, 480);
+      & .tag {
+        margin-bottom: convertPxToVw(4, 480);
+      }
+    }
+  }
+  .work-list {
+    padding: 0 0 convertPxToVw(14, 480);
+    & li {
+      margin-top: convertPxToVw(24, 480);
+      &:first-of-type {
+        margin-top: convertPxToVw(16, 480);
+      }
+      & .work-title {
+        &::before {
+          margin-right: convertPxToVw(8, 480);
+        }
+        & span:not(.tag) {
+          display: block;
+          margin-top: convertPxToVw(4, 480);
+        }
+      }
+
+      & .details {
+        padding-right: convertPxToVw(20, 480);
+        & a {
+          margin: convertPxToVw(16, 480) 0;
+          & .ic.page {
+            margin-right: convertPxToVw(4, 480);
+          }
+          &.btn {
+            padding: convertPxToVw(8, 480) convertPxToVw(10, 480);
+          }
+        }
+      }
+    }
+
+    & .text {
+      margin-top: convertPxToVw(16, 480);
+    }
+    &.history {
+      & li {
+        margin-top: convertPxToVw(16, 480);
+      }
+    }
+  }
+  .tag-wrapper {
+    margin-top: convertPxToVw(8, 480);
+  }
+}
+.dark {
+  .company-info,
+  .work-list li .work-title,
+  .work-list.history li .work-title {
+    color: $color-dark;
+  }
+  .work-list {
+    & .text {
+      color: $gray400;
+    }
+    & > li .work-title {
+      font-size: 0.875rem;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .info-title {
+    color: $gray25;
+  }
+}

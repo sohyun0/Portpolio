@@ -15,9 +15,6 @@
   line-height: 1.7142857143;
   display: none;
 }
-.dsy .tag-wrapper {
-  margin-bottom: 12px;
-}
 .dsy .tag-wrapper .tag {
   margin: 4px;
   border: 1px solid #ececed;
@@ -48,4 +45,9 @@
 }
 .dark.dsy .description {
   color: #c6c5ca;
+}
+
+.img-group img {
+  width: 100%;
+  border-radius: 12px;
 }

@@ -16,7 +16,6 @@ $color-dark: $gray300;
     display: none;
   }
   & .tag-wrapper {
-    margin-bottom: 12px;
     & .tag {
       margin: 4px;
       border: 1px solid $gray75;
@@ -52,4 +51,8 @@ $color-dark: $gray300;
       color: $color-dark;
     }
   }
+}
+.img-group img {
+  width: 100%;
+  border-radius: 12px;
 }

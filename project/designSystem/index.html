@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="wrapper dsy">
+    <div class="wrapper sub dsy">
       <div class="container">
         <div class="mode-toggle">
           <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
@@ -21,33 +21,62 @@
             <span> 다크모드 </span>
           </label>
         </div>
-        <div class="title">TCK Design System</div>
-        <div class="tag-wrapper">
-          <span data-tag-color="primary" class="tag">적응형</span>
-          <span data-tag-color="secondary" class="tag">기여도 100%</span>
-          <span data-tag-color="info" class="tag">1명</span>
-          <span data-tag-color="danger" class="tag">HTML</span>
-          <span data-tag-color="danger" class="tag">SCSS</span>
-          <span data-tag-color="danger" class="tag">Javascript</span>
-          <span data-tag-color="warning" class="tag">Figma</span>
-          <span data-tag-color="warning" class="tag">VScode</span>
-        </div>
-        <!-- <div class="swiper img-group">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
+        <div class="pd-box">
+          <div class="title">TCK Design System</div>
+          <div class="tag-wrapper">
+            <span data-tag-color="primary" class="tag">적응형</span>
+            <span data-tag-color="secondary" class="tag">기여도 100%</span>
+            <span data-tag-color="info" class="tag">1명</span>
+            <span data-tag-color="danger" class="tag">HTML</span>
+            <span data-tag-color="danger" class="tag">SCSS</span>
+            <span data-tag-color="danger" class="tag">Javascript</span>
+            <span data-tag-color="warning" class="tag">Figma</span>
+            <span data-tag-color="warning" class="tag">VScode</span>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div> -->
+        </div>
+      </div>
+      <div class="container">
+        <div class="pd-box">
+          <div class="flex-box img-group">
+            <div class="grid-item-4">
+              <img src="image/typeA-foundations.png" alt="" />
+            </div>
+            <div class="grid-item-4">
+              <img src="image/typeA-components-01.png" alt="" />
+            </div>
+            <div class="grid-item-4">
+              <img src="image/typeA-components-02.png" alt="" />
+            </div>
+            <div class="grid-item-4">
+              <img src="image/typeA-modules.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="pd-box">
+          <div class="swiper img-group">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="image/typeA-template01.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/typeA-template02.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/typeA-template03.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/typeA-template04.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/typeA-template05.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
         <button type="button" class="btn btn-sm secondary-bg more-btn" target="_blank">
           <div>
             <span class="ic ic-sm page"></span>
@@ -86,12 +115,12 @@
       document.querySelector(".more-btn").onclick = function () {
         classToggle(this);
       };
-      var swiper = new Swiper(".img-group", {
+      var swiper = new Swiper(".swiper.img-group", {
         loop: true,
-        effect: "cards",
-        grabCursor: true,
+        autoHeight: true,
         pagination: {
           el: ".swiper-pagination",
+          type: "progressbar",
         },
         navigation: {
           nextEl: ".swiper-button-next",
