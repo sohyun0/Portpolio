@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DBL Korea</title>
+    <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/base.css" />
+    <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/common.css" />
+    <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/component.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/sub.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper sub dbl">
+      <div class="container">
+        <div class="mode-toggle">
+          <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
+          <label for="darkMode">
+            <span> 다크모드 </span>
+          </label>
+        </div>
+        <div class="pd-box">
+          <div class="title">DBL Korea</div>
+          <div class="tag-wrapper">
+            <span data-tag-color="primary" class="tag">반응형</span>
+            <span data-tag-color="secondary" class="tag">기여도 100% (1차)</span>
+            <span data-tag-color="info" class="tag">2명</span>
+            <span data-tag-color="danger" class="tag">HTML</span>
+            <span data-tag-color="danger" class="tag">SCSS</span>
+            <span data-tag-color="danger" class="tag">Javascript</span>
+            <span data-tag-color="danger" class="tag">gsap.js</span>
+            <span data-tag-color="danger" class="tag">wow.js</span>
+            <span data-tag-color="warning" class="tag">퍼블리싱</span>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="pd-box">
+          <div class="title">Animation</div>
+          <div class="video-wrapper">
+            <video controls>
+              <source src="video/main.webm" type="video/webm" />
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="pd-box">
+          <div class="title">Publishing</div>
+          <div class="swiper img-group type-pc">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide scroll">
+                <img src="image/main_pc.png" alt="main" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/businessIntro1_pc.png" alt="회사소개 step1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/businessIntro2_pc.png" alt="회사소개 step2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/serviceCenter_pc.png" alt="서비스센터" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/cleaning_pc.png" alt="클리닝서비스" />
+              </div>
+            </div>
+            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
+            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="swiper img-group type-mo">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide scroll">
+                <img src="image/main_mo.png" alt="main" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/businessIntro1_mo.png" alt="회사소개 step1" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/businessIntro2_mo.png" alt="회사소개 step2" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/serviceCenter_mo.png" alt="서비스센터" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/cleaning_mo.png" alt="클리닝서비스" />
+              </div>
+            </div>
+            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
+            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <button type="button" class="btn btn-sm secondary-bg more-btn" target="_blank">
+            <div>
+              <span class="ic ic-sm page"></span>
+              <span>자세한 설명 보기</span>
+            </div>
+            <span class="ic ic-sm arrow-down ml0"></span>
+          </button>
+          <div class="description">
+            기업 이미지와 브랜딩을 인터렉션으로 표현되는 사이트를 구현하는 것이 핵심이였습니다.
+            <br /><br />
+            첫 번째 요소로 메인페이지의 인트로 영역에서는 gsap.js의 timeline 기능을 활용하여, 스크롤 동작에 따라 톱니바퀴가 동적으로 회전하고, 이후에
+            텍스트가 부드럽게 노출되는 애니메이션을 구현했습니다.
+            <br /><br />
+            컨텐츠 영역은 wow.js를 활용하여 사용자가 스크롤할 때, 컨텐츠가 순차적으로 나타나면서 동적인 느낌을 제공함과 동시에 많은 양의 정보가 아닌
+            최소한의 컨텐츠를 노출시켜 모든 내용을 다 볼 수 있도록 사용자 경험을 향상시켰습니다.
+            <br /><br />
+            두 번째로, 클리닝 서비스의 Before와 After 이미지를 명확하게 비교할 수 있는 기능을 구현했습니다. 이를 위해 input 요소의 range를 활용하여
+            반반 슬라이드를 개발하였습니다.
+            <br /><br />
+            마지막으로, 모바일 환경에서 서브 페이지의 사용자 경험을 개선하기 위해 드롭다운 탭을 구현했습니다. 화면 크기가 작아질 때, 탭이 자동으로
+            드롭다운 형태로 변환되어 사용자가 쉽게 이동할 수 있도록 했습니다.
+            <br /><br />
+            그 결과 메인페이지는 사용자에게 기업 이미지를 시각적으로 강조하여 전달하는 역할, Before&After 슬라이드는 기업 브랜딩을 강화 할 수 있는
+            효과를 줍니다. 기업의 온라인 존재감을 향상시키고 고객과의 상호작용을 개선하는 데 기여했습니다.
+            <br /><br />
+            또한 오픈 전 급작스런 디자인 변경 및 컨텐츠 미수급등 이슈가 있었으나 개발된 컴포넌트를 재사용하여 추가 작업을 최소한으로 유지하는 목표를
+            세운 후 원활한 커뮤니케이션과 효율적인 리소스 활용을 통해 프로젝트를 기한 내 성공적으로 완료했습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script>
+      document.querySelector(".more-btn").onclick = function () {
+        classToggle(this);
+      };
+      let imgPcSwiper = new Swiper(".img-group.type-pc", {
+        slidesPerView: 2,
+        spaceBetween: 24,
+        loop: true,
+        autoHeight: true,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      let imgMoSwiper = new Swiper(".img-group.type-mo", {
+        slidesPerView: 2,
+        spaceBetween: 24,
+        loop: true,
+        autoHeight: true,
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -82,10 +82,10 @@
 }
 .work-list > li .tag-wrapper {
   width: 25%;
+  text-align: right;
 }
 .work-list > li .tag-wrapper .tag {
   text-indent: 0;
-  border-radius: 50%;
   border: 1px solid #ececed;
 }
 .work-list > li .more-content-btn {

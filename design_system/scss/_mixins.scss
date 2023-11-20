@@ -57,7 +57,7 @@
   font-size: 0;
   line-height: 0;
   text-indent: -9999em;
-  setzindex: -100;
+  z-index: -100000;
 }
 /// @param {Number} $isLines - 말줄임표가 필요한 라인
 @mixin applyEllipsis($isLines: 1) {
@@ -272,7 +272,15 @@
 /// @param {Number} $isVertiValue   top , bottom의 수치
 /// @param {Number} $isTranslateX   x좌표 수치
 /// @param {Number} $isTranslateY   y좌표 수치
-@mixin setPosition($isPosition: absolute, $isHorizDirection: left, $isHorizValue: 0, $isVertiDirection: top, $isVertiValue: 0, $isTranslateX: 0, $isTranslateY: 0) {
+@mixin setPosition(
+  $isPosition: absolute,
+  $isHorizDirection: left,
+  $isHorizValue: 0,
+  $isVertiDirection: top,
+  $isVertiValue: 0,
+  $isTranslateX: 0,
+  $isTranslateY: 0
+) {
   position: $isPosition;
   #{$isHorizDirection}: insertUnit($isHorizValue);
   #{$isVertiDirection}: insertUnit($isVertiValue);

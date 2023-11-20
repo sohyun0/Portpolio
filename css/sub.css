@@ -1,0 +1,72 @@
+.sub input.toggle.right:checked + label::after {
+  background-color: #3bc641;
+}
+.sub .title {
+  color: #110c22;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.4545454545;
+  margin: 24px 0;
+}
+.sub .description {
+  color: #110c22;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+  display: none;
+}
+.sub .tag-wrapper .tag {
+  margin: 4px;
+  border: 1px solid #ececed;
+}
+.sub .more-btn {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  background: #3bc641;
+  width: 100%;
+  margin: 24px 0;
+}
+.sub .more-btn .ic {
+  background: rgb(255, 255, 255);
+}
+.sub .more-btn .ic.page {
+  margin-right: 4px;
+}
+.sub .more-btn.active .arrow-down {
+  transform: rotate(180deg);
+}
+.sub .more-btn.active + .description {
+  display: block;
+}
+
+.type-mo {
+  margin-top: 60px;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+  border-top: 0;
+}
+.scroll::-webkit-scrollbar-thumb {
+  border-color: transparent;
+}
+
+@media all and (max-width: 480px) {
+  .sub .more-btn {
+    margin: 5vw 0;
+  }
+  .sub .type-mo {
+    margin-top: 12.5vw 0;
+  }
+}
+.dark.sub .title {
+  color: rgb(255, 255, 255);
+}
+.dark.sub .description {
+  color: #c6c5ca;
+}

@@ -3440,7 +3440,7 @@
   font-size: 0;
   line-height: 0;
   text-indent: -9999em;
-  setzindex: -100;
+  z-index: -100000;
 }
 
 span {

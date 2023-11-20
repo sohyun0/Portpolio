@@ -1,0 +1,17 @@
+.component-group.swiper {
+  padding-bottom: 12px;
+}
+.component-group .swiper-wrapper {
+  align-items: stretch;
+}
+.component-group .swiper-slide {
+  height: auto;
+  border-radius: 12px;
+  background-color: #fff;
+}
+.component-group .swiper-pagination {
+  border-radius: 12px;
+}
+.component-group .swiper-pagination .swiper-pagination-progressbar-fill {
+  border-radius: 12px;
+}

@@ -4,7 +4,7 @@
 
 .wrapper {
   background-color: #f3f3f4;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .container {
@@ -27,7 +27,7 @@
   transform: translate(-50%, 0);
   width: 100vw;
   height: 4px;
-  background-color: rgb(255, 255, 255);
+  background-color: #676472;
 }
 .container .pd-box {
   padding: 24px 0;
@@ -92,6 +92,30 @@
   margin-bottom: 0;
 }
 
+.swiper .with-progressbar .swiper-slide img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.swiper [class*=swiper-button]::after {
+  display: none;
+}
+.swiper .swiper-pagination-progressbar {
+  top: auto;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.24);
+}
+.swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #3bc641;
+}
+
+.img-group [class*=grid-item] {
+  border-radius: 12px;
+}
+.img-group img {
+  width: 100%;
+  border-radius: 12px;
+}
+
 @media all and (max-width: 768px) {
   .only-tablet-mobile {
     display: block;
@@ -99,7 +123,7 @@
 }
 @media all and (max-width: 480px) {
   .wrapper {
-    padding: 20.8333333333vw 0;
+    padding: 14.5833333333vw 0;
   }
   .container {
     padding: 0 5vw;
@@ -138,4 +162,7 @@
 .dark .hyphen-list li,
 .dark .decimal-list li {
   color: #c6c5ca;
+}
+.dark .swiper .swiper-pagination-progressbar {
+  background-color: rgba(255, 255, 255, 0.24);
 }

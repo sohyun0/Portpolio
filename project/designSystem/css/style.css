@@ -1,53 +1,17 @@
-.dsy input.toggle.right:checked + label::after {
-  background-color: #3bc641;
+.component-group.swiper {
+  padding-bottom: 12px;
 }
-.dsy .title {
-  color: #110c22;
-  font-weight: 500;
-  font-size: 1.375rem;
-  line-height: 1.4545454545;
-  margin-bottom: 12px;
+.component-group .swiper-wrapper {
+  align-items: stretch;
 }
-.dsy .description {
-  color: #110c22;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.7142857143;
-  display: none;
+.component-group .swiper-slide {
+  height: auto;
+  border-radius: 12px;
+  background-color: #fff;
 }
-.dsy .tag-wrapper .tag {
-  margin: 4px;
-  border: 1px solid #ececed;
+.component-group .swiper-pagination {
+  border-radius: 12px;
 }
-.dsy .more-btn {
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: space-between;
-  background: #3bc641;
-  width: 100%;
-  margin: 16px 0;
-}
-.dsy .more-btn .ic {
-  background: rgb(255, 255, 255);
-}
-.dsy .more-btn .ic.page {
-  margin-right: 4px;
-}
-.dsy .more-btn.active .arrow-down {
-  transform: rotate(180deg);
-}
-.dsy .more-btn.active + .description {
-  display: block;
-}
-
-.dark.dsy .title {
-  color: rgb(255, 255, 255);
-}
-.dark.dsy .description {
-  color: #c6c5ca;
-}
-
-.img-group img {
-  width: 100%;
+.component-group .swiper-pagination .swiper-pagination-progressbar-fill {
   border-radius: 12px;
 }

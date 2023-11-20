@@ -8,7 +8,7 @@ $color-dark: $gray300;
 }
 .wrapper {
   background-color: $bg-color-light;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 .container {
   @include setContainerMinMax($isContainerWidth: 1028, $isSideMargin: 24);
@@ -20,7 +20,7 @@ $color-dark: $gray300;
       @include setPosition(absolute, left, 50%, top, -4px, -50%);
       width: 100vw;
       height: 4px;
-      background-color: $white100;
+      background-color: $gray600;
     }
   }
   & .pd-box {
@@ -67,6 +67,41 @@ $color-dark: $gray300;
     }
   }
 }
+.swiper {
+  & .with-progressbar {
+    & .swiper-slide {
+      & img {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+  & [class*="swiper-button"] {
+    &::after {
+      display: none;
+    }
+  }
+  & .swiper-pagination {
+    &-progressbar {
+      top: auto;
+      bottom: 0;
+      background-color: $black24;
+      & .swiper-pagination-progressbar-fill {
+        background-color: $secondary600;
+      }
+    }
+  }
+}
+.img-group {
+  & [class*="grid-item"] {
+    border-radius: 12px;
+  }
+  & img {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
 @include respond(768) {
   .only-tablet-mobile {
     display: block;
@@ -76,7 +111,7 @@ $color-dark: $gray300;
 }
 @include respond(480) {
   .wrapper {
-    padding: convertPxToVw(100, 480) 0;
+    padding: convertPxToVw(70, 480) 0;
   }
   .container {
     padding: 0 convertPxToVw(24, 480);
@@ -118,5 +153,12 @@ $color-dark: $gray300;
   .hyphen-list li,
   .decimal-list li {
     color: $color-dark;
+  }
+  .swiper {
+    & .swiper-pagination {
+      &-progressbar {
+        background-color: $white24;
+      }
+    }
   }
 }
