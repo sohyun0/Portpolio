@@ -26,14 +26,14 @@
           <div class="title">DBL Korea</div>
           <div class="tag-wrapper">
             <span data-tag-color="primary" class="tag">반응형</span>
-            <span data-tag-color="secondary" class="tag">기여도 100% (1차)</span>
+            <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 100% (1차)</span>
             <span data-tag-color="info" class="tag">2명</span>
             <span data-tag-color="danger" class="tag">HTML</span>
             <span data-tag-color="danger" class="tag">SCSS</span>
             <span data-tag-color="danger" class="tag">Javascript</span>
             <span data-tag-color="danger" class="tag">gsap.js</span>
             <span data-tag-color="danger" class="tag">wow.js</span>
-            <span data-tag-color="warning" class="tag">퍼블리싱</span>
+            <span data-tag-color="warning" class="tag">Figma</span>
           </div>
         </div>
       </div>
@@ -131,40 +131,6 @@
       document.querySelector(".more-btn").onclick = function () {
         classToggle(this);
       };
-      let imgPcSwiper = new Swiper(".img-group.type-pc", {
-        slidesPerView: 2,
-        spaceBetween: 24,
-        loop: true,
-        autoHeight: true,
-        pagination: {
-          el: ".swiper-pagination",
-          type: "progressbar",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-      let imgMoSwiper = new Swiper(".img-group.type-mo", {
-        slidesPerView: 2,
-        spaceBetween: 24,
-        loop: true,
-        autoHeight: true,
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-          },
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          type: "progressbar",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
     </script>
   </body>
 </html>

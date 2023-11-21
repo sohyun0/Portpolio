@@ -1,3 +1,7 @@
+.sub {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 .sub input.toggle.right:checked + label::after {
   background-color: #3bc641;
 }

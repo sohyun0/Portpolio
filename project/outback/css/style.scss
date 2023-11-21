@@ -3,13 +3,10 @@
 $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
 $color-dark: $gray300;
-.swiper-wrapper {
-  & .swiper-slide {
-    max-height: 500px;
-  }
-}
-.video-wrapper {
-  & video {
-    width: 100%;
+.type-mo {
+  .swiper-wrapper {
+    & .swiper-slide {
+      max-height: 485px;
+    }
   }
 }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outback delivery app</title>
+    <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/base.css" />
+    <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/common.css" />
+    <link rel="stylesheet" href="https://sohyun0.github.io/Portpolio/design_system/css/component.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/sub.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper sub dsy">
+      <div class="container">
+        <div class="mode-toggle">
+          <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
+          <label for="darkMode">
+            <span> 다크모드 </span>
+          </label>
+        </div>
+        <div class="pd-box">
+          <div class="title">아웃백 딜리버리 앱</div>
+          <div class="tag-wrapper">
+            <span data-tag-color="primary" class="tag">하이브리드 앱</span>
+            <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 60%</span>
+            <span data-tag-color="info" class="tag">2명</span>
+            <span data-tag-color="danger" class="tag">HTML</span>
+            <span data-tag-color="danger" class="tag">CSS</span>
+            <span data-tag-color="danger" class="tag">Javascript</span>
+            <span data-tag-color="danger" class="tag">jQuery</span>
+            <span data-tag-color="danger" class="tag">jQuery UI</span>
+            <span data-tag-color="danger" class="tag">swiper.js</span>
+            <span data-tag-color="warning" class="tag">Zeplin</span>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="pd-box">
+          <div class="title">Publishing</div>
+          <div class="swiper img-group type-mo">
+            <div class="swiper-wrapper with-progressbar">
+              <div class="swiper-slide scroll">
+                <img src="image/main.png" alt="main" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/add.png" alt="address" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/add_menu-01.png" alt=" menu" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/add_menu-02.png" alt=" menu" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/add_menu-03.png" alt=" menu" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/add_menu_info.png" alt=" menu info" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/add_cart.png" alt="cart" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/add_menu_order.png" alt=" menu order" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/order_main.png" alt="order process" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/mypage.png" alt="mypage" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/grade.png" alt="grade" />
+              </div>
+              <div class="swiper-slide scroll">
+                <img src="image/stamp.png" alt="stamp" />
+              </div>
+            </div>
+            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
+            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <button type="button" class="btn btn-sm secondary-bg more-btn" target="_blank">
+            <div>
+              <span class="ic ic-sm page"></span>
+              <span>자세한 설명 보기</span>
+            </div>
+            <span class="ic ic-sm arrow-down ml0"></span>
+          </button>
+          <div class="description">
+            하이브리드 앱으로 제작되었으며, 아웃백 앱 내의 딜리버리 서비스를 위한 하이브리드 앱 입니다.
+            <br /><br />
+            메인 페이지와 서브 페이지 전반적으로 Swiper.js를 사용하여 슬라이드를 구현하였고, 메뉴란은 freeMode와 thumbs 옵션을 사용하여
+            구현하였습니다.
+            <br />
+            프로그래스 바는 커스텀 하여 주문 상태를 확인 할 수 있게 구현했습니다. 진행 정도의 표시는 getBoundingClientRect로 상대위치를 구한 값을
+            이용하여 left와 width를 조절했습니다. footer 영역은 홈 버튼의 위치가 위로 튀어나와 있는 듯한 표현을 위해 배경과 상단 라인 디자인을
+            linear-gradient로 처리를 했습니다.
+            <br /><br />
+            기존 프로젝트에 비해 앱은 공통으로 사용하는 색상이나 버튼, 폰트 등 스타일이 많아서 common 파일을 제대로 응용 해볼 수 있는 기회가
+            되었습니다. 또한 두 명의 퍼블리셔가 동시에 작업 한 첫 프로젝트여서 css네이밍에 대해 간단한 컨벤션을 설정 후 작업에 들어 갔습니다.
+            <br /><br />
+            네이밍은 Kebab case를 사용하고, 함축어를 사용하여 txt-* , ic-* ,fc-* ,bg-* 등으로 클래스를 선언하는 등의 컨벤션을 설정했습니다. 이에 따라
+            협업에 필요한 의사소통 능력과 전반적인 코드 스타일을 맞추어 가며 협업 스킬을 쌓을 수 있었습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script>
+      document.querySelector(".more-btn").onclick = function () {
+        classToggle(this);
+      };
+    </script>
+  </body>
+</html>

@@ -33,13 +33,14 @@
             <span data-tag-color="danger" class="tag">HTML</span>
             <span data-tag-color="danger" class="tag">SCSS</span>
             <span data-tag-color="danger" class="tag">Javascript</span>
+            <span data-tag-color="danger" class="tag">jQuery</span>
+            <span data-tag-color="danger" class="tag">jQuery UI</span>
             <span data-tag-color="danger" class="tag">chart.js</span>
             <span data-tag-color="danger" class="tag">realgrid.js</span>
-            <span data-tag-color="danger" class="tag">jQuery UI</span>
+            <span data-tag-color="warning" class="tag">Figma</span>
           </div>
         </div>
       </div>
-
       <div class="container">
         <div class="pd-box">
           <div class="title">Publishing</div>
@@ -150,8 +151,8 @@
             빠르게 작업을 진행할 수 있도록 했습니다. 이를 위해 해당 프로젝트에서 처음으로 scss를 도입했습니다.
             <br /><br />
             프로젝트가 크고 foundation 요소가 많아 실제 작업기간 전에 미리 mixin과 variable 설정을 해두어 이를 활용하여 기간을 짧게 사용할 수
-            있었습니다. 또한 scss는 css와 문법적으로도 유사하기 때문에 빠르게 적용할 수 있었고, 상속이 편리해 가독성에도 높은 효율을 볼 수 있어서
-            도입을 결정했습니다.
+            있었습니다. 또한 scss는 css와 문법적으로도 유사하기 때문에 빠르게 적용할 수 있었고, 가독성에도 높은 효율을 볼 수 있어서 도입을
+            결정했습니다.
             <br /><br />
             컴포넌트 단위의 UI에서 중점을 둔 부분은, 데이터 입력 부분이 종류가 많고 복잡했기 때문에 다양한 레이아웃과 디자인 요소를 고려하여 UI를
             설계했습니다. input 필드에 자주 사용되는 prefix와 suffix를 쉽게 변경할 수 있도록 data-set을 활용하였고, input에 select, 아이콘이 결합하는
@@ -197,40 +198,6 @@
       document.querySelector(".more-btn").onclick = function () {
         classToggle(this);
       };
-      let imgPcSwiper = new Swiper(".img-group.type-pc", {
-        slidesPerView: 2,
-        spaceBetween: 24,
-        loop: true,
-        autoHeight: true,
-        pagination: {
-          el: ".swiper-pagination",
-          type: "progressbar",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-      let imgMoSwiper = new Swiper(".img-group.type-mo", {
-        slidesPerView: 2,
-        spaceBetween: 24,
-        loop: true,
-        autoHeight: true,
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-          },
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          type: "progressbar",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
     </script>
   </body>
 </html>

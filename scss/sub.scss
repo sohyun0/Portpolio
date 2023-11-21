@@ -4,6 +4,8 @@ $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
 $color-dark: $gray300;
 .sub {
+  min-height: 100vh;
+  overflow-x: hidden;
   & input.toggle.right:checked + label::after {
     background-color: $secondary600;
   }
