@@ -43,8 +43,11 @@ $color-dark: $gray300;
       }
     }
   }
+  & .url {
+    margin-bottom: 12px;
+  }
 }
-.type-mo {
+.type-pc + .type-mo {
   margin-top: 60px;
 }
 .scroll {
@@ -65,8 +68,11 @@ $color-dark: $gray300;
     & .more-btn {
       margin: convertPxToVw(24, 480) 0;
     }
-    .type-mo {
+    & .type-pc + .type-mo {
       margin-top: convertPxToVw(60, 480) 0;
+    }
+    & .url {
+      margin-bottom: convertPxToVw(12, 480);
     }
   }
 }

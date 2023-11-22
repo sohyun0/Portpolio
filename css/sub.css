@@ -43,8 +43,11 @@
 .sub .more-btn.active + .description {
   display: block;
 }
+.sub .url {
+  margin-bottom: 12px;
+}
 
-.type-mo {
+.type-pc + .type-mo {
   margin-top: 60px;
 }
 
@@ -64,8 +67,11 @@
   .sub .more-btn {
     margin: 5vw 0;
   }
-  .sub .type-mo {
+  .sub .type-pc + .type-mo {
     margin-top: 12.5vw 0;
+  }
+  .sub .url {
+    margin-bottom: 2.5vw;
   }
 }
 .dark.sub .title {

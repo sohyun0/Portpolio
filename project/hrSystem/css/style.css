@@ -1,0 +1,7 @@
+.type-pc .swiper-wrapper .swiper-slide {
+  max-height: 316px;
+}
+
+.type-mo .swiper-wrapper .swiper-slide {
+  max-height: 500px;
+}

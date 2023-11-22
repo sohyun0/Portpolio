@@ -3,6 +3,10 @@
   min-height: 100vh;
 }
 
+.title {
+  margin-top: 40px;
+}
+
 .company-info {
   color: #110c22;
   font-weight: 500;
@@ -40,7 +44,7 @@
   margin-top: 16px;
 }
 .work-list > li .work-title {
-  color: #4f4b5c;
+  color: #110c22;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -51,20 +55,8 @@
   word-break: keep-all;
 }
 .work-list > li .work-title::before {
-  content: "✨";
+  content: "🌼";
   margin-right: 8px;
-}
-.work-list > li .work-title::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: -2px;
-  top: 2px;
-  transform: translate(0, 0);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  box-shadow: -2px 2px 0px 0 rgba(205, 205, 205, 0.18);
 }
 .work-list > li .work-title span:not(.tag) {
   display: inline-block;
@@ -155,6 +147,9 @@
   }
 }
 @media all and (max-width: 480px) {
+  .title {
+    margin-top: 8.3333333333vw;
+  }
   .info-title {
     padding: 10vw 4.1666666667vw 0;
   }
@@ -212,9 +207,6 @@
 }
 .dark .work-list > li .work-title {
   font-size: 0.875rem;
-}
-.dark .work-list > li .work-title::after {
-  display: none;
 }
 .dark .info-title {
   color: #f8f8f8;

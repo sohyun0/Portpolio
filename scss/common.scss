@@ -3,6 +3,7 @@
 $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
 $color-dark: $gray300;
+$sub-color-dark: $gray500;
 .only-tablet-mobile {
   display: none;
 }
@@ -59,7 +60,7 @@ $color-dark: $gray300;
   border: 2px dashed $gray700;
   border-radius: 16px;
   & li {
-    @include setFontStyle(map-get($font, sm-24), $gray700, 400);
+    @include setFontStyle(map-get($font, sm-24), $gray900, 400);
     list-style: decimal;
     margin-bottom: 8px;
     &:last-of-type {
@@ -150,7 +151,9 @@ $color-dark: $gray300;
   .decimal-list {
     border-color: $color-dark;
   }
-  .hyphen-list li,
+  .hyphen-list li {
+    color: $sub-color-dark;
+  }
   .decimal-list li {
     color: $color-dark;
   }

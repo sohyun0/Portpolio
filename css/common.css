@@ -81,7 +81,7 @@
   border-radius: 16px;
 }
 .decimal-list li {
-  color: #4f4b5c;
+  color: #110c22;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.7142857143;
@@ -159,7 +159,9 @@
 .dark .decimal-list {
   border-color: #c6c5ca;
 }
-.dark .hyphen-list li,
+.dark .hyphen-list li {
+  color: #8d8a95;
+}
 .dark .decimal-list li {
   color: #c6c5ca;
 }

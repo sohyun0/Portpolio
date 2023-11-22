@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import "../../../design_system/scss/_variables.scss", "../../../design_system/scss/_mixins.scss";
+$bg-color-light: $gray50;
+$bg-color-dark: $base-background-color;
+$color-dark: $gray300;
+.type-pc {
+  .swiper-wrapper {
+    & .swiper-slide {
+      max-height: 316px;
+    }
+  }
+}
+.type-mo {
+  .swiper-wrapper {
+    & .swiper-slide {
+      max-height: 500px;
+    }
+  }
+}

@@ -3,9 +3,13 @@
 $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
 $color-dark: $gray300;
+$sub-color-dark: $gray500;
 
 .container {
   min-height: 100vh;
+}
+.title {
+  margin-top: 40px;
 }
 .company-info {
   @include setFontStyle(map-get($font, md-24));
@@ -32,7 +36,7 @@ $color-dark: $gray300;
       margin-top: 16px;
     }
     & .work-title {
-      @include setFontStyle(map-get($font, md-24), $gray700, 400);
+      @include setFontStyle(map-get($font, md-24), $gray900, 400);
       width: 75%;
       position: relative;
       text-indent: -23px;
@@ -40,17 +44,10 @@ $color-dark: $gray300;
       word-break: keep-all;
 
       &::before {
-        content: "✨";
+        content: "🌼";
         margin-right: 8px;
       }
-      &::after {
-        @include createPseudoElement;
-        @include setPosition(absolute, left, -2px, top, 2px);
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        box-shadow: -2px 2px 0px 0 rgb(205 205 205 / 18%);
-      }
+
       & span:not(.tag) {
         display: inline-block;
         font-size: convertPxToRem(12);
@@ -145,6 +142,9 @@ $color-dark: $gray300;
   }
 }
 @include respond(480) {
+  .title {
+    margin-top: convertPxToVw(40, 480);
+  }
   .info-title {
     padding: convertPxToVw(48, 480) convertPxToVw(20, 480) 0;
     & .tag-wrapper {
@@ -170,7 +170,6 @@ $color-dark: $gray300;
           margin-top: convertPxToVw(4, 480);
         }
       }
-
       & .details {
         padding-right: convertPxToVw(20, 480);
         & a {
@@ -184,7 +183,6 @@ $color-dark: $gray300;
         }
       }
     }
-
     & .text {
       margin-top: convertPxToVw(16, 480);
     }
@@ -210,9 +208,6 @@ $color-dark: $gray300;
     }
     & > li .work-title {
       font-size: 0.875rem;
-      &::after {
-        display: none;
-      }
     }
   }
   .info-title {
