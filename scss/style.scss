@@ -21,6 +21,9 @@ $sub-color-dark: $gray500;
   padding: 48px 20px 0;
   margin-top: 48px;
   border-top: 1px solid $primary600;
+  & .notice {
+    @include setFontStyle(map-get($font, sm-24), $gray500, 400);
+  }
   & .tag-wrapper {
     display: inline-block;
     margin-left: 20px;
@@ -35,6 +38,12 @@ $sub-color-dark: $gray500;
     &:first-of-type {
       margin-top: 16px;
     }
+  
+    &.active {
+      & .details {
+        display: block;
+      }
+    }
     & .work-title {
       @include setFontStyle(map-get($font, md-24), $gray900, 400);
       width: 75%;
@@ -42,7 +51,6 @@ $sub-color-dark: $gray500;
       text-indent: -23px;
       padding-left: 23px;
       word-break: keep-all;
-
       &::before {
         content: "🌼";
         margin-right: 8px;
@@ -71,13 +79,8 @@ $sub-color-dark: $gray500;
         border: 1px solid $gray75;
       }
     }
-    & .more-content-btn {
+    & .ic-wrapper {
       border-radius: 50%;
-      &.active {
-        & + .details {
-          display: block;
-        }
-      }
     }
     &.history {
       display: block;

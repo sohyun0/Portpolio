@@ -25,6 +25,12 @@
   margin-top: 48px;
   border-top: 1px solid #6347f4;
 }
+.info-title .notice {
+  color: #8d8a95;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+}
 .info-title .tag-wrapper {
   display: inline-block;
   margin-left: 20px;
@@ -42,6 +48,9 @@
 }
 .work-list > li:first-of-type {
   margin-top: 16px;
+}
+.work-list > li.active .details {
+  display: block;
 }
 .work-list > li .work-title {
   color: #110c22;
@@ -80,11 +89,8 @@
   text-indent: 0;
   border: 1px solid #ececed;
 }
-.work-list > li .more-content-btn {
+.work-list > li .ic-wrapper {
   border-radius: 50%;
-}
-.work-list > li .more-content-btn.active + .details {
-  display: block;
 }
 .work-list > li.history {
   display: block;

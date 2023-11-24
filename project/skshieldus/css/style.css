@@ -1,0 +1,17 @@
+.flex-box .grid-item-2 img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.type-mo {
+  margin-top: 60px;
+}
+.type-mo .swiper-wrapper .swiper-slide {
+  max-height: 522px;
+}
+
+@media all and (max-width: 480px) {
+  .type-mo {
+    margin-top: 12.5vw;
+  }
+}

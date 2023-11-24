@@ -1,0 +1,23 @@
+@charset "utf-8";
+@import "../../../design_system/scss/_variables.scss", "../../../design_system/scss/_mixins.scss";
+.flex-box {
+  .grid-item-2 {
+    & img {
+      width: 100%;
+      border-radius: 12px;
+    }
+  }
+}
+.type-mo {
+  margin-top: 60px;
+  .swiper-wrapper {
+    & .swiper-slide {
+      max-height: 522px;
+    }
+  }
+}
+@include respond(480) {
+  .type-mo {
+    margin-top: convertPxToVw(60, 480);
+  }
+}
