@@ -16,26 +16,30 @@
   <body>
     <div class="wrapper sub">
       <div class="container">
-        <div class="mode-toggle">
-          <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
-          <label for="darkMode">
-            <span> 다크모드 </span>
-          </label>
-        </div>
-        <div class="pd-box">
-          <div class="title">TCK Design System</div>
-          <div class="tag-wrapper">
-            <span data-tag-color="primary" class="tag">적응형</span>
-            <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 100%</span>
-            <span data-tag-color="info" class="tag">1명</span>
-            <span data-tag-color="danger" class="tag">HTML</span>
-            <span data-tag-color="danger" class="tag">SCSS</span>
-            <span data-tag-color="danger" class="tag">Javascript</span>
-            <span data-tag-color="warning" class="tag">Figma</span>
+        <div class="fix-content">
+          <div class="flex-box container va-center">
+            <div class="title">TCK Design System</div>
+            <div class="mode-toggle">
+              <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
+              <label for="darkMode">
+                <span> 다크모드 </span>
+              </label>
+            </div>
+          </div>
+          <div class="scroll-progress">
+            <div class="bar"></div>
           </div>
         </div>
-      </div>
-      <div class="container">
+        <div class="tag-wrapper">
+          <span data-tag-color="primary" class="tag">적응형</span>
+          <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 100%</span>
+          <span data-tag-color="info" class="tag">1명</span>
+          <span data-tag-color="danger" class="tag">HTML</span>
+          <span data-tag-color="danger" class="tag">SCSS</span>
+          <span data-tag-color="danger" class="tag">Javascript</span>
+          <span data-tag-color="warning" class="tag">Figma</span>
+        </div>
+
         <div class="pd-box">
           <div class="title">Design Guide</div>
           <div class="swiper img-group component-group">
@@ -65,8 +69,12 @@
                 <img src="image/typeB-modules.png" alt="type B modules" />
               </div>
             </div>
-            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
-            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-button-prev">
+              <span class="ic ic-md arrow-circle-left"></span>
+            </div>
+            <div class="swiper-button-next">
+              <span class="ic ic-md arrow-circle-right"></span>
+            </div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
@@ -107,8 +115,12 @@
                 <img src="image/typeB-grid.png" alt="type B grid" />
               </div>
             </div>
-            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
-            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-button-prev">
+              <span class="ic ic-md arrow-circle-left"></span>
+            </div>
+            <div class="swiper-button-next">
+              <span class="ic ic-md arrow-circle-right"></span>
+            </div>
             <div class="swiper-pagination"></div>
           </div>
           <button type="button" class="btn btn-sm secondary-bg more-btn" target="_blank">

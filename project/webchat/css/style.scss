@@ -8,3 +8,10 @@
     }
   }
 }
+@include respond(480) {
+  .flex-box {
+    .grid-item-2.mt40 {
+      width: 100%;
+    }
+  }
+}

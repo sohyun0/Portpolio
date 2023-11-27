@@ -9,7 +9,7 @@ $sub-color-dark: $gray500;
 }
 .wrapper {
   background-color: $bg-color-light;
-  padding: 50px 0;
+  padding: 104px 0 50px;
 }
 .container {
   @include setContainerMinMax($isContainerWidth: 1028, $isSideMargin: 24);
@@ -29,7 +29,6 @@ $sub-color-dark: $gray500;
   }
 }
 .mode-toggle {
-  @include setPosition(absolute, right, 40px, top, 40px);
   & input.toggle.right + label::after {
     border: 1px solid $gray300;
   }
@@ -68,6 +67,17 @@ $sub-color-dark: $gray500;
     }
   }
 }
+.img-group {
+  & [class*="grid-item"] {
+    border-radius: 12px;
+  }
+  & img {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
+/*라이브러리*/
 .swiper {
   & .with-progressbar {
     & .swiper-slide {
@@ -92,14 +102,22 @@ $sub-color-dark: $gray500;
       }
     }
   }
-}
-.img-group {
-  & [class*="grid-item"] {
-    border-radius: 12px;
-  }
-  & img {
-    width: 100%;
-    border-radius: 12px;
+  .swiper-button-next,
+  .swiper-button-prev {
+    $size: calc(var(--swiper-navigation-size) / 44 * 27);
+    height: $size;
+    &::before {
+      @include createPseudoElement;
+      @include setPositionCenter;
+      width: $size;
+      height: $size;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    & .ic {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -112,14 +130,16 @@ $sub-color-dark: $gray500;
 }
 @include respond(480) {
   .wrapper {
-    padding: convertPxToVw(70, 480) 0;
+    padding: convertPxToVw(100, 480) 0 convertPxToVw(50, 480);
   }
   .container {
     padding: 0 convertPxToVw(24, 480);
+    & .pd-box {
+      padding: convertPxToVw(24, 480) 0;
+    }
   }
-  .mode-toggle {
-    right: convertPxToVw(30, 480);
-    top: convertPxToVw(30, 480);
+  .title {
+    font-size: 1rem;
   }
   .hyphen-list {
     margin-top: convertPxToVw(16, 480);
@@ -137,6 +157,19 @@ $sub-color-dark: $gray500;
   }
   .tag-wrapper {
     margin-top: convertPxToVw(8, 480);
+  }
+}
+@include respond(380) {
+  .wrapper {
+    padding-top: convertPxToVw(130, 480);
+  }
+  .mode-toggle {
+    & span {
+      display: block;
+    }
+    & input.toggle.right:checked + label::before {
+      top: calc(50% + 5px);
+    }
   }
 }
 .dark {

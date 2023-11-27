@@ -19,6 +19,30 @@ function classToggle(target) {
     target.classList.remove("active");
   }
 }
+
+// scroll-progress
+window.onscroll = function () {
+  myFunction();
+};
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  var bar = document.querySelector(".bar");
+  var fixContent = document.querySelector(".fix-content");
+  bar.style.width = scrolled + "%";
+  if (scrolled > 1) {
+    fixContent.classList.add("top");
+    if (scrolled > 99) {
+      bar.style.borderRadius = 0;
+    } else {
+      bar.style.borderRadius = "0 5px 5px 0";
+    }
+  } else {
+    fixContent.classList.remove("top");
+  }
+}
+
 // swiper
 if (document.querySelector(".type-pc") != undefined) {
   let imgPcSwiper = new Swiper(".img-group.type-pc", {

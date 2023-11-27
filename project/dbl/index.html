@@ -16,31 +16,35 @@
   <body>
     <div class="wrapper sub dbl">
       <div class="container">
-        <div class="mode-toggle">
-          <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
-          <label for="darkMode">
-            <span> 다크모드 </span>
-          </label>
-        </div>
-        <div class="pd-box">
-          <div class="title">DBL Korea</div>
-          <div class="url">
-            <a href="https://www.dblkorea.com/" target="_blank" class="tag bd-success-500 fc-success-500"> URL : https://www.dblkorea.com/ </a>
+        <div class="fix-content">
+          <div class="flex-box container va-center">
+            <div class="title">DBL Korea</div>
+            <div class="mode-toggle">
+              <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
+              <label for="darkMode">
+                <span> 다크모드 </span>
+              </label>
+            </div>
           </div>
-          <div class="tag-wrapper">
-            <span data-tag-color="primary" class="tag">반응형</span>
-            <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 100% (1차)</span>
-            <span data-tag-color="info" class="tag">2명</span>
-            <span data-tag-color="danger" class="tag">HTML</span>
-            <span data-tag-color="danger" class="tag">SCSS</span>
-            <span data-tag-color="danger" class="tag">Javascript</span>
-            <span data-tag-color="danger" class="tag">gsap.js</span>
-            <span data-tag-color="danger" class="tag">wow.js</span>
-            <span data-tag-color="warning" class="tag">Figma</span>
+          <div class="scroll-progress">
+            <div class="bar"></div>
           </div>
         </div>
-      </div>
-      <div class="container">
+        <div class="url">
+          <a href="https://www.dblkorea.com/" target="_blank" class="tag bd-success-500 fc-success-500"> URL : https://www.dblkorea.com/ </a>
+        </div>
+        <div class="tag-wrapper">
+          <span data-tag-color="primary" class="tag">반응형</span>
+          <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 100% (1차)</span>
+          <span data-tag-color="info" class="tag">2명</span>
+          <span data-tag-color="danger" class="tag">HTML</span>
+          <span data-tag-color="danger" class="tag">SCSS</span>
+          <span data-tag-color="danger" class="tag">Javascript</span>
+          <span data-tag-color="danger" class="tag">gsap.js</span>
+          <span data-tag-color="danger" class="tag">wow.js</span>
+          <span data-tag-color="warning" class="tag">Figma</span>
+        </div>
+
         <div class="pd-box">
           <div class="title">Animation</div>
           <div class="video-wrapper">
@@ -49,8 +53,7 @@
             </video>
           </div>
         </div>
-      </div>
-      <div class="container">
+
         <div class="pd-box">
           <div class="title">Publishing</div>
           <div class="swiper img-group type-pc">
@@ -71,8 +74,12 @@
                 <img src="image/cleaning_pc.png" alt="클리닝서비스" />
               </div>
             </div>
-            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
-            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-button-prev">
+              <span class="ic ic-md arrow-circle-left"></span>
+            </div>
+            <div class="swiper-button-next">
+              <span class="ic ic-md arrow-circle-right"></span>
+            </div>
             <div class="swiper-pagination"></div>
           </div>
           <div class="swiper img-group type-mo">
@@ -93,8 +100,12 @@
                 <img src="image/cleaning_mo.png" alt="클리닝서비스" />
               </div>
             </div>
-            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
-            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-button-prev">
+              <span class="ic ic-md arrow-circle-left"></span>
+            </div>
+            <div class="swiper-button-next">
+              <span class="ic ic-md arrow-circle-right"></span>
+            </div>
             <div class="swiper-pagination"></div>
           </div>
           <button type="button" class="btn btn-sm secondary-bg more-btn" target="_blank">

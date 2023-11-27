@@ -3,6 +3,7 @@
 $bg-color-light: $gray50;
 $bg-color-dark: $base-background-color;
 $color-dark: $gray300;
+
 .sub {
   min-height: 100vh;
   overflow-x: hidden;
@@ -13,15 +14,21 @@ $color-dark: $gray300;
     @include setFontStyle(map-get($font, xl2-32));
     margin: 24px 0;
   }
-  & .description {
-    @include setFontStyle(map-get($font, sm-24));
-    display: none;
-  }
   & .tag-wrapper {
     & .tag {
       margin: 4px;
       border: 1px solid $gray75;
     }
+  }
+  & .url {
+    margin-bottom: 12px;
+  }
+  & .type-pc + .type-mo {
+    margin-top: 60px;
+  }
+  & .description {
+    @include setFontStyle(map-get($font, sm-24));
+    display: none;
   }
   & .more-btn {
     @include setFlexLayout;
@@ -43,12 +50,32 @@ $color-dark: $gray300;
       }
     }
   }
-  & .url {
-    margin-bottom: 12px;
-  }
 }
-.type-pc + .type-mo {
-  margin-top: 60px;
+.fix-content {
+  @include setPosition(fixed, left, 0, top, 0);
+  width: 100%;
+  background-color: $bg-color-light;
+  padding: 48px 0 24px;
+  z-index: 10;
+  &.top {
+    padding-top: 24px;
+  }
+  & .title {
+    margin: 0 !important;
+  }
+  & .scroll-progress {
+    @include setPosition(absolute, left, 0, bottom, 0);
+    width: 100%;
+    height: 5px;
+    & .bar {
+      @include setPosition(absolute, left, 0, bottom, 0);
+      width: 100%;
+      height: 5px;
+      background: $secondary600;
+      transition: all 0.3s ease;
+      border-radius: 0 5px 5px 0;
+    }
+  }
 }
 .scroll {
   &::-webkit-scrollbar {
@@ -65,24 +92,37 @@ $color-dark: $gray300;
 }
 @include respond(480) {
   .sub {
-    & .more-btn {
+    & .title {
+      font-size: 1rem;
       margin: convertPxToVw(24, 480) 0;
-    }
-    & .type-pc + .type-mo {
-      margin-top: convertPxToVw(60, 480) 0;
     }
     & .url {
       margin-bottom: convertPxToVw(12, 480);
+    }
+    & .type-pc + .type-mo {
+      margin-top: convertPxToVw(60, 480);
+    }
+    & .more-btn {
+      margin: convertPxToVw(24, 480) 0;
+    }
+  }
+  .fix-content {
+    padding: convertPxToVw(48, 480) 0 convertPxToVw(24, 480);
+    &.top {
+      padding-top: convertPxToVw(24, 480);
     }
   }
 }
 .dark {
   &.sub {
     & .title {
-      color: $white100;
+      color: $gray50;
     }
     & .description {
       color: $color-dark;
     }
+  }
+  & .fix-content {
+    background-color: $bg-color-dark;
   }
 }

@@ -16,34 +16,46 @@
   <body>
     <div class="wrapper sub dsy">
       <div class="container">
-        <div class="mode-toggle">
-          <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
-          <label for="darkMode">
-            <span> 다크모드 </span>
-          </label>
-        </div>
-        <div class="pd-box">
-          <div class="title">아웃백 딜리버리 앱</div>
-          <div class="url">
-            <a href="https://play.google.com/store/apps/details?id=kr.co.Outback&hl=ko&gl=US" target="_blank" class="tag bd-success-500 fc-success-500 mb6"> 안드로이드 URL : https://play.google.com/store/apps/details?id=kr.co.Outback&hl=ko&gl=US </a>
-            <a href="https://apps.apple.com/kr/app/아웃백-outback/id410254248" target="_blank" class="tag bd-success-500 fc-success-500"> iOS URL : https://apps.apple.com/kr/app/아웃백-outback-outback/id410254248 </a>
+        <div class="fix-content">
+          <div class="flex-box container va-center">
+            <div class="title">아웃백 딜리버리 앱</div>
+            <div class="mode-toggle">
+              <input type="checkbox" id="darkMode" name="darkMode" class="toggle right" />
+              <label for="darkMode">
+                <span> 다크모드 </span>
+              </label>
+            </div>
           </div>
-          <div class="tag-wrapper">
-            <span data-tag-color="primary" class="tag">하이브리드 앱</span>
-            <span data-tag-color="secondary" class="tag">컴포넌트 기여도 100%</span>
-            <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 60%</span>
-            <span data-tag-color="info" class="tag">2명</span>
-            <span data-tag-color="danger" class="tag">HTML</span>
-            <span data-tag-color="danger" class="tag">CSS</span>
-            <span data-tag-color="danger" class="tag">Javascript</span>
-            <span data-tag-color="danger" class="tag">jQuery</span>
-            <span data-tag-color="danger" class="tag">jQuery UI</span>
-            <span data-tag-color="danger" class="tag">swiper.js</span>
-            <span data-tag-color="warning" class="tag">Zeplin</span>
+          <div class="scroll-progress">
+            <div class="bar"></div>
           </div>
         </div>
-      </div>
-      <div class="container">
+        <div class="url">
+          <a
+            href="https://play.google.com/store/apps/details?id=kr.co.Outback&hl=ko&gl=US"
+            target="_blank"
+            class="tag bd-success-500 fc-success-500 mb6"
+          >
+            안드로이드 URL : https://play.google.com/store/apps/details?id=kr.co.Outback&hl=ko&gl=US
+          </a>
+          <a href="https://apps.apple.com/kr/app/아웃백-outback/id410254248" target="_blank" class="tag bd-success-500 fc-success-500">
+            iOS URL : https://apps.apple.com/kr/app/아웃백-outback-outback/id410254248
+          </a>
+        </div>
+        <div class="tag-wrapper">
+          <span data-tag-color="primary" class="tag">하이브리드 앱</span>
+          <span data-tag-color="secondary" class="tag">컴포넌트 기여도 100%</span>
+          <span data-tag-color="secondary" class="tag">퍼블리싱 기여도 60%</span>
+          <span data-tag-color="info" class="tag">2명</span>
+          <span data-tag-color="danger" class="tag">HTML</span>
+          <span data-tag-color="danger" class="tag">CSS</span>
+          <span data-tag-color="danger" class="tag">Javascript</span>
+          <span data-tag-color="danger" class="tag">jQuery</span>
+          <span data-tag-color="danger" class="tag">jQuery UI</span>
+          <span data-tag-color="danger" class="tag">swiper.js</span>
+          <span data-tag-color="warning" class="tag">Zeplin</span>
+        </div>
+
         <div class="pd-box">
           <div class="title">Publishing</div>
           <div class="swiper img-group type-mo">
@@ -85,8 +97,12 @@
                 <img src="image/stamp.png" alt="stamp" />
               </div>
             </div>
-            <div class="swiper-button-prev ic ic-md arrow-circle-left"></div>
-            <div class="swiper-button-next ic ic-md arrow-circle-right"></div>
+            <div class="swiper-button-prev">
+              <span class="ic ic-md arrow-circle-left"></span>
+            </div>
+            <div class="swiper-button-next">
+              <span class="ic ic-md arrow-circle-right"></span>
+            </div>
             <div class="swiper-pagination"></div>
           </div>
           <button type="button" class="btn btn-sm secondary-bg more-btn" target="_blank">

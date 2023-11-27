@@ -2,3 +2,9 @@
   width: 100%;
   border-radius: 12px;
 }
+
+@media all and (max-width: 480px) {
+  .flex-box .grid-item-2.mt40 {
+    width: 100%;
+  }
+}
