@@ -19,6 +19,14 @@
   padding: 24px 0;
 }
 
+.mode-toggle span {
+  vertical-align: middle;
+  color: #110c22;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+}
+
 .title {
   color: #6347f4;
   font-weight: 700;

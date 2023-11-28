@@ -17,6 +17,12 @@ $sub-color-dark: $gray400;
     padding: 24px 0;
   }
 }
+.mode-toggle {
+  & span {
+    vertical-align: middle;
+    @include setFontStyle(map-get($font, sm-24));
+  }
+}
 .title {
   @include setFontStyle(map-get($font, xl6-64), $primary600, 700);
   letter-spacing: 2px;

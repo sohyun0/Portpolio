@@ -11,13 +11,6 @@
 .sub .mode-toggle input.toggle.right:checked + label::after {
   background-color: #3bc641;
 }
-.sub .mode-toggle span {
-  vertical-align: middle;
-  color: #110c22;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.7142857143;
-}
 .sub .title {
   color: #110c22;
   font-weight: 500;
@@ -92,7 +85,7 @@
   left: 0;
   bottom: 0;
   transform: translate(0, 0);
-  width: 100%;
+  width: 0%;
   height: 5px;
   background: #3bc641;
   transition: all 0.3s ease;
@@ -136,14 +129,17 @@
   }
 }
 @media all and (max-width: 380px) {
-  .wrapper {
-    padding-top: 27.0833333333vw;
+  .sub.wrapper {
+    padding-top: 26.3157894737vw;
   }
-  .mode-toggle span {
+  .sub .mode-toggle span {
     display: block;
   }
-  .mode-toggle input.toggle.right:checked + label::before {
+  .sub .mode-toggle input.toggle.right:checked + label::before {
     top: calc(50% + 5px);
+  }
+  .fix-content {
+    padding: 6.3157894737vw 0;
   }
 }
 .dark.sub .title {

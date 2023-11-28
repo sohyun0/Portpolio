@@ -10,19 +10,14 @@ $color-dark: $gray300;
   &.wrapper {
     padding: 104px 0 50px;
   }
-  .mode-toggle {
+  & .mode-toggle {
     & input.toggle.right + label::after {
       border: 1px solid $gray300;
     }
     & input.toggle.right:checked + label::after {
       background-color: $secondary600;
     }
-    & span {
-      vertical-align: middle;
-      @include setFontStyle(map-get($font, sm-24));
-    }
   }
-
   & .title {
     @include setFontStyle(map-get($font, xl2-32));
     margin: 24px 0;
@@ -82,7 +77,7 @@ $color-dark: $gray300;
     height: 5px;
     & .bar {
       @include setPosition(absolute, left, 0, bottom, 0);
-      width: 100%;
+      width: 0%;
       height: 5px;
       background: $secondary600;
       transition: all 0.3s ease;
@@ -130,16 +125,21 @@ $color-dark: $gray300;
   }
 }
 @include respond(380) {
-  .wrapper {
-    padding-top: convertPxToVw(130, 480);
+  .sub {
+    &.wrapper {
+      padding-top: convertPxToVw(100, 380);
+    }
+    .mode-toggle {
+      & span {
+        display: block;
+      }
+      & input.toggle.right:checked + label::before {
+        top: calc(50% + 5px);
+      }
+    }
   }
-  .mode-toggle {
-    & span {
-      display: block;
-    }
-    & input.toggle.right:checked + label::before {
-      top: calc(50% + 5px);
-    }
+  .fix-content {
+    padding: convertPxToVw(24, 380) 0;
   }
 }
 .dark {

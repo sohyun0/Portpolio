@@ -8,36 +8,43 @@ function classToggle(target) {
 export { classToggle };
 
 // 다크모드
-let wrapper = document.querySelector(".wrapper");
-let darkModeToggle = document.getElementById("darkMode");
-if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  wrapper.classList.add("dark");
-  darkModeToggle.checked = true;
-}
-darkModeToggle.onchange = function () {
-  if (darkModeToggle.checked) {
+darkMode();
+function darkMode() {
+  let wrapper = document.querySelector(".wrapper");
+  let darkModeToggle = document.getElementById("darkMode");
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
     wrapper.classList.add("dark");
-  } else {
-    wrapper.classList.remove("dark");
+    darkModeToggle.checked = true;
   }
-};
+  darkModeToggle.onchange = function () {
+    if (darkModeToggle.checked) {
+      wrapper.classList.add("dark");
+    } else {
+      wrapper.classList.remove("dark");
+    }
+  };
+}
+
+// more content
+moreContent();
+function moreContent() {
+  const moreBtn = document.querySelector(".more-btn");
+  if (!moreBtn) return false;
+  moreBtn.onclick = function () {
+    classToggle(this);
+  };
+}
 
 // scroll-progress
-window.onresize = function () {
-  scrollGageBar();
-};
-window.onscroll = function () {
-  scrollGageBar();
-};
 scrollGageBar();
 function scrollGageBar() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var scrollHeight = document.documentElement.scrollHeight;
-  var clientHeight = document.documentElement.clientHeight;
-  var height = scrollHeight - clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  var bar = document.querySelector(".bar");
-  var fixContent = document.querySelector(".fix-content");
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let scrollHeight = document.documentElement.scrollHeight;
+  let clientHeight = document.documentElement.clientHeight;
+  let height = scrollHeight - clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  let bar = document.querySelector(".bar");
+  let fixContent = document.querySelector(".fix-content");
   if (!bar) return false;
   if (scrollHeight === clientHeight) {
     fixContent.classList.add("top");
@@ -55,53 +62,62 @@ function scrollGageBar() {
     }
   }
 }
+window.onresize = function () {
+  scrollGageBar();
+};
+window.onscroll = function () {
+  scrollGageBar();
+};
 
 // swiper
-if (document.querySelector(".type-pc") != undefined) {
-  let imgPcSwiper = new Swiper(".img-group.type-pc", {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 24,
+breakpointsSwiper();
+function breakpointsSwiper() {
+  if (document.querySelector(".type-pc") != undefined) {
+    let imgPcSwiper = new Swiper(".img-group.type-pc", {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
       },
-    },
-    loop: true,
-    autoHeight: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-}
-if (document.querySelector(".type-mo") != undefined) {
-  let imgMoSwiper = new Swiper(".img-group.type-mo", {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    breakpoints: {
-      410: {
-        slidesPerView: 2,
-        spaceBetween: 24,
+      loop: true,
+      autoHeight: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
       },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 24,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
-    },
-    loop: true,
-    autoHeight: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+    });
+  }
+  if (document.querySelector(".type-mo") != undefined) {
+    let imgMoSwiper = new Swiper(".img-group.type-mo", {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      breakpoints: {
+        410: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+      loop: true,
+      autoHeight: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
 }
