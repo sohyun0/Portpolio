@@ -9,32 +9,12 @@ $sub-color-dark: $gray500;
 }
 .wrapper {
   background-color: $bg-color-light;
-  padding: 104px 0 50px;
+  padding: 50px 0;
 }
 .container {
   @include setContainerMinMax($isContainerWidth: 1028, $isSideMargin: 24);
-  &:not(:first-of-type) {
-    position: relative;
-    margin-top: 4px;
-    &::before {
-      @include createPseudoElement;
-      @include setPosition(absolute, left, 50%, top, -4px, -50%);
-      width: 100vw;
-      height: 4px;
-      background-color: $gray600;
-    }
-  }
   & .pd-box {
     padding: 24px 0;
-  }
-}
-.mode-toggle {
-  & input.toggle.right + label::after {
-    border: 1px solid $gray300;
-  }
-  & span {
-    vertical-align: middle;
-    @include setFontStyle(map-get($font, sm-24));
   }
 }
 .title {
@@ -48,6 +28,7 @@ $sub-color-dark: $gray500;
     @include setFontStyle(map-get($font, sm-24), $gray700, 400);
     padding-left: 4px;
     text-indent: -4px;
+    word-break: keep-all;
     &::before {
       content: "-";
     }
@@ -62,6 +43,7 @@ $sub-color-dark: $gray500;
     @include setFontStyle(map-get($font, sm-24), $gray900, 400);
     list-style: decimal;
     margin-bottom: 8px;
+    word-break: keep-all;
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -130,7 +112,7 @@ $sub-color-dark: $gray500;
 }
 @include respond(480) {
   .wrapper {
-    padding: convertPxToVw(100, 480) 0 convertPxToVw(50, 480);
+    padding: convertPxToVw(50, 480) 0 convertPxToVw(50, 480);
   }
   .container {
     padding: 0 convertPxToVw(24, 480);
@@ -139,7 +121,7 @@ $sub-color-dark: $gray500;
     }
   }
   .title {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .hyphen-list {
     margin-top: convertPxToVw(16, 480);
@@ -159,19 +141,7 @@ $sub-color-dark: $gray500;
     margin-top: convertPxToVw(8, 480);
   }
 }
-@include respond(380) {
-  .wrapper {
-    padding-top: convertPxToVw(130, 480);
-  }
-  .mode-toggle {
-    & span {
-      display: block;
-    }
-    & input.toggle.right:checked + label::before {
-      top: calc(50% + 5px);
-    }
-  }
-}
+
 .dark {
   &.wrapper {
     background-color: $bg-color-dark;

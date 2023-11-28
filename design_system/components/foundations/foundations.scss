@@ -493,6 +493,9 @@
   &.refresh {
     @include createSvgImage(refresh);
   }
+  &.filter {
+    @include createSvgImage(filter);
+  }
 }
 // .draw {
 //   &-arrow {

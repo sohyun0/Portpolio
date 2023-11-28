@@ -21,25 +21,36 @@ function classToggle(target) {
 }
 
 // scroll-progress
-window.onscroll = function () {
-  myFunction();
+window.onresize = function () {
+  scrollGageBar();
 };
-function myFunction() {
+window.onscroll = function () {
+  scrollGageBar();
+};
+scrollGageBar();
+function scrollGageBar() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrollHeight = document.documentElement.scrollHeight;
+  var clientHeight = document.documentElement.clientHeight;
+  var height = scrollHeight - clientHeight;
   var scrolled = (winScroll / height) * 100;
   var bar = document.querySelector(".bar");
   var fixContent = document.querySelector(".fix-content");
-  bar.style.width = scrolled + "%";
-  if (scrolled > 1) {
+  if (!bar) return false;
+  if (scrollHeight === clientHeight) {
     fixContent.classList.add("top");
-    if (scrolled > 99) {
-      bar.style.borderRadius = 0;
-    } else {
-      bar.style.borderRadius = "0 5px 5px 0";
-    }
   } else {
-    fixContent.classList.remove("top");
+    bar.style.width = scrolled + "%";
+    if (scrolled > 1) {
+      fixContent.classList.add("top");
+      if (scrolled > 99) {
+        bar.style.borderRadius = 0;
+      } else {
+        bar.style.borderRadius = "0 5px 5px 0";
+      }
+    } else {
+      fixContent.classList.remove("top");
+    }
   }
 }
 

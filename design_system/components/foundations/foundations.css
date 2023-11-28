@@ -1683,6 +1683,10 @@
   -webkit-mask-image: url("../img/icon/refresh.svg");
   mask-image: url("../img/icon/refresh.svg");
 }
+.ic.filter {
+  -webkit-mask-image: url("../img/icon/filter.svg");
+  mask-image: url("../img/icon/filter.svg");
+}
 
 .m0 {
   margin: 0 !important;

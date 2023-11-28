@@ -7,9 +7,22 @@ $color-dark: $gray300;
 .sub {
   min-height: 100vh;
   overflow-x: hidden;
-  & input.toggle.right:checked + label::after {
-    background-color: $secondary600;
+  &.wrapper {
+    padding: 104px 0 50px;
   }
+  .mode-toggle {
+    & input.toggle.right + label::after {
+      border: 1px solid $gray300;
+    }
+    & input.toggle.right:checked + label::after {
+      background-color: $secondary600;
+    }
+    & span {
+      vertical-align: middle;
+      @include setFontStyle(map-get($font, sm-24));
+    }
+  }
+
   & .title {
     @include setFontStyle(map-get($font, xl2-32));
     margin: 24px 0;
@@ -92,6 +105,9 @@ $color-dark: $gray300;
 }
 @include respond(480) {
   .sub {
+    &.wrapper {
+      padding: convertPxToVw(100, 480) 0 convertPxToVw(50, 480);
+    }
     & .title {
       font-size: 1rem;
       margin: convertPxToVw(24, 480) 0;
@@ -110,6 +126,19 @@ $color-dark: $gray300;
     padding: convertPxToVw(48, 480) 0 convertPxToVw(24, 480);
     &.top {
       padding-top: convertPxToVw(24, 480);
+    }
+  }
+}
+@include respond(380) {
+  .wrapper {
+    padding-top: convertPxToVw(130, 480);
+  }
+  .mode-toggle {
+    & span {
+      display: block;
+    }
+    & input.toggle.right:checked + label::before {
+      top: calc(50% + 5px);
     }
   }
 }
