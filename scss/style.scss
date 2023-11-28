@@ -29,8 +29,34 @@ $sub-color-dark: $gray500;
   & .notice {
     @include setFontStyle(map-get($font, sm-24), $gray500, 400);
   }
-  & .filter {
-    width: calc(100% - 100px);
+}
+.filter-wrapper {
+  position: relative;
+  & .filter-btn {
+    & .tag {
+      margin: 0;
+      padding: 6px;
+    }
+    &.active {
+      & + .tag-wrapper {
+        display: block;
+      }
+    }
+  }
+  & .tag-wrapper {
+    display: none;
+    @include setPosition(absolute, right, 0px, top, 40px);
+    border-radius: 16px;
+    padding: 16px;
+    background-color: $white100;
+    text-align: right;
+    z-index: 1;
+    & .tag {
+      margin-top: 4px;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
   }
 }
 .work-list {
@@ -88,6 +114,9 @@ $sub-color-dark: $gray500;
     & .tag {
       text-indent: 0;
       border: 1px solid $gray75;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
   & .ic-wrapper {
@@ -121,11 +150,6 @@ $sub-color-dark: $gray500;
   }
 }
 @include respond(640) {
-  .info-title {
-    & .tag-wrapper {
-      text-align: right;
-    }
-  }
   .work-list {
     padding: 0 15px 14px;
     & .work-title {
@@ -156,16 +180,40 @@ $sub-color-dark: $gray500;
   }
   .info-title {
     padding: convertPxToVw(48, 480) convertPxToVw(20, 480) 0;
-    & .tag-wrapper {
-      margin-top: convertPxToVw(10, 480);
+  }
+  .filter-wrapper {
+    position: relative;
+    & .filter-btn {
       & .tag {
-        margin-bottom: convertPxToVw(4, 480);
+        margin: 0;
+        padding: 6px;
+      }
+      &.active {
+        & + .tag-wrapper {
+          display: block;
+        }
+      }
+    }
+    & .tag-wrapper {
+      top: convertPxToVw(40, 480);
+      border-radius: convertPxToVw(16, 480);
+      padding: convertPxToVw(16, 480);
+      & .tag {
+        margin-top: convertPxToVw(4, 480);
+        &:first-of-type {
+          margin-top: 0;
+        }
       }
     }
   }
   .work-list {
     padding: 0 0 convertPxToVw(14, 480);
-    & li {
+    &.history {
+      & li {
+        margin-top: convertPxToVw(16, 480);
+      }
+    }
+    & > li {
       margin-top: convertPxToVw(24, 480);
       &:first-of-type {
         margin-top: convertPxToVw(16, 480);
@@ -195,14 +243,9 @@ $sub-color-dark: $gray500;
     & .text {
       margin-top: convertPxToVw(16, 480);
     }
-    &.history {
-      & li {
-        margin-top: convertPxToVw(16, 480);
-      }
+    & .tag-wrapper {
+      margin-top: convertPxToVw(8, 480);
     }
-  }
-  .tag-wrapper {
-    margin-top: convertPxToVw(8, 480);
   }
 }
 .dark {

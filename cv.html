@@ -14,7 +14,7 @@
   <body>
     <!-- v 1.2 -->
     <!-- <a href="https://sohyun0.github.io/Portpolio/design_system/" class="btn btn-sm primary-bd" target="_blank"> -->
-    <div class="wrapper">
+    <div class="wrapper dark">
       <div class="container">
         <!--  intro [s] -->
         <div class="mode-toggle">
@@ -395,17 +395,20 @@
           <!-- 서울특별시 중부교육청 보이는 ARS [e] //  -->
         </ul>
         <!--  project [e] //-->
+
         <!--  history [s] -->
-        <div class="info-title flex-box va-center">
+        <div class="info-title flex-box va-center pr0">
           <span> 🕰 history </span>
-          <div class="filter">
-            <button type="button">Filter</button>
+          <div class="filter-wrapper">
+            <button type="button" class="filter-btn">
+              <span data-tag-color="gray" class="tag"> <span class="ic ic-xs2 filter"></span> </span>
+            </button>
             <div class="tag-wrapper">
-              <span data-tag-color="gray" class="tag"> All </span>
-              <span data-tag-color="warning" class="tag">New</span>
-              <span data-tag-color="primary" class="tag">Responsive</span>
-              <span data-tag-color="info" class="tag">Desktop</span>
-              <span data-tag-color="success" class="tag">Moblie</span>
+              <span data-tag-color="gray" class="tag bd-gray-100" data-filter="All"> All </span>
+              <span data-tag-color="warning" class="tag" data-filter="New"> New</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">Responsive</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">Desktop</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">Moblie</span>
             </div>
           </div>
         </div>
@@ -413,175 +416,163 @@
           <li>
             <p class="work-title">[TCK] Design System 신규 제작 <span>23.08 ~ 23.10</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="primary" class="tag">R</span>
-              <span data-tag-color="info" class="tag">D</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
           <li>
             <p class="work-title">JT 친애 저축은행 유지보수 <span>22.12 ~ 23.03</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="info" class="tag">D</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
             </div>
           </li>
           <li>
             <p class="work-title">록시땅 멤버십 페이지 프로모션 <span>22.12 ~ 22.12</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">디비엘 코리아 홈페이지 신규 제작 <span>22.10 ~ 22.12</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">다이와 홈페이지 유지보수 지원 <span>22.05 ~ </span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">전자랜드 영업 & 고객관리 플랫폼 신규 제작 <span>22.05 ~ 22.10</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="info" class="tag">D</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
           <li>
             <p class="work-title">서울특별시 중부교육청 보이는 ARS 신규 제작 <span>22.04 ~ 22.04</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
           <li>
             <p class="work-title">[TCK] T-helpdesk 신규 제작 <span>22.03 ~ 22.03</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="info" class="tag">D</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
             </div>
           </li>
           <li>
             <p class="work-title">[TCK] 영업관리 시스템 신규 제작 <span>22.01 ~ 22.09</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="info" class="tag">D</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
           <li>
             <p class="work-title">SK쉴더스 홈페이지 유지보수 및 프로모션 제작 <span>21.12 ~ </span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">[TCK] 인사지원 시스템 신규 제작 <span>21.12 ~ 22.03</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">이너시그널 어드민 시스템 제작 <span>21.09 ~ 21.09</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="info" class="tag">D</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
             </div>
           </li>
           <li>
             <p class="work-title">JTI코리아 프로모션 제작 <span>21.09 ~ 21.09</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">미쉐린 코리아 프로모션 제작 <span>21.07 ~ </span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">아웃백 딜리버리 앱 신규 제작 <span>21.05 ~ 21.08</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
           <li>
             <p class="work-title">AAPS홈페이지 유지보수 <span>20.12 ~ </span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="info" class="tag">D</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
           <li>
             <p class="work-title">[TCK] web chat 신규 제작 <span>20.11 ~ 20.12</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="warning" class="tag">N</span>
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="warning" class="tag" data-filter="New">N</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">캡스텍 유지보수 <span>20.07 ~</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">ADT 캡스(現 SK쉴더스) <span>20.07 ~ 21.12</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="info" class="tag">D</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
           <li>
             <p class="work-title">다이슨 홈페이지 및 서베이 유지보수 <span>20.06 ~ </span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">JCB카드 홈페이지 유지보수 및 프로모션 페이지 제작 <span>20.05 ~ 21.08</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="info" class="tag">D</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
             </div>
           </li>
           <li>
             <p class="work-title">한국머크 파트너 홈페이지 유지보수 및 쇼핑몰 , 프로모션 페이지 제작 <span>20.03 ~ </span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="primary" class="tag">R</span>
+              <span data-tag-color="primary" class="tag" data-filter="Responsive">R</span>
             </div>
           </li>
           <li>
             <p class="work-title">GU 온라인스토어 유지보수 <span>20.03 ~ 20.05</span></p>
             <div class="tag-wrapper">
-              <span data-tag-color="info" class="tag">D</span>
-              <span data-tag-color="success" class="tag">M</span>
+              <span data-tag-color="info" class="tag" data-filter="Desktop">D</span>
+              <span data-tag-color="success" class="tag" data-filter="Moblie">M</span>
             </div>
           </li>
         </ul>
         <!--  history [e] //-->
       </div>
     </div>
-    <script src="js/common.js"></script>
-    <script>
-      // 아코디언 ui
-      let moreContentBtn = document.querySelectorAll(".more-content");
-      moreContentBtn.forEach((btn) => {
-        btn.onclick = function (e) {
-          if (this.classList.contains("active")) {
-            this.classList.remove("active");
-          } else {
-            this.classList.add("active");
-          }
-        };
-      });
-    </script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

@@ -42,8 +42,34 @@
   font-size: 0.875rem;
   line-height: 1.7142857143;
 }
-.info-title .filter {
-  width: calc(100% - 100px);
+
+.filter-wrapper {
+  position: relative;
+}
+.filter-wrapper .filter-btn .tag {
+  margin: 0;
+  padding: 6px;
+}
+.filter-wrapper .filter-btn.active + .tag-wrapper {
+  display: block;
+}
+.filter-wrapper .tag-wrapper {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 40px;
+  transform: translate(0, 0);
+  border-radius: 16px;
+  padding: 16px;
+  background-color: rgb(255, 255, 255);
+  text-align: right;
+  z-index: 1;
+}
+.filter-wrapper .tag-wrapper .tag {
+  margin-top: 4px;
+}
+.filter-wrapper .tag-wrapper .tag:first-of-type {
+  margin-top: 0;
 }
 
 .work-list {
@@ -108,6 +134,9 @@
   text-indent: 0;
   border: 1px solid #ececed;
 }
+.work-list .tag-wrapper .tag:last-of-type {
+  margin-right: 0;
+}
 .work-list .ic-wrapper {
   border-radius: 50%;
 }
@@ -142,9 +171,6 @@
 }
 
 @media all and (max-width: 640px) {
-  .info-title .tag-wrapper {
-    text-align: right;
-  }
   .work-list {
     padding: 0 15px 14px;
   }
@@ -174,47 +200,62 @@
   .info-title {
     padding: 10vw 4.1666666667vw 0;
   }
-  .info-title .tag-wrapper {
-    margin-top: 2.0833333333vw;
+  .filter-wrapper {
+    position: relative;
   }
-  .info-title .tag-wrapper .tag {
-    margin-bottom: 0.8333333333vw;
+  .filter-wrapper .filter-btn .tag {
+    margin: 0;
+    padding: 6px;
+  }
+  .filter-wrapper .filter-btn.active + .tag-wrapper {
+    display: block;
+  }
+  .filter-wrapper .tag-wrapper {
+    top: 8.3333333333vw;
+    border-radius: 3.3333333333vw;
+    padding: 3.3333333333vw;
+  }
+  .filter-wrapper .tag-wrapper .tag {
+    margin-top: 0.8333333333vw;
+  }
+  .filter-wrapper .tag-wrapper .tag:first-of-type {
+    margin-top: 0;
   }
   .work-list {
     padding: 0 0 2.9166666667vw;
   }
-  .work-list li {
-    margin-top: 5vw;
-  }
-  .work-list li:first-of-type {
+  .work-list.history li {
     margin-top: 3.3333333333vw;
   }
-  .work-list li .work-title::before {
+  .work-list > li {
+    margin-top: 5vw;
+  }
+  .work-list > li:first-of-type {
+    margin-top: 3.3333333333vw;
+  }
+  .work-list > li .work-title::before {
     margin-right: 1.6666666667vw;
   }
-  .work-list li .work-title span:not(.tag) {
+  .work-list > li .work-title span:not(.tag) {
     display: block;
     margin-top: 0.8333333333vw;
   }
-  .work-list li .details {
+  .work-list > li .details {
     padding-right: 4.1666666667vw;
   }
-  .work-list li .details a {
+  .work-list > li .details a {
     margin: 3.3333333333vw 0;
   }
-  .work-list li .details a .ic.page {
+  .work-list > li .details a .ic.page {
     margin-right: 0.8333333333vw;
   }
-  .work-list li .details a.btn {
+  .work-list > li .details a.btn {
     padding: 1.6666666667vw 2.0833333333vw;
   }
   .work-list .text {
     margin-top: 3.3333333333vw;
   }
-  .work-list.history li {
-    margin-top: 3.3333333333vw;
-  }
-  .tag-wrapper {
+  .work-list .tag-wrapper {
     margin-top: 1.6666666667vw;
   }
 }

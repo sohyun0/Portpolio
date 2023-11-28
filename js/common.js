@@ -1,3 +1,12 @@
+function classToggle(target) {
+  if (!target.classList.contains("active")) {
+    target.classList.add("active");
+  } else {
+    target.classList.remove("active");
+  }
+}
+export { classToggle };
+
 // 다크모드
 let wrapper = document.querySelector(".wrapper");
 let darkModeToggle = document.getElementById("darkMode");
@@ -12,13 +21,6 @@ darkModeToggle.onchange = function () {
     wrapper.classList.remove("dark");
   }
 };
-function classToggle(target) {
-  if (!target.classList.contains("active")) {
-    target.classList.add("active");
-  } else {
-    target.classList.remove("active");
-  }
-}
 
 // scroll-progress
 window.onresize = function () {
