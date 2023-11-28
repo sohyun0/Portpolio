@@ -179,7 +179,7 @@ $sub-color-dark: $gray500;
     margin-top: convertPxToVw(40, 480);
   }
   .info-title {
-    padding: convertPxToVw(48, 480) convertPxToVw(20, 480) 0;
+    padding: convertPxToVw(48, 480) 0 0;
   }
   .filter-wrapper {
     position: relative;
