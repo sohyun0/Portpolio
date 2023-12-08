@@ -1,9 +1,5 @@
 @charset "utf-8";
 @import "../design_system/scss/_variables.scss", "../design_system/scss/_mixins.scss";
-$bg-color-light: $gray50;
-$bg-color-dark: $base-background-color;
-$color-dark: $gray300;
-
 .sub {
   min-height: 100vh;
   overflow-x: hidden;
@@ -19,7 +15,8 @@ $color-dark: $gray300;
     }
   }
   & .title {
-    @include setFontStyle(map-get($font, xl2-32));
+    @include setFontSize(map-get($font, xl2-32));
+    color: var(--sub-color);
     margin: 24px 0;
   }
   & .tag-wrapper {
@@ -35,7 +32,9 @@ $color-dark: $gray300;
     margin-top: 60px;
   }
   & .description {
-    @include setFontStyle(map-get($font, sm-24));
+    @include setFontSize(map-get($font, sm-24));
+    color: var(--color);
+
     display: none;
   }
   & .more-btn {
@@ -62,7 +61,7 @@ $color-dark: $gray300;
 .fix-content {
   @include setPosition(fixed, left, 0, top, 0);
   width: 100%;
-  background-color: $bg-color-light;
+  background-color: var(--bg-color);
   padding: 48px 0 24px;
   z-index: 10;
   &.top {
@@ -140,18 +139,5 @@ $color-dark: $gray300;
   }
   .fix-content {
     padding: convertPxToVw(24, 380) 0;
-  }
-}
-.dark {
-  &.sub {
-    & .title {
-      color: $gray50;
-    }
-    & .description {
-      color: $color-dark;
-    }
-  }
-  & .fix-content {
-    background-color: $bg-color-dark;
   }
 }

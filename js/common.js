@@ -10,17 +10,21 @@ export { classToggle };
 // 다크모드
 darkMode();
 function darkMode() {
-  let wrapper = document.querySelector(".wrapper");
+  let wrapper = document.querySelector("html");
   let darkModeToggle = document.getElementById("darkMode");
   if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    wrapper.classList.add("dark");
+    wrapper.dataset.theme = "dark";
     darkModeToggle.checked = true;
+  } else {
+    wrapper.dataset.theme = "light";
+    darkModeToggle.checked = false;
   }
   darkModeToggle.onchange = function () {
     if (darkModeToggle.checked) {
-      wrapper.classList.add("dark");
+      wrapper.dataset.theme = "dark";
     } else {
-      wrapper.classList.remove("dark");
+      wrapper.dataset.theme = "light";
+
     }
   };
 }

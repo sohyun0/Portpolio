@@ -19,19 +19,19 @@
 }
 
 .company-info {
-  color: #110c22;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.5;
+  color: var(--color);
   word-break: keep-all;
   margin-bottom: 48px;
 }
 
 .info-title {
-  color: #110c22;
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.6;
+  color: var(--info-title);
   padding: 48px 20px 0;
   margin-top: 48px;
   border-top: 1px solid #6347f4;
@@ -79,10 +79,10 @@
   margin-top: 16px;
 }
 .work-list.history li .work-title {
-  color: #4f4b5c;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.7142857143;
+  color: var(--color);
 }
 .work-list > li {
   margin-top: 24px;
@@ -98,10 +98,10 @@
   display: block;
 }
 .work-list .work-title {
-  color: #110c22;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
+  color: var(--color);
   width: 75%;
   position: relative;
   text-indent: -23px;
@@ -162,14 +162,40 @@
   background-color: #fff;
 }
 .work-list .text {
-  color: #676472;
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.7142857143;
+  color: var(--sub-color);
   margin-top: 16px;
   word-break: keep-all;
 }
 
+.portfolio-btn {
+  text-align: center;
+}
+.portfolio-btn a {
+  border-radius: 30px;
+}
+.portfolio-btn a .ic {
+  background: #7357ff;
+}
+.portfolio-btn a:hover {
+  background: linear-gradient(90deg, #21194d 0%, #8b75ff 100%);
+  background-size: 150%;
+  animation: gradient 2s ease infinite alternate-reverse;
+}
+.portfolio-btn a:hover .ic {
+  background: rgb(255, 255, 255);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
 @media all and (max-width: 640px) {
   .work-list {
     padding: 0 15px 14px;
@@ -258,18 +284,4 @@
   .work-list .tag-wrapper {
     margin-top: 1.6666666667vw;
   }
-}
-.dark .company-info,
-.dark .work-list li .work-title,
-.dark .work-list.history li .work-title {
-  color: #c6c5ca;
-}
-.dark .work-list .text {
-  color: #b3b1b8;
-}
-.dark .work-list > li .work-title {
-  font-size: 0.875rem;
-}
-.dark .info-title {
-  color: #f8f8f8;
 }

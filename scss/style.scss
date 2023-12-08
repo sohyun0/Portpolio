@@ -1,9 +1,6 @@
 @charset "utf-8";
 @import "../design_system/scss/_variables.scss", "../design_system/scss/_mixins.scss";
-$bg-color-light: $gray50;
-$bg-color-dark: $base-background-color;
-$color-dark: $gray300;
-$sub-color-dark: $gray500;
+
 .only-mobile {
   display: none;
 }
@@ -17,12 +14,14 @@ $sub-color-dark: $gray500;
   margin-top: 40px;
 }
 .company-info {
-  @include setFontStyle(map-get($font, md-24));
+  @include setFontSize(map-get($font, md-24));
+  color: var(--color);
   word-break: keep-all;
   margin-bottom: 48px;
 }
 .info-title {
-  @include setFontStyle(map-get($font, xl-32));
+  @include setFontSize(map-get($font, xl-32));
+  color: var(--info-title);
   padding: 48px 20px 0;
   margin-top: 48px;
   border-top: 1px solid $primary600;
@@ -65,7 +64,8 @@ $sub-color-dark: $gray500;
     & li {
       margin-top: 16px;
       & .work-title {
-        @include setFontStyle(map-get($font, sm-24), $gray700);
+        @include setFontSize(map-get($font, sm-24));
+        color: var(--color);
       }
     }
   }
@@ -83,7 +83,8 @@ $sub-color-dark: $gray500;
     }
   }
   & .work-title {
-    @include setFontStyle(map-get($font, md-24), $gray900, 400);
+    @include setFontSize(map-get($font, md-24), 400);
+    color: var(--color);
     width: 75%;
     position: relative;
     text-indent: -23px;
@@ -144,9 +145,35 @@ $sub-color-dark: $gray500;
     }
   }
   & .text {
-    @include setFontStyle(map-get($font, sm-24), $gray600, 400);
+    @include setFontSize(map-get($font, sm-24), 400);
+    color: var(--sub-color);
     margin-top: 16px;
     word-break: keep-all;
+  }
+}
+.portfolio-btn {
+  text-align: center;
+  & a {
+    border-radius: 30px;
+    & .ic {
+      background: $primary500;
+    }
+    &:hover {
+      background: linear-gradient(90deg, $primary900 0%, $primary400 100%);
+      background-size: 150%;
+      animation: gradient 2s ease infinite alternate-reverse;
+      & .ic {
+        background: $white100;
+      }
+    }
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
 }
 @include respond(640) {
@@ -246,23 +273,5 @@ $sub-color-dark: $gray500;
     & .tag-wrapper {
       margin-top: convertPxToVw(8, 480);
     }
-  }
-}
-.dark {
-  .company-info,
-  .work-list li .work-title,
-  .work-list.history li .work-title {
-    color: $color-dark;
-  }
-  .work-list {
-    & .text {
-      color: $gray400;
-    }
-    & > li .work-title {
-      font-size: 0.875rem;
-    }
-  }
-  .info-title {
-    color: $gray25;
   }
 }

@@ -341,6 +341,11 @@
   font-size: #{convertPxToRem(nth($isFont, 1))};
   line-height: nth($isFont, 2);
 }
+@mixin setFontSize($isFont, $isFontWeight: 500) {
+  font-weight: $isFontWeight;
+  font-size: #{convertPxToRem(nth($isFont, 1))};
+  line-height: nth($isFont, 2);
+}
 /// @param {Boolean} $isState - 상태별 스타일
 @mixin setInputStyle($isState: true) {
   display: inline-block;

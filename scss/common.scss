@@ -1,14 +1,29 @@
 @charset "utf-8";
 @import "../design_system/scss/_variables.scss", "../design_system/scss/_mixins.scss";
-$bg-color-light: $gray50;
-$bg-color-dark: $base-background-color;
-$color-dark: $gray300;
-$sub-color-dark: $gray400;
+
+[data-theme="light"]:root {
+  --bg-color: #{$gray50};
+  --color: #{$gray900};
+  --sub-color: #{$gray700};
+  --progressbar: #{$black24};
+  --sub-title: #{$gray900};
+  --info-title: #{$gray900};
+}
+
+[data-theme="dark"]:root {
+  --bg-color: #{$base-background-color};
+  --color: #{$gray300};
+  --sub-color: #{$gray400};
+  --progressbar: #{$white24};
+  --sub-title: #{$gray50};
+  --info-title: #{$gray25};
+}
+
 .only-tablet-mobile {
   display: none;
 }
 .wrapper {
-  background-color: $bg-color-light;
+  background-color: var(--bg-color);
   padding: 50px 0;
 }
 .container {
@@ -20,7 +35,8 @@ $sub-color-dark: $gray400;
 .mode-toggle {
   & span {
     vertical-align: middle;
-    @include setFontStyle(map-get($font, sm-24));
+    @include setFontSize(map-get($font, sm-24));
+    color: var(--color);
   }
 }
 .title {
@@ -31,7 +47,8 @@ $sub-color-dark: $gray400;
 .hyphen-list {
   margin-top: 16px;
   & li {
-    @include setFontStyle(map-get($font, sm-24), $gray700, 400);
+    @include setFontSize(map-get($font, sm-24), 400);
+    color: var(--sub-color);
     padding-left: 4px;
     text-indent: -4px;
     word-break: keep-all;
@@ -43,10 +60,11 @@ $sub-color-dark: $gray400;
 .decimal-list {
   margin-top: 16px;
   padding: 16px 16px 16px 35px;
-  border: 2px dashed $gray700;
+  border: 2px dashed var(--sub-color);
   border-radius: 16px;
   & li {
-    @include setFontStyle(map-get($font, sm-24), $gray900, 400);
+    @include setFontSize(map-get($font, sm-24), 400);
+    color: var(--color);
     list-style: decimal;
     margin-bottom: 8px;
     word-break: keep-all;
@@ -84,7 +102,7 @@ $sub-color-dark: $gray400;
     &-progressbar {
       top: auto;
       bottom: 0;
-      background-color: $black24;
+      background-color: var(--progressbar);
       & .swiper-pagination-progressbar-fill {
         background-color: $secondary600;
       }
@@ -145,32 +163,5 @@ $sub-color-dark: $gray400;
   }
   .tag-wrapper {
     margin-top: convertPxToVw(8, 480);
-  }
-}
-
-.dark {
-  &.wrapper {
-    background-color: $bg-color-dark;
-  }
-  .mode-toggle {
-    & span {
-      color: $color-dark;
-    }
-  }
-  .decimal-list {
-    border-color: $color-dark;
-  }
-  .hyphen-list li {
-    color: $sub-color-dark;
-  }
-  .decimal-list li {
-    color: $color-dark;
-  }
-  .swiper {
-    & .swiper-pagination {
-      &-progressbar {
-        background-color: $white24;
-      }
-    }
   }
 }
