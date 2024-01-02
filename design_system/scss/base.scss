@@ -12,7 +12,8 @@
   vertical-align: baseline;
   color: $base-text-color;
   -webkit-tap-highlight-color: transparent;
-  font-family: $base-font-family, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-family: $base-font-family, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
   box-sizing: border-box;
 }
 
@@ -121,7 +122,7 @@ hr {
 }
 // 마우스 커서 변경
 html,
-body {
+body * {
   cursor: url(../img/icon/mouse-auto.svg) 0 40, auto;
 }
 a,
