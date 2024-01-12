@@ -24,7 +24,6 @@ function darkMode() {
       wrapper.dataset.theme = "dark";
     } else {
       wrapper.dataset.theme = "light";
-
     }
   };
 }

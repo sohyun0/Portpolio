@@ -39,9 +39,14 @@
   }
   & .more-btn {
     @include setFlexLayout;
-    background: $secondary600;
+    background: linear-gradient(90deg, $secondary900 0%, $secondary400 100%);
+    background-size: 150%;
+    animation: gradient 2s ease infinite alternate-reverse;
     width: 100%;
     margin: 24px 0;
+    &:hover {
+      background: $secondary600;
+    }
     & .ic {
       background: $white100;
       &.page {
@@ -56,6 +61,14 @@
         display: block;
       }
     }
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
 }
 .fix-content {
