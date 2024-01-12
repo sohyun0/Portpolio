@@ -126,7 +126,9 @@ body * {
   cursor: url(../img/icon/mouse-auto.svg) 0 40, auto;
 }
 a,
-button {
+a *,
+button,
+button * {
   cursor: url(../img/icon/mouse-pointer.svg) 20 20, pointer;
 }
 input,
