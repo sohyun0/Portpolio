@@ -41,7 +41,7 @@
     @include setFlexLayout;
     background: linear-gradient(90deg, $secondary900 0%, $secondary400 100%);
     background-size: 150%;
-    animation: gradient 2s ease infinite alternate-reverse;
+    animation: gradient 1.5s ease infinite alternate-reverse;
     width: 100%;
     margin: 24px 0;
     &:hover {
@@ -67,7 +67,7 @@
   0% {
     background-position: 0% 0%;
   }
-  50% {
+  100% {
     background-position: 100% 100%;
   }
 }

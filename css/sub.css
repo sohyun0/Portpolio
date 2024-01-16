@@ -39,9 +39,14 @@
   display: flex;
   flex-flow: wrap row;
   justify-content: space-between;
-  background: #3bc641;
+  background: linear-gradient(90deg, #143e16 0%, #5ce762 100%);
+  background-size: 150%;
+  animation: gradient 1.5s ease infinite alternate-reverse;
   width: 100%;
   margin: 24px 0;
+}
+.sub .more-btn:hover {
+  background: #3bc641;
 }
 .sub .more-btn .ic {
   background: rgb(255, 255, 255);
@@ -56,6 +61,14 @@
   display: block;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
 .fix-content {
   position: fixed;
   left: 0;
