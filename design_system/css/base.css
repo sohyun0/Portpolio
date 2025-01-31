@@ -134,7 +134,7 @@ hr {
 
 html,
 body * {
-  cursor: url(../img/icon/mouse-auto.svg) 0 40, auto;
+  cursor: url(../img/icon/mouse-pointer.svg) 20 20, auto;
 }
 
 a,
