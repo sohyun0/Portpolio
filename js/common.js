@@ -87,6 +87,9 @@ function breakpointsSwiper() {
       },
       loop: true,
       autoHeight: true,
+      mousewheel: {
+        forceToAxis: true, // 수직 스크롤 방지, 가로로만 이동
+      },
       pagination: {
         el: ".swiper-pagination",
         type: "progressbar",
@@ -113,6 +116,9 @@ function breakpointsSwiper() {
       },
       loop: true,
       autoHeight: true,
+      mousewheel: {
+        forceToAxis: true, // 수직 스크롤 방지, 가로로만 이동
+      },
       pagination: {
         el: ".swiper-pagination",
         type: "progressbar",

@@ -8,8 +8,8 @@ $color-dark: $gray300;
     max-height: 500px;
   }
 }
-.video-wrapper {
-  & video {
-    width: 100%;
-  }
+
+.flex-box .grid-item-2 img {
+  width: 100%;
+  border-radius: 12px;
 }

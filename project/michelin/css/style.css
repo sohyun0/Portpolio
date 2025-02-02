@@ -1,0 +1,7 @@
+.swiper-wrapper .swiper-slide {
+  max-height: 500px;
+}
+.flex-box .grid-item-2 img {
+  width: 100%;
+  border-radius: 12px;
+}

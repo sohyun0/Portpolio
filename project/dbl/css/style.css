@@ -2,6 +2,7 @@
   max-height: 500px;
 }
 
-.video-wrapper video {
+.flex-box .grid-item-2 img {
   width: 100%;
+  border-radius: 12px;
 }

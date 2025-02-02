@@ -60,6 +60,9 @@
 .sub .more-btn.active + .description {
   display: block;
 }
+.sub .swiper-wrapper {
+  margin-bottom: 10px;
+}
 
 @keyframes gradient {
   0% {
